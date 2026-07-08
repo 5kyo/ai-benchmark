@@ -35,6 +35,7 @@ export function parseAndValidate(raw: string, expectedMetricKeys: string[]): Sco
       throw new Error(`score out of range for ${String(e.metricKey)}`);
     }
     if (typeof e.evidence !== "string") throw new Error(`missing evidence for ${String(e.metricKey)}`);
+    if (seen.has(e.metricKey)) throw new Error(`duplicate metric ${e.metricKey}`);
     seen.add(e.metricKey);
   }
   for (const key of expectedMetricKeys) {

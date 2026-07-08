@@ -1,5 +1,5 @@
 import "dotenv/config";
-import { readdirSync, readFileSync, existsSync } from "node:fs";
+import { readdirSync, readFileSync, existsSync, statSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { createClient } from "@supabase/supabase-js";
@@ -35,26 +35,38 @@ async function main(): Promise<void> {
 
   let imported = 0;
   let validated = 0;
+  let failed = 0;
   for (const model of readdirSync(outboxDir)) {
     const modelDir = resolve(outboxDir, model);
+    if (!statSync(modelDir).isDirectory()) continue;
     for (const file of readdirSync(modelDir)) {
       const rel = `${model}/${file}`;
       const parsed = parseOutboxPath(rel);
       if (!parsed) continue;
-      const raw = readFileSync(resolve(modelDir, file), "utf8");
-      const output = parseAndValidate(raw, expectedKeys); // 실패 시 throw로 중단
-      validated += 1;
-      const scores = toAxisCScores(output);
-      if (client) {
-        const { scanId, count } = await importModelScores(client, parsed.slug, scores);
-        imported += 1;
-        console.log(`[${parsed.slug}/${output.model}] upserted ${count} scores to scan ${scanId}`);
-      } else {
-        console.log(`[${parsed.slug}/${output.model}] validated ${scores.length} scores (DB skipped: no env)`);
+      try {
+        const raw = readFileSync(resolve(modelDir, file), "utf8");
+        const output = parseAndValidate(raw, expectedKeys); // 실패 시 throw로 중단
+        if (parsed.model !== output.model) {
+          console.warn(`[${rel}] folder model '${parsed.model}' != json model '${output.model}'`);
+        }
+        validated += 1;
+        const scores = toAxisCScores(output);
+        if (client) {
+          const { scanId, count } = await importModelScores(client, parsed.slug, scores);
+          imported += 1;
+          console.log(`[${parsed.slug}/${output.model}] upserted ${count} scores to scan ${scanId}`);
+        } else {
+          console.log(`[${parsed.slug}/${output.model}] validated ${scores.length} scores (DB skipped: no env)`);
+        }
+      } catch (err) {
+        console.error(`[${rel}] FAILED: ${(err as Error).message}`);
+        failed += 1;
+        continue;
       }
     }
   }
-  console.log(`\n${validated} file(s) validated, ${imported} imported.`);
+  console.log(`\n${validated} file(s) validated, ${imported} imported, ${failed} failed.`);
+  if (failed > 0) process.exitCode = 1;
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

@@ -66,6 +66,19 @@ describe("parseAndValidate", () => {
   it("throws when model is missing", () => {
     expect(() => parseAndValidate(validJson({ model: "" }), KEYS)).toThrow(/missing model/);
   });
+
+  it("throws on a duplicate metric key", () => {
+    const dup = validJson({
+      scores: [
+        { metricKey: "clarity", score: 80, evidence: "x" },
+        { metricKey: "clarity", score: 60, evidence: "x" },
+        { metricKey: "product_depth", score: 60, evidence: "x" },
+        { metricKey: "key_info_present", score: 40, evidence: "x" },
+        { metricKey: "freshness_clarity", score: 70, evidence: "x" },
+      ],
+    });
+    expect(() => parseAndValidate(dup, KEYS)).toThrow(/duplicate metric/);
+  });
 });
 
 describe("toAxisCScores", () => {
