@@ -1,0 +1,11 @@
+{
+  "name": "@ai-benchmark/crawler",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./src/index.ts",
+  "dependencies": {
+    "@ai-benchmark/core": "workspace:*",
+    "cheerio": "^1.0.0",
+    "yaml": "^2.5.0"
+  }
+}
