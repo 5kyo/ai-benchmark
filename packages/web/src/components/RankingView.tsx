@@ -51,7 +51,7 @@ export function RankingView({ companies, weights, models }: { companies: Company
     <div>
       <div className="mb-2 flex flex-wrap items-start justify-between gap-3">
         <div className="max-w-2xl">
-          <h1 className="font-display text-2xl font-semibold">블록체인 기업 AI 친화도 벤치마크</h1>
+          <h1 className="font-display text-2xl font-semibold">블록체인 기업 홈페이지 AI 친화도 벤치마크</h1>
           <p className="mt-1 text-sm" style={{ color: "var(--muted)" }}>
             국내외 블록체인 기업의 공식 홈페이지를 AI·AI 에이전트가 얼마나 잘 읽는지 채점한 순위입니다.
             <br />
