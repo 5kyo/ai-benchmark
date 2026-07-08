@@ -5,3 +5,6 @@ raw/
 .env
 *.tsbuildinfo
 .next/
+
+# 비주얼 컴패니언 스크래치
+.superpowers/

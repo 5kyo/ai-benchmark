@@ -20,7 +20,7 @@
   --text: #14181f;
   --muted: #5b6472;
 }
-html { color-scheme: dark; }
+html { color-scheme: dark; scroll-behavior: smooth; }
 body {
   background: var(--ink);
   color: var(--text);
@@ -42,5 +42,6 @@ body {
 }
 @media (prefers-reduced-motion: reduce) {
   .scanline { animation: none; display: none; }
+  html { scroll-behavior: auto; }
 }
 :focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }

@@ -10,6 +10,8 @@ import { ScorePill } from "./ScorePill.js";
 import { AxisRadar, type RadarSeries } from "./AxisRadar.js";
 import { CompanySummary } from "./CompanySummary.js";
 import { modelColor } from "../lib/modelColor.js";
+import { AXIS_INFO } from "../lib/glossary.js";
+import { scoreColor } from "../lib/scoreColor.js";
 
 const AXES: Axis[] = ["A", "B", "C", "D"];
 
@@ -51,17 +53,34 @@ export function CompanyDetailView({ company, weights, models }: { company: Compa
           <div className="mt-2"><ModelToggle models={models} value={view} onChange={setView} /></div>
         </div>
       </div>
-      <div className="grid gap-6 md:grid-cols-2 md:items-start">
-        <div className="flex flex-col gap-6">
+      <div className="grid gap-6 md:grid-cols-[minmax(280px,340px)_1fr] md:items-start">
+        <div className="flex flex-col gap-6 md:sticky md:top-6 md:self-start">
           <div className="panel p-4">
             <h2 className="mb-2 font-display text-sm" style={{ color: "var(--muted)" }}>축별 (모델 오버레이)</h2>
             <AxisRadar series={series} />
+            <div className="mt-3 flex flex-wrap gap-1.5 border-t pt-3" style={{ borderColor: "var(--line)" }}>
+              {axisScores.map((a) => (
+                <a
+                  key={a.axis}
+                  href={`#axis-${a.axis}`}
+                  className="flex items-baseline gap-1 rounded px-1.5 py-0.5 text-[11px] transition-colors hover:bg-[rgba(255,255,255,0.04)]"
+                  style={{ border: "1px solid var(--line)" }}
+                  title={`${AXIS_INFO[a.axis].label}로 이동`}
+                >
+                  <span className="mono font-semibold" style={{ color: "var(--signal)" }}>{a.axis}</span>
+                  <span style={{ color: "var(--muted)" }}>{AXIS_INFO[a.axis].label}</span>
+                  <span className="mono tabular-nums" style={{ color: scoreColor(a.score) }}>
+                    {a.score == null ? "—" : Math.round(a.score)}
+                  </span>
+                </a>
+              ))}
+            </div>
           </div>
           <CompanySummary rows={rows} overall={overall} axisScores={axisScores} />
         </div>
-        <div className="panel p-4">
+        <div>
           <h2 className="mb-2 font-display text-sm" style={{ color: "var(--muted)" }}>지표</h2>
-          <MetricTable rows={rows} />
+          <MetricTable rows={rows} axisScores={axisScores} />
         </div>
       </div>
     </div>

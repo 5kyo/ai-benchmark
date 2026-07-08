@@ -1,5 +1,6 @@
 import type { Axis } from "@ai-benchmark/core";
 import type { MetricRow } from "../lib/data/metricRows.js";
+import type { AxisScore } from "../lib/data/types.js";
 import { scoreColor } from "../lib/scoreColor.js";
 import { AXIS_INFO, metricLabel, metricDescription } from "../lib/glossary.js";
 import { modelColor, modelShort } from "../lib/modelColor.js";
@@ -12,27 +13,33 @@ function groupByAxis(rows: MetricRow[]): { axis: Axis; rows: MetricRow[] }[] {
   );
 }
 
-export function MetricTable({ rows }: { rows: MetricRow[] }) {
+export function MetricTable({ rows, axisScores }: { rows: MetricRow[]; axisScores: AxisScore[] }) {
   const groups = groupByAxis(rows);
   return (
-    <div className="space-y-4">
+    <div className="space-y-5">
       {groups.map((g) => {
         const info = AXIS_INFO[g.axis];
+        const axisScore = axisScores.find((a) => a.axis === g.axis)?.score ?? null;
         return (
-          <section key={g.axis} className="rounded-lg border" style={{ borderColor: "var(--line)" }}>
-            <div className="border-b px-3 py-2" style={{ borderColor: "var(--line)", background: "var(--ink)" }}>
-              <div className="flex items-baseline gap-2">
-                <span
-                  className="mono rounded px-1.5 py-0.5 text-xs font-semibold leading-none"
-                  style={{ color: "var(--signal)", border: "1px solid var(--signal)" }}
-                >
-                  {g.axis}
-                </span>
-                <h3 className="font-display text-sm font-semibold">{info.label}</h3>
+          <section key={g.axis} id={`axis-${g.axis}`} className="panel scroll-mt-6">
+            <div className="flex items-start justify-between gap-3 border-b px-4 py-3" style={{ borderColor: "var(--line)", background: "var(--ink)" }}>
+              <div>
+                <div className="flex items-baseline gap-2">
+                  <span
+                    className="mono rounded px-1.5 py-0.5 text-xs font-semibold leading-none"
+                    style={{ color: "var(--signal)", border: "1px solid var(--signal)" }}
+                  >
+                    {g.axis}
+                  </span>
+                  <h3 className="font-display text-sm font-semibold">{info.label}</h3>
+                </div>
+                <p className="mt-1 text-xs leading-snug" style={{ color: "var(--muted)" }}>{info.summary}</p>
               </div>
-              <p className="mt-1 text-xs leading-snug" style={{ color: "var(--muted)" }}>{info.summary}</p>
+              <span className="mono shrink-0 text-2xl tabular-nums leading-none" style={{ color: scoreColor(axisScore) }}>
+                {axisScore == null ? "—" : Math.round(axisScore)}
+              </span>
             </div>
-            <ul className="space-y-2.5 px-3 py-3">
+            <ul className="space-y-2.5 px-4 py-3">
               {g.rows.map((r) => (
                 <li key={`${r.axis}-${r.metricKey}`} className="flex items-center gap-3">
                   <div className="min-w-0 flex-1">
