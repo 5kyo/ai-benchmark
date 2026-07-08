@@ -1,0 +1,9 @@
+{
+  "name": "@ai-benchmark/db",
+  "version": "0.0.0",
+  "type": "module",
+  "dependencies": {
+    "@ai-benchmark/core": "workspace:*",
+    "@supabase/supabase-js": "^2.45.4"
+  }
+}
