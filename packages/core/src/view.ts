@@ -26,7 +26,9 @@ export function collapseForView(scores: MetricScore[], view: ScoreView): MetricS
   for (const group of groups.values()) {
     if (view === "average") {
       const avg = group.reduce((sum, s) => sum + s.score, 0) / group.length;
-      collapsed.push({ axis: group[0].axis, metricKey: group[0].metricKey, model: "average", score: avg });
+      // 단일 모델만 있으면 그 근거(evidence)를 유지한다(여러 모델이면 평균이라 특정 근거 없음).
+      const evidence = group.length === 1 ? group[0].evidence : undefined;
+      collapsed.push({ axis: group[0].axis, metricKey: group[0].metricKey, model: "average", score: avg, evidence });
     } else {
       const picked = group.find((s) => s.model === view.model);
       if (picked) collapsed.push(picked);
