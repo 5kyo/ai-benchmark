@@ -31,7 +31,7 @@ export function MetricTable({ rows, axisScores }: { rows: MetricRow[]; axisScore
                   >
                     {g.axis}
                   </span>
-                  <h3 className="font-display text-sm font-semibold">{info.label}</h3>
+                  <h3 className="font-display text-base font-semibold">{info.label}</h3>
                 </div>
                 <p className="mt-1 text-xs leading-snug" style={{ color: "var(--muted)" }}>{info.summary}</p>
               </div>
@@ -39,12 +39,22 @@ export function MetricTable({ rows, axisScores }: { rows: MetricRow[]; axisScore
                 {axisScore == null ? "—" : Math.round(axisScore)}
               </span>
             </div>
-            <ul className="space-y-2.5 px-4 py-3">
-              {g.rows.map((r) => (
-                <li key={`${r.axis}-${r.metricKey}`} className="flex items-center gap-3">
+            <ul className="px-4">
+              {g.rows.map((r, i) => (
+                <li
+                  key={`${r.axis}-${r.metricKey}`}
+                  className="flex items-center gap-3 border-t py-3.5 first:border-t-0"
+                  style={{ borderColor: "var(--line)" }}
+                >
+                  <span
+                    className="mono self-start pt-0.5 text-xs tabular-nums"
+                    style={{ color: "var(--muted)", minWidth: "2ch" }}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <div className="min-w-0 flex-1">
                     <div className="flex items-baseline gap-2">
-                      <span className="text-sm">{metricLabel(r.metricKey)}</span>
+                      <span className="text-[15px] font-semibold">{metricLabel(r.metricKey)}</span>
                       <span className="mono text-[10px]" style={{ color: "var(--muted)" }}>{r.metricKey}</span>
                     </div>
                     <p className="mt-0.5 text-xs leading-snug" style={{ color: "var(--muted)" }}>

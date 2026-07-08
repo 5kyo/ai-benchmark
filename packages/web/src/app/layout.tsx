@@ -14,8 +14,6 @@ export const metadata: Metadata = {
 
 const NAV = [
   { href: "/", label: "순위" },
-  { href: "/compare", label: "우리 vs 경쟁사" },
-  { href: "/models", label: "모델 비교" },
   { href: "/methodology", label: "방법론" },
 ];
 
