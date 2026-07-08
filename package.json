@@ -9,7 +9,10 @@
     "typecheck": "tsc -b",
     "crawl": "tsx packages/crawler/src/cli-crawl.ts",
     "prepare-scores": "tsx packages/scoring/src/cli-prepare.ts",
-    "import-scores": "tsx packages/scoring/src/cli-import.ts"
+    "import-scores": "tsx packages/scoring/src/cli-import.ts",
+    "web:dev": "pnpm --filter @ai-benchmark/web dev",
+    "web:build": "pnpm --filter @ai-benchmark/web build",
+    "web:seed": "tsx packages/web/scripts/seed.ts"
   },
   "devDependencies": {
     "typescript": "^5.5.4",
