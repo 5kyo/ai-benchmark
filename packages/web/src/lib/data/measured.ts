@@ -10,6 +10,7 @@ export function measuredCompanies(): CompanyRecord[] {
     "homepageUrl": "https://parametacorp.com/",
     "isSelf": true,
     "category": "Infra",
+    "region": "국내",
     "description": "Web2에서 Web3 전환을 돕는 국내 블록체인 인프라·솔루션 기업. 자체 엔진 loopchain, DID(MyID), 인터체인(BTP), 커스터디 지갑·STO·토큰 관리를 제공한다.",
     "scores": [
       {
@@ -153,6 +154,7 @@ export function measuredCompanies(): CompanyRecord[] {
     "homepageUrl": "https://lambda256.io/",
     "isSelf": false,
     "category": "Infra",
+    "region": "국내",
     "description": "두나무 계열 블록체인 기술 자회사. BaaS 플랫폼 Luniverse와 노드 API 서비스 Nodit으로 Web3 개발 인프라를 제공한다.",
     "scores": [
       {
@@ -296,6 +298,7 @@ export function measuredCompanies(): CompanyRecord[] {
     "homepageUrl": "https://www.dsrv.com/en",
     "isSelf": false,
     "category": "Infra",
+    "region": "국내",
     "description": "멀티체인 노드·스테이킹·검증인 인프라 전문 기업. RPC 서비스 'All That Node' 등 기관용 블록체인 인프라를 운영한다.",
     "scores": [
       {
@@ -439,6 +442,7 @@ export function measuredCompanies(): CompanyRecord[] {
     "homepageUrl": "https://www.hexlant.com/",
     "isSelf": false,
     "category": "Custody",
+    "region": "국내",
     "description": "블록체인 보안·커스터디·지갑 솔루션 기업. 기관용 디지털자산 지갑과 키 관리 기술을 제공한다.",
     "scores": [
       {
@@ -582,6 +586,7 @@ export function measuredCompanies(): CompanyRecord[] {
     "homepageUrl": "https://haechi.io/",
     "isSelf": false,
     "category": "Custody",
+    "region": "국내",
     "description": "Web3 보안·개발 기업. 스마트컨트랙트 감사(Kalos)와 기관용 지갑(Henesis)을 제공한다.",
     "scores": [
       {
@@ -725,6 +730,7 @@ export function measuredCompanies(): CompanyRecord[] {
     "homepageUrl": "https://www.kodax.com/en",
     "isSelf": false,
     "category": "Custody",
+    "region": "국내",
     "description": "KB국민은행·해시드 등이 출자한 기관 디지털자산 커스터디 기업. 국내 커스터디 시장 점유율 최상위권이다.",
     "scores": [
       {
@@ -868,6 +874,7 @@ export function measuredCompanies(): CompanyRecord[] {
     "homepageUrl": "https://www.bdacs.co.kr/en",
     "isSelf": false,
     "category": "Custody",
+    "region": "국내",
     "description": "부산 기반 디지털자산 커스터디 기업. 우리은행과 원화 스테이블코인(KRW1) 등을 협업한다.",
     "scores": [
       {
@@ -1011,6 +1018,7 @@ export function measuredCompanies(): CompanyRecord[] {
     "homepageUrl": "https://consensys.io/",
     "isSelf": false,
     "category": "Infra",
+    "region": "해외",
     "description": "이더리움 대표 인프라·소프트웨어 기업. 노드 API(Infura), 지갑(MetaMask), L2(Linea), 엔터프라이즈 솔루션을 제공한다.",
     "scores": [
       {
@@ -1154,6 +1162,7 @@ export function measuredCompanies(): CompanyRecord[] {
     "homepageUrl": "https://www.alchemy.com/",
     "isSelf": false,
     "category": "Infra",
+    "region": "해외",
     "description": "글로벌 Web3 개발 플랫폼. 노드 인프라·API·SDK로 수많은 디앱과 지갑의 백엔드를 담당한다.",
     "scores": [
       {
@@ -1297,6 +1306,7 @@ export function measuredCompanies(): CompanyRecord[] {
     "homepageUrl": "https://www.fireblocks.com/",
     "isSelf": false,
     "category": "Custody",
+    "region": "해외",
     "description": "기관용 디지털자산 커스터디·지갑 인프라 선도 기업. MPC 기반 키 관리와 전송 네트워크를 제공한다.",
     "scores": [
       {
@@ -1440,6 +1450,7 @@ export function measuredCompanies(): CompanyRecord[] {
     "homepageUrl": "https://www.blockdaemon.com/",
     "isSelf": false,
     "category": "Infra",
+    "region": "해외",
     "description": "글로벌 노드·스테이킹·커스터디 인프라 기업. 다수 체인의 기관용 인프라와 API를 운영한다.",
     "scores": [
       {
@@ -1583,6 +1594,7 @@ export function measuredCompanies(): CompanyRecord[] {
     "homepageUrl": "https://www.kaleido.io/",
     "isSelf": false,
     "category": "Enterprise",
+    "region": "해외",
     "description": "엔터프라이즈 블록체인·디지털자산 플랫폼. 기업용 BaaS와 토큰화·자산 오케스트레이션을 제공한다.",
     "scores": [
       {
@@ -1726,6 +1738,7 @@ export function measuredCompanies(): CompanyRecord[] {
     "homepageUrl": "https://r3.com/",
     "isSelf": false,
     "category": "Enterprise",
+    "region": "해외",
     "description": "엔터프라이즈 분산원장 Corda를 만든 기업. 금융권 중심의 규제 준수형 블록체인 인프라를 제공한다.",
     "scores": [
       {

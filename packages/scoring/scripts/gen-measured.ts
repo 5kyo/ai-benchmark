@@ -50,6 +50,7 @@ const records = companies.map((c) => {
     homepageUrl: c.homepageUrl,
     isSelf: c.isSelf,
     category: c.category,
+    region: c.region,
     description: c.description,
     scores,
   };

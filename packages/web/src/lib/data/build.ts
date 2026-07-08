@@ -9,6 +9,8 @@ export function buildRanking(companies: CompanyRecord[], w: Weights, view: Score
     slug: c.slug,
     name: c.name,
     isSelf: c.isSelf,
+    category: c.category,
+    region: c.region,
     overall: overallForView(c.scores, w, view),
     axes: AXES.map((axis) => ({ axis, score: axisForView(c.scores, axis, w, view) })),
   }));

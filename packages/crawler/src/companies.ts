@@ -7,6 +7,7 @@ export interface CompanyConfig {
   homepageUrl: string;
   isSelf: boolean;
   category?: string;
+  region?: string;
   description?: string;
 }
 
@@ -16,6 +17,7 @@ interface RawCompany {
   homepage_url: string;
   is_self?: boolean;
   category?: string;
+  region?: string;
   description?: string;
 }
 
@@ -28,6 +30,7 @@ export function loadCompanies(path: string): CompanyConfig[] {
     homepageUrl: r.homepage_url,
     isSelf: r.is_self ?? false,
     category: r.category,
+    region: r.region,
     description: r.description,
   }));
 }
