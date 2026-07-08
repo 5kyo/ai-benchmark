@@ -32,11 +32,14 @@ export function CompanyDetailView({ company, weights, models }: { company: Compa
   return (
     <div>
       <div className="mb-6 flex items-start justify-between">
-        <div>
+        <div className="max-w-2xl">
           <h1 className="font-display text-2xl font-semibold">{company.name}</h1>
           <a href={company.homepageUrl} className="mono text-sm" style={{ color: "var(--muted)" }} target="_blank" rel="noreferrer">
             {company.homepageUrl}
           </a>
+          {company.description ? (
+            <p className="mt-2 text-sm leading-relaxed" style={{ color: "var(--text)" }}>{company.description}</p>
+          ) : null}
         </div>
         <div className="text-right">
           <ScorePill score={overall} size="lg" />
