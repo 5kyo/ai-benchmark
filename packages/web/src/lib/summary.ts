@@ -3,6 +3,7 @@ import type { Axis } from "@ai-benchmark/core";
 import type { MetricRow } from "./data/metricRows.js";
 import type { AxisScore } from "./data/types.js";
 import { AXIS_INFO, metricLabel, metricSuggestion, metricScorer } from "./glossary.js";
+import { pickRowEvidence } from "./evidence.js";
 
 const STRONG = 85; // 이 이상이면 강점
 const WEAK = 60; // 이 미만이면 개선 대상
@@ -26,35 +27,13 @@ export interface Summary {
 
 type ScoredRow = MetricRow & { score: number };
 
-// 근거 서술의 첫 문장만 취한다(전문은 옆 지표 표에 있음). 소수점(4.5)은 문장 끝으로 보지 않는다.
-function firstSentence(text: string): string {
-  const m = text.match(/^[\s\S]*?[.!?。](?=\s|$)/);
-  return (m ? m[0] : text).trim();
-}
-
-// 근거 선택: 평균 뷰 perModel이면 합쳐진 점수에 가장 가까운 모델, 아니면 행 자체 evidence.
-function pickEvidence(r: ScoredRow): string | undefined {
-  if (r.perModel && r.perModel.length > 0) {
-    const withEv = r.perModel.filter(
-      (p): p is { model: string; score: number; evidence: string } => p.evidence != null && p.score != null
-    );
-    if (withEv.length > 0) {
-      const best = withEv.reduce((a, b) =>
-        Math.abs(b.score - r.score) < Math.abs(a.score - r.score) ? b : a
-      );
-      return firstSentence(best.evidence);
-    }
-  }
-  return r.evidence ? firstSentence(r.evidence) : undefined;
-}
-
 function toItem(r: ScoredRow): SummaryItem {
   return {
     axis: r.axis,
     metricKey: r.metricKey,
     label: metricLabel(r.metricKey),
     score: Math.round(r.score),
-    evidence: pickEvidence(r),
+    evidence: pickRowEvidence(r),
   };
 }
 
