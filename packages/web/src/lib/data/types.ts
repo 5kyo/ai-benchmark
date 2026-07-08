@@ -6,6 +6,7 @@ export interface CompanyRecord {
   homepageUrl: string;
   isSelf: boolean;
   category?: string;
+  description?: string;
   scores: MetricScore[];
 }
 
