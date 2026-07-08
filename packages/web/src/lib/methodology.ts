@@ -9,7 +9,7 @@ export interface AxisInfo {
   scorer: "규칙" | "LLM";
 }
 
-const LABELS: Record<Axis, string> = { A: "크롤링/접근성", B: "구조화/시맨틱", C: "콘텐츠 품질", D: "응답성/기술위생" };
+const LABELS: Record<Axis, string> = { A: "크롤링/접근성", B: "구조화/시맨틱", C: "콘텐츠 품질", D: "응답성/기술 품질" };
 
 export function loadMethodology(weightsPath: string): AxisInfo[] {
   const w = loadWeights(weightsPath);

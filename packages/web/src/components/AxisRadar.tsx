@@ -1,18 +1,18 @@
 "use client";
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer, Legend } from "recharts";
 import type { Axis } from "@ai-benchmark/core";
+import { AXIS_INFO } from "../lib/glossary.js";
 
 export interface RadarSeries {
   label: string;
   color: string;
   values: { axis: Axis; score: number | null }[];
 }
-const AXIS_LABEL: Record<Axis, string> = { A: "접근성", B: "구조화", C: "콘텐츠", D: "기술위생" };
 
 export function AxisRadar({ series }: { series: RadarSeries[] }) {
   const axes: Axis[] = ["A", "B", "C", "D"];
   const data = axes.map((axis) => {
-    const row: Record<string, string | number> = { axis: AXIS_LABEL[axis] };
+    const row: Record<string, string | number> = { axis: AXIS_INFO[axis].label };
     series.forEach((s) => (row[s.label] = s.values.find((v) => v.axis === axis)?.score ?? 0));
     return row;
   });

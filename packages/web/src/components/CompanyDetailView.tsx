@@ -8,6 +8,7 @@ import { ModelToggle } from "./ModelToggle.js";
 import { MetricTable } from "./MetricTable.js";
 import { ScorePill } from "./ScorePill.js";
 import { AxisRadar, type RadarSeries } from "./AxisRadar.js";
+import { CompanySummary } from "./CompanySummary.js";
 
 const AXES: Axis[] = ["A", "B", "C", "D"];
 
@@ -15,6 +16,10 @@ export function CompanyDetailView({ company, weights, models }: { company: Compa
   const [view, setView] = useState<ScoreView>("average");
   const overall = useMemo(() => overallForView(company.scores, weights, view), [company, weights, view]);
   const rows = useMemo(() => metricRowsForView(company.scores, view), [company, view]);
+  const axisScores = useMemo(
+    () => AXES.map((axis) => ({ axis, score: axisForView(company.scores, axis, weights, view) })),
+    [company, weights, view]
+  );
 
   const series: RadarSeries[] = useMemo(() => {
     const colors: Record<string, string> = { "claude-opus-4-8": "#57C7D4", "gpt-4o": "#F5A524" };
@@ -56,6 +61,7 @@ export function CompanyDetailView({ company, weights, models }: { company: Compa
           <MetricTable rows={rows} />
         </div>
       </div>
+      <CompanySummary rows={rows} overall={overall} axisScores={axisScores} />
     </div>
   );
 }
