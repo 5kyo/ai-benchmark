@@ -8,7 +8,8 @@
     "test:watch": "vitest",
     "typecheck": "tsc -b",
     "crawl": "tsx packages/crawler/src/cli-crawl.ts",
-    "prepare-scores": "tsx packages/scoring/src/cli-prepare.ts"
+    "prepare-scores": "tsx packages/scoring/src/cli-prepare.ts",
+    "import-scores": "tsx packages/scoring/src/cli-import.ts"
   },
   "devDependencies": {
     "typescript": "^5.5.4",
