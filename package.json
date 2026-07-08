@@ -6,7 +6,8 @@
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest",
-    "typecheck": "tsc -b"
+    "typecheck": "tsc -b",
+    "crawl": "tsx packages/crawler/src/cli-crawl.ts"
   },
   "devDependencies": {
     "typescript": "^5.5.4",
