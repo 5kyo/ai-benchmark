@@ -1,0 +1,17 @@
+{
+  "name": "@ai-benchmark/scoring",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": { ".": "./src/index.ts" },
+  "dependencies": {
+    "@ai-benchmark/core": "workspace:*",
+    "@ai-benchmark/db": "workspace:*",
+    "@ai-benchmark/crawler": "workspace:*",
+    "@supabase/supabase-js": "^2.45.4",
+    "cheerio": "^1.0.0",
+    "yaml": "^2.5.0",
+    "dotenv": "^16.4.5"
+  }
+}
