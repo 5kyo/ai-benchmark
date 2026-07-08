@@ -1,0 +1,11 @@
+companies:
+  - name: "우리회사 (예시)"
+    slug: "our-company"
+    homepage_url: "https://example.com"
+    is_self: true
+    category: "blockchain"
+  - name: "경쟁사 A (예시)"
+    slug: "competitor-a"
+    homepage_url: "https://example.org"
+    is_self: false
+    category: "blockchain"

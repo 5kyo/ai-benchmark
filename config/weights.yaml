@@ -1,0 +1,31 @@
+# 축 가중치 (합 1.0). Methodology 페이지의 단일 출처.
+axes:
+  A: 0.30   # 크롤링/접근성
+  B: 0.25   # 구조화/시맨틱
+  C: 0.30   # 콘텐츠 품질 (LLM, Plan 2)
+  D: 0.15   # 응답성/기술위생
+# 축 내부 지표 가중치 (각 축 합 1.0)
+metrics:
+  A:
+    robots_allowed: 0.20
+    sitemap_present: 0.15
+    llms_txt_present: 0.15
+    ssr_rendered: 0.25
+    not_bot_blocked: 0.10
+    pages_reachable: 0.15
+  B:
+    json_ld_present: 0.25
+    semantic_ratio: 0.20
+    meta_completeness: 0.20
+    heading_hierarchy: 0.20
+    alt_coverage: 0.15
+  C:
+    clarity: 0.30
+    product_depth: 0.25
+    key_info_present: 0.25
+    freshness_clarity: 0.20
+  D:
+    load_time: 0.35
+    mobile_ready: 0.25
+    https_secure: 0.20
+    multilingual: 0.20
