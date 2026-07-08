@@ -54,6 +54,7 @@ export function RankingView({ companies, weights, models }: { companies: Company
           <h1 className="font-display text-2xl font-semibold">종합 순위</h1>
           <p className="mt-1 text-sm" style={{ color: "var(--muted)" }}>
             국내외 블록체인 기업의 공식 홈페이지를 AI·AI 에이전트가 얼마나 잘 읽는지 채점한 순위입니다.
+            <br />
             점수가 높을수록 AI 친화적입니다.
           </p>
         </div>
