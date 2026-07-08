@@ -3,6 +3,7 @@
   "references": [
     { "path": "packages/core" },
     { "path": "packages/crawler" },
-    { "path": "packages/db" }
+    { "path": "packages/db" },
+    { "path": "packages/scoring" }
   ]
 }
