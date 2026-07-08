@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 const NAV = [
   { href: "/", label: "순위" },
-  { href: "/methodology", label: "방법론" },
+  { href: "/methodology", label: "평가 기준·방식" },
 ];
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

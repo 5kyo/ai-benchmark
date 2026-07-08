@@ -9,7 +9,7 @@ export default function MethodologyPage() {
   const rubric = readFileSync(resolve(root, "config/rubric/rubric_v1.md"), "utf8");
   return (
     <div>
-      <h1 className="mb-2 font-display text-2xl font-semibold">평가 방법론</h1>
+      <h1 className="mb-2 font-display text-2xl font-semibold">평가 기준·방식</h1>
       <p className="mb-6 text-sm" style={{ color: "var(--muted)" }}>
         종합 점수는 4개 축의 가중 평균입니다. 아래 가중치·지표는 실제 채점에 쓰인 <span className="mono">config/weights.yaml</span>을 그대로 읽어 표시합니다.
       </p>
