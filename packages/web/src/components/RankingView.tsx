@@ -104,7 +104,7 @@ export function RankingView({ companies, weights, models }: { companies: Company
           <table className="w-full min-w-[720px]">
             <thead>
               <tr className="text-left" style={{ color: "var(--muted)", borderBottom: "1px solid var(--line)" }}>
-                <th className="px-4 py-2.5 text-xs font-normal" style={{ width: 44 }}>순위</th>
+                <th className="whitespace-nowrap px-4 py-2.5 text-xs font-normal" style={{ width: 56 }}>순위</th>
                 <th className="px-2 py-2.5 text-xs font-normal">기업</th>
                 {AXES.map((a) => (
                   <th key={a} className="px-2 py-2.5 text-center text-xs font-normal" style={{ width: 64 }} title={AXIS_INFO[a].summary}>
