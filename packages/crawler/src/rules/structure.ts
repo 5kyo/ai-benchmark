@@ -43,7 +43,9 @@ function headingHierarchyScore($: cheerio.CheerioAPI): number {
   if (h1 !== 1) score -= 50; // 정확히 하나의 h1이 아니면 감점
   // 레벨 건너뜀 검사 (h1 없이 h2로 시작 등)
   const levels: number[] = [];
-  $("h1,h2,h3,h4,h5,h6").each((_, el) => levels.push(Number(el.tagName[1])));
+  $("h1,h2,h3,h4,h5,h6").each((_, el) => {
+    levels.push(Number(el.tagName[1]));
+  });
   for (let i = 1; i < levels.length; i++) {
     if (levels[i] - levels[i - 1] > 1) {
       score -= 25;
