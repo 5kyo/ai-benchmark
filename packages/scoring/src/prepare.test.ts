@@ -1,12 +1,12 @@
 import { describe, it, expect } from "vitest";
 import { buildInboxDoc, pickLatestSnapshot } from "./prepare.js";
-import type { AxisCMetric } from "./rubric.js";
+import type { LlmMetric } from "./rubric.js";
 
-const metrics: AxisCMetric[] = [
-  { key: "clarity", weight: 0.3 },
-  { key: "product_depth", weight: 0.25 },
-  { key: "key_info_present", weight: 0.25 },
-  { key: "freshness_clarity", weight: 0.2 },
+const metrics: LlmMetric[] = [
+  { axis: "A", key: "agent_findability", weight: 0.2 },
+  { axis: "C", key: "clarity", weight: 0.3 },
+  { axis: "C", key: "product_depth", weight: 0.25 },
+  { axis: "D", key: "technical_depth", weight: 0.2 },
 ];
 
 describe("buildInboxDoc", () => {
@@ -22,7 +22,7 @@ describe("buildInboxDoc", () => {
     expect(doc).toContain("Acme builds blockchains.");
   });
 
-  it("lists every axis-C metric key", () => {
+  it("lists every LLM metric key", () => {
     for (const m of metrics) expect(doc).toContain(m.key);
   });
 

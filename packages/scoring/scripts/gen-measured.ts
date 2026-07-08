@@ -6,13 +6,15 @@ import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadCompanies, scoreRules, type RawSnapshot } from "@ai-benchmark/crawler";
 import type { MetricScore } from "@ai-benchmark/core";
-import { parseAndValidate, toAxisCScores, loadAxisCMetrics } from "../src/index.js";
+import { parseAndValidate, toLlmScores, loadLlmMetrics, llmAxisByKey } from "../src/index.js";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = resolve(here, "../../..");
 
 const companies = loadCompanies(resolve(root, "config/companies.yaml"));
-const cKeys = loadAxisCMetrics(resolve(root, "config/weights.yaml")).map((m) => m.key);
+const weightsPath = resolve(root, "config/weights.yaml");
+const llmKeys = loadLlmMetrics(weightsPath).map((m) => m.key);
+const axisByKey = llmAxisByKey(weightsPath);
 const outboxRoot = resolve(root, "scoring/outbox");
 const models = existsSync(outboxRoot) ? readdirSync(outboxRoot) : [];
 
@@ -37,8 +39,8 @@ const records = companies.map((c) => {
     const file = resolve(outboxRoot, model, `${c.slug}.json`);
     if (!existsSync(file)) continue;
     try {
-      const out = parseAndValidate(readFileSync(file, "utf8"), cKeys);
-      scores.push(...toAxisCScores(out));
+      const out = parseAndValidate(readFileSync(file, "utf8"), llmKeys);
+      scores.push(...toLlmScores(out, axisByKey));
     } catch (e) {
       console.error(`[${c.slug}/${model}] validation failed: ${(e as Error).message}`);
     }

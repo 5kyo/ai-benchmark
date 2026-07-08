@@ -1,4 +1,5 @@
-import type { AxisCMetric } from "./rubric.js";
+import type { Axis } from "@ai-benchmark/core";
+import type { LlmMetric } from "./rubric.js";
 
 export interface InboxInput {
   name: string;
@@ -6,23 +7,33 @@ export interface InboxInput {
   url: string;
   text: string;
   rubricVersion: string;
-  metrics: AxisCMetric[];
+  metrics: LlmMetric[];
   rubricText: string;
 }
 
+const AXES: Axis[] = ["A", "B", "C", "D"];
+
 /** 루브릭 프롬프트 + 원문 + 출력 스키마가 모두 박힌 자기완결 채점 입력 문서. */
 export function buildInboxDoc(input: InboxInput): string {
-  const metricList = input.metrics.map((m) => `- ${m.key}`).join("\n");
+  // 축별로 그룹지어 채점 대상 지표를 나열한다.
+  const grouped = AXES.map((axis) => {
+    const keys = input.metrics.filter((m) => m.axis === axis).map((m) => `- ${m.key}`);
+    return keys.length ? `축 ${axis}:\n${keys.join("\n")}` : "";
+  })
+    .filter(Boolean)
+    .join("\n");
+
   const exampleScores = input.metrics
     .map((m) => `    { "metricKey": "${m.key}", "score": 0, "evidence": "..." }`)
     .join(",\n");
+
   return `# AI 채점 작업: ${input.name} (${input.slug})
 
 ## 지시 (그대로 따르세요)
-아래 [홈페이지 원문]을 읽고, [루브릭]의 축 C 지표 ${input.metrics.length}개를 각각 0~100 정수로 채점하세요.
+아래 [홈페이지 원문]을 읽고, [루브릭]의 LLM 지표 ${input.metrics.length}개를 각각 0~100 정수로 채점하세요.
 각 지표에 1~2문장 근거(evidence)를 쓰세요. 마지막에 [출력 형식]의 JSON만 출력하세요.
 채점 대상 지표(정확히 이 키들만, 추가/누락 금지):
-${metricList}
+${grouped}
 
 ## 루브릭 (${input.rubricVersion})
 ${input.rubricText}
@@ -38,7 +49,7 @@ ${input.text}
 \`\`\`json
 {
   "slug": "${input.slug}",
-  "model": "<사용한 모델 id, 예: claude-opus-4-8 또는 gpt-4o>",
+  "model": "<사용한 모델 id, 예: claude-sonnet-5 또는 gpt-5.5>",
   "rubricVersion": "${input.rubricVersion}",
   "scores": [
 ${exampleScores}

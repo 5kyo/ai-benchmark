@@ -9,6 +9,7 @@ import { MetricTable } from "./MetricTable.js";
 import { ScorePill } from "./ScorePill.js";
 import { AxisRadar, type RadarSeries } from "./AxisRadar.js";
 import { CompanySummary } from "./CompanySummary.js";
+import { modelColor } from "../lib/modelColor.js";
 
 const AXES: Axis[] = ["A", "B", "C", "D"];
 
@@ -22,10 +23,9 @@ export function CompanyDetailView({ company, weights, models }: { company: Compa
   );
 
   const series: RadarSeries[] = useMemo(() => {
-    const colors: Record<string, string> = { "claude-opus-4-8": "#57C7D4", "gpt-4o": "#F5A524" };
-    const list: RadarSeries[] = models.map((m, i) => ({
+    const list: RadarSeries[] = models.map((m) => ({
       label: m,
-      color: colors[m] ?? (i === 0 ? "#57C7D4" : "#8B7CF6"),
+      color: modelColor(m),
       values: AXES.map((axis) => ({ axis, score: axisForView(company.scores, axis, weights, { model: m }) })),
     }));
     return list.length ? list : [{
@@ -51,17 +51,19 @@ export function CompanyDetailView({ company, weights, models }: { company: Compa
           <div className="mt-2"><ModelToggle models={models} value={view} onChange={setView} /></div>
         </div>
       </div>
-      <div className="grid gap-6 md:grid-cols-2">
-        <div className="panel p-4">
-          <h2 className="mb-2 font-display text-sm" style={{ color: "var(--muted)" }}>축별 (모델 오버레이)</h2>
-          <AxisRadar series={series} />
+      <div className="grid gap-6 md:grid-cols-2 md:items-start">
+        <div className="flex flex-col gap-6">
+          <div className="panel p-4">
+            <h2 className="mb-2 font-display text-sm" style={{ color: "var(--muted)" }}>축별 (모델 오버레이)</h2>
+            <AxisRadar series={series} />
+          </div>
+          <CompanySummary rows={rows} overall={overall} axisScores={axisScores} />
         </div>
         <div className="panel p-4">
           <h2 className="mb-2 font-display text-sm" style={{ color: "var(--muted)" }}>지표</h2>
           <MetricTable rows={rows} />
         </div>
       </div>
-      <CompanySummary rows={rows} overall={overall} axisScores={axisScores} />
     </div>
   );
 }

@@ -4,7 +4,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { loadCompanies } from "@ai-benchmark/crawler";
 import type { RawSnapshot } from "@ai-benchmark/crawler";
-import { loadAxisCMetrics, loadRubricText } from "./rubric.js";
+import { loadLlmMetrics, loadRubricText } from "./rubric.js";
 import { extractText } from "./text.js";
 import { buildInboxDoc, pickLatestSnapshot } from "./prepare.js";
 
@@ -14,7 +14,7 @@ async function main(): Promise<void> {
   const here = dirname(fileURLToPath(import.meta.url));
   const root = resolve(here, "../../..");
   const companies = loadCompanies(resolve(root, "config/companies.yaml"));
-  const metrics = loadAxisCMetrics(resolve(root, "config/weights.yaml"));
+  const metrics = loadLlmMetrics(resolve(root, "config/weights.yaml"));
   const rubricText = loadRubricText(resolve(root, "config/rubric/rubric_v1.md"));
   const inboxDir = resolve(root, "scoring/inbox");
   mkdirSync(inboxDir, { recursive: true });

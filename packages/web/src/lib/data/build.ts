@@ -5,6 +5,7 @@ import type { CompanyRecord, RankingRow } from "./types.js";
 const AXES: Axis[] = ["A", "B", "C", "D"];
 
 export function buildRanking(companies: CompanyRecord[], w: Weights, view: ScoreView): RankingRow[] {
+  const models = listModels(companies);
   const rows: RankingRow[] = companies.map((c) => ({
     slug: c.slug,
     name: c.name,
@@ -13,6 +14,7 @@ export function buildRanking(companies: CompanyRecord[], w: Weights, view: Score
     region: c.region,
     overall: overallForView(c.scores, w, view),
     axes: AXES.map((axis) => ({ axis, score: axisForView(c.scores, axis, w, view) })),
+    overallByModel: models.map((m) => ({ model: m, score: overallForView(c.scores, w, { model: m }) })),
   }));
   return rows.sort((a, b) => (b.overall ?? -1) - (a.overall ?? -1));
 }

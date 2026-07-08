@@ -1,24 +1,32 @@
 import type { Axis } from "@ai-benchmark/core";
 import { loadWeights } from "@ai-benchmark/core";
+import { metricScorer } from "./glossary.js";
+
+export interface MethodologyMetric {
+  key: string;
+  weight: number;
+  scorer: "규칙" | "LLM";
+}
 
 export interface AxisInfo {
   axis: Axis;
   weight: number;
-  label: string;
-  metrics: { key: string; weight: number }[];
-  scorer: "규칙" | "LLM";
+  metrics: MethodologyMetric[];
+  scorer: "규칙" | "LLM" | "규칙+LLM"; // 축 전체 채점 방식 요약
 }
-
-const LABELS: Record<Axis, string> = { A: "크롤링/접근성", B: "구조화/시맨틱", C: "콘텐츠 품질", D: "응답성/기술 품질" };
 
 export function loadMethodology(weightsPath: string): AxisInfo[] {
   const w = loadWeights(weightsPath);
   const axes: Axis[] = ["A", "B", "C", "D"];
-  return axes.map((axis) => ({
-    axis,
-    weight: w.axes[axis],
-    label: LABELS[axis],
-    metrics: Object.entries(w.metrics[axis] ?? {}).map(([key, weight]) => ({ key, weight })),
-    scorer: axis === "C" ? "LLM" : "규칙",
-  }));
+  return axes.map((axis) => {
+    const metrics = Object.entries(w.metrics[axis] ?? {}).map(([key, weight]) => ({
+      key,
+      weight,
+      scorer: metricScorer(key),
+    }));
+    const hasRule = metrics.some((m) => m.scorer === "규칙");
+    const hasLlm = metrics.some((m) => m.scorer === "LLM");
+    const scorer: AxisInfo["scorer"] = hasRule && hasLlm ? "규칙+LLM" : hasLlm ? "LLM" : "규칙";
+    return { axis, weight: w.axes[axis], metrics, scorer };
+  });
 }

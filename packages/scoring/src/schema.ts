@@ -1,4 +1,4 @@
-import type { MetricScore } from "@ai-benchmark/core";
+import type { Axis, MetricScore } from "@ai-benchmark/core";
 
 export interface ScoreEntry {
   metricKey: string;
@@ -47,13 +47,17 @@ export function parseAndValidate(raw: string, expectedMetricKeys: string[]): Sco
   return d as unknown as ScoreOutput;
 }
 
-/** 검증된 출력을 축 C MetricScore[]로 매핑(모델 태그 부여). */
-export function toAxisCScores(output: ScoreOutput): MetricScore[] {
-  return output.scores.map((s) => ({
-    axis: "C",
-    metricKey: s.metricKey,
-    model: output.model,
-    score: s.score,
-    evidence: s.evidence,
-  }));
+/** 검증된 출력을 MetricScore[]로 매핑. 각 지표는 axisByKey로 축을 배정(모델 태그 부여). */
+export function toLlmScores(output: ScoreOutput, axisByKey: Record<string, Axis>): MetricScore[] {
+  return output.scores.map((s) => {
+    const axis = axisByKey[s.metricKey];
+    if (!axis) throw new Error(`unknown axis for metric ${s.metricKey}`);
+    return {
+      axis,
+      metricKey: s.metricKey,
+      model: output.model,
+      score: s.score,
+      evidence: s.evidence,
+    };
+  });
 }

@@ -4,8 +4,8 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { createClient } from "@supabase/supabase-js";
 import { importModelScores } from "@ai-benchmark/db";
-import { loadAxisCMetrics } from "./rubric.js";
-import { parseAndValidate, toAxisCScores } from "./schema.js";
+import { loadLlmMetrics, llmAxisByKey } from "./rubric.js";
+import { parseAndValidate, toLlmScores } from "./schema.js";
 
 /** "<model>/<slug>.json" → { model, slug }. 형식 불일치면 null. */
 export function parseOutboxPath(relPath: string): { model: string; slug: string } | null {
@@ -22,7 +22,9 @@ async function main(): Promise<void> {
   const here = dirname(fileURLToPath(import.meta.url));
   const root = resolve(here, "../../..");
   const outboxDir = resolve(root, "scoring/outbox");
-  const expectedKeys = loadAxisCMetrics(resolve(root, "config/weights.yaml")).map((m) => m.key);
+  const weightsPath = resolve(root, "config/weights.yaml");
+  const expectedKeys = loadLlmMetrics(weightsPath).map((m) => m.key);
+  const axisByKey = llmAxisByKey(weightsPath);
 
   if (!existsSync(outboxDir)) {
     console.log("no scoring/outbox — run `pnpm prepare-scores`, score files, then retry.");
@@ -50,7 +52,7 @@ async function main(): Promise<void> {
           console.warn(`[${rel}] folder model '${parsed.model}' != json model '${output.model}'`);
         }
         validated += 1;
-        const scores = toAxisCScores(output);
+        const scores = toLlmScores(output, axisByKey);
         if (client) {
           const { scanId, count } = await importModelScores(client, parsed.slug, scores);
           imported += 1;

@@ -2,6 +2,8 @@
 import { useState } from "react";
 import type { CompanyRecord } from "../lib/data/types.js";
 import { modelDeltas } from "../lib/data/compare.js";
+import { modelColor, modelShort } from "../lib/modelColor.js";
+import { metricLabel } from "../lib/glossary.js";
 
 export function ModelCompareView({ companies, models }: { companies: CompanyRecord[]; models: string[] }) {
   const [slug, setSlug] = useState(companies[0]?.slug ?? "");
@@ -22,10 +24,10 @@ export function ModelCompareView({ companies, models }: { companies: CompanyReco
       <div className="panel divide-y" style={{ borderColor: "var(--line)" }}>
         {rows.map((r) => (
           <div key={r.metricKey} className="flex items-center justify-between p-3 text-sm">
-            <span className="mono">{r.metricKey}</span>
+            <span>{metricLabel(r.metricKey)} <span className="mono text-[10px]" style={{ color: "var(--muted)" }}>{r.metricKey}</span></span>
             <span className="flex items-center gap-4">
-              <span className="mono" style={{ color: "#57C7D4" }}>{a} {r.a == null ? "—" : Math.round(r.a)}</span>
-              <span className="mono" style={{ color: "#F5A524" }}>{b} {r.b == null ? "—" : Math.round(r.b)}</span>
+              <span className="mono" style={{ color: modelColor(a) }}>{modelShort(a)} {r.a == null ? "—" : Math.round(r.a)}</span>
+              <span className="mono" style={{ color: modelColor(b) }}>{modelShort(b)} {r.b == null ? "—" : Math.round(r.b)}</span>
               <span className="mono font-semibold" style={{ width: 44, textAlign: "right" }}>{r.delta >= 0 ? "+" : ""}{Math.round(r.delta)}</span>
             </span>
           </div>

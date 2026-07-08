@@ -6,6 +6,7 @@ import type { CompanyRecord } from "../lib/data/types.js";
 import { buildRanking, industryAverage } from "../lib/data/build.js";
 import { AXIS_INFO, categoryLabel } from "../lib/glossary.js";
 import { scoreColor } from "../lib/scoreColor.js";
+import { modelColor, modelShort } from "../lib/modelColor.js";
 import { ModelToggle } from "./ModelToggle.js";
 import { ScorePill } from "./ScorePill.js";
 
@@ -43,6 +44,8 @@ export function RankingView({ companies, weights, models }: { companies: Company
   const [view, setView] = useState<ScoreView>("average");
   const rows = useMemo(() => buildRanking(companies, weights, view), [companies, weights, view]);
   const avg = industryAverage(rows);
+  // 모델이 2개 이상이고 평균 뷰일 때 종합을 모델별로 함께 보여준다.
+  const splitModels = models.length >= 2 && view === "average";
 
   return (
     <div>
@@ -71,14 +74,27 @@ export function RankingView({ companies, weights, models }: { companies: Company
             </span>
           ))}
         </div>
-        <div className="flex items-center gap-2">
-          <span style={{ color: "var(--muted)" }}>0</span>
-          <div
-            className="h-2 w-28 rounded-full"
-            style={{ background: "linear-gradient(90deg, var(--score-low), var(--score-mid), var(--score-high))" }}
-          />
-          <span style={{ color: "var(--muted)" }}>100</span>
-          <span className="ml-1" style={{ color: "var(--muted)" }}>낮음 → 높음</span>
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+          {models.length >= 2 && (
+            <span className="flex items-center gap-2">
+              <span style={{ color: "var(--muted)" }}>모델</span>
+              {models.map((m) => (
+                <span key={m} className="flex items-center gap-1">
+                  <span className="inline-block h-2 w-2 rounded-full" style={{ background: modelColor(m) }} />
+                  {modelShort(m)}
+                </span>
+              ))}
+            </span>
+          )}
+          <span className="flex items-center gap-2">
+            <span style={{ color: "var(--muted)" }}>0</span>
+            <div
+              className="h-2 w-24 rounded-full"
+              style={{ background: "linear-gradient(90deg, var(--score-low), var(--score-mid), var(--score-high))" }}
+            />
+            <span style={{ color: "var(--muted)" }}>100</span>
+            <span className="ml-1" style={{ color: "var(--muted)" }}>낮음 → 높음</span>
+          </span>
         </div>
       </div>
 
@@ -129,7 +145,21 @@ export function RankingView({ companies, weights, models }: { companies: Company
                         <AxisMeter score={r.axes.find((x) => x.axis === a)?.score ?? null} />
                       </td>
                     ))}
-                    <td className="px-3 py-3 text-right"><ScorePill score={r.overall} /></td>
+                    <td className="px-3 py-3 text-right">
+                      <ScorePill score={r.overall} />
+                      {splitModels && (
+                        <div className="mt-1 flex flex-col items-end gap-0.5">
+                          {r.overallByModel.map((m) => (
+                            <span key={m.model} className="flex items-center gap-1" title={m.model}>
+                              <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ background: modelColor(m.model) }} />
+                              <span className="mono text-[10px] tabular-nums" style={{ color: scoreColor(m.score) }}>
+                                {m.score == null ? "—" : Math.round(m.score)}
+                              </span>
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </td>
                     <td
                       className="mono px-4 py-3 text-right text-xs tabular-nums"
                       style={{ color: delta == null ? "var(--muted)" : delta >= 0 ? "var(--score-high)" : "var(--score-low)" }}

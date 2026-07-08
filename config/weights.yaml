@@ -2,30 +2,44 @@
 axes:
   A: 0.30   # 크롤링/접근성
   B: 0.25   # 구조화/시맨틱
-  C: 0.30   # 콘텐츠 품질 (LLM, Plan 2)
+  C: 0.30   # 콘텐츠 품질 (LLM)
   D: 0.15   # 응답성/기술위생
 # 축 내부 지표 가중치 (각 축 합 1.0)
+# A·B·D는 규칙 지표(60%) + LLM 지표(40%) 하이브리드. C는 LLM 100%.
 metrics:
   A:
-    robots_allowed: 0.20
-    sitemap_present: 0.15
-    llms_txt_present: 0.15
-    ssr_rendered: 0.25
-    not_bot_blocked: 0.10
-    pages_reachable: 0.15
+    # 규칙 (60%)
+    ssr_rendered: 0.15
+    robots_allowed: 0.10
+    sitemap_present: 0.10
+    llms_txt_present: 0.10
+    pages_reachable: 0.10
+    not_bot_blocked: 0.05
+    # LLM (40%)
+    agent_findability: 0.20
+    content_extractability: 0.20
   B:
-    json_ld_present: 0.25
-    semantic_ratio: 0.20
-    meta_completeness: 0.20
-    heading_hierarchy: 0.20
-    alt_coverage: 0.15
+    # 규칙 (60%)
+    json_ld_present: 0.15
+    heading_hierarchy: 0.15
+    semantic_ratio: 0.10
+    meta_completeness: 0.10
+    alt_coverage: 0.10
+    # LLM (40%)
+    logical_organization: 0.20
+    info_scannability: 0.20
   C:
+    # LLM (100%)
     clarity: 0.30
     product_depth: 0.25
     key_info_present: 0.25
     freshness_clarity: 0.20
   D:
-    load_time: 0.35
-    mobile_ready: 0.25
-    https_secure: 0.20
-    multilingual: 0.20
+    # 규칙 (60%)
+    load_time: 0.25
+    mobile_ready: 0.15
+    https_secure: 0.10
+    multilingual: 0.10
+    # LLM (40%)
+    technical_depth: 0.20
+    content_polish: 0.20

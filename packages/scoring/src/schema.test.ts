@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
-import { parseAndValidate, toAxisCScores } from "./schema.js";
+import { parseAndValidate, toLlmScores } from "./schema.js";
+import type { Axis } from "@ai-benchmark/core";
 
 const KEYS = ["clarity", "product_depth", "key_info_present", "freshness_clarity"];
 
@@ -81,14 +82,21 @@ describe("parseAndValidate", () => {
   });
 });
 
-describe("toAxisCScores", () => {
-  it("maps a validated output to axis-C MetricScores tagged with the model", () => {
+describe("toLlmScores", () => {
+  const axisByKey: Record<string, Axis> = {
+    clarity: "C", product_depth: "C", key_info_present: "C", freshness_clarity: "C",
+  };
+  it("maps a validated output to MetricScores with the axis from axisByKey and the model", () => {
     const out = parseAndValidate(validJson(), KEYS);
-    const scores = toAxisCScores(out);
+    const scores = toLlmScores(out, axisByKey);
     expect(scores).toHaveLength(4);
     expect(scores.every((s) => s.axis === "C" && s.model === "claude-opus-4-8")).toBe(true);
     const clarity = scores.find((s) => s.metricKey === "clarity")!;
     expect(clarity.score).toBe(80);
     expect(clarity.evidence).toBe("명확");
+  });
+  it("throws when a metric has no axis mapping", () => {
+    const out = parseAndValidate(validJson(), KEYS);
+    expect(() => toLlmScores(out, { clarity: "C" })).toThrow(/unknown axis/);
   });
 });

@@ -24,14 +24,14 @@ export function CompanySummary({
   const { headline, strengths, weaknesses, weakIsFallback } = buildSummary(rows, overall, axisScores);
 
   return (
-    <div className="panel mt-6 p-4">
+    <div className="panel p-4">
       <div className="mb-3 flex items-baseline gap-2">
         <h2 className="font-display text-sm font-semibold">진단 요약</h2>
         <span className="text-xs" style={{ color: "var(--muted)" }}>점수 기준 자동 분석</span>
       </div>
       <p className="mb-4 text-sm leading-relaxed">{headline}</p>
 
-      <div className="grid gap-5 md:grid-cols-2">
+      <div className="space-y-5">
         {/* 잘하고 있는 점 */}
         <section>
           <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold">

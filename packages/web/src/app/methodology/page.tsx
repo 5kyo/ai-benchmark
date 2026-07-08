@@ -28,7 +28,18 @@ export default function MethodologyPage() {
                     <span className="text-sm">
                       {metricLabel(m.key)} <span className="mono text-[10px]" style={{ color: "var(--muted)" }}>{m.key}</span>
                     </span>
-                    <span className="mono text-xs" style={{ color: "var(--muted)" }}>{Math.round(m.weight * 100)}%</span>
+                    <span className="flex items-baseline gap-1.5">
+                      <span
+                        className="mono rounded px-1 text-[9px]"
+                        style={{
+                          color: m.scorer === "LLM" ? "var(--signal)" : "var(--muted)",
+                          border: `1px solid ${m.scorer === "LLM" ? "var(--signal)" : "var(--line)"}`,
+                        }}
+                      >
+                        {m.scorer}
+                      </span>
+                      <span className="mono text-xs" style={{ color: "var(--muted)" }}>{Math.round(m.weight * 100)}%</span>
+                    </span>
                   </div>
                   <p className="text-xs leading-snug" style={{ color: "var(--muted)" }}>{metricDescription(m.key)}</p>
                 </li>
@@ -38,7 +49,7 @@ export default function MethodologyPage() {
         ))}
       </div>
       <div className="panel mt-6 p-4">
-        <h2 className="mb-2 font-display text-sm" style={{ color: "var(--muted)" }}>축 C 루브릭</h2>
+        <h2 className="mb-2 font-display text-sm" style={{ color: "var(--muted)" }}>LLM 채점 루브릭 (축 A·B·C·D)</h2>
         <pre className="mono whitespace-pre-wrap text-xs" style={{ color: "var(--text)" }}>{rubric}</pre>
       </div>
     </div>
