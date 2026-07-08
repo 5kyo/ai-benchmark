@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #0e1116;
+  --surface: #171b22;
+  --line: #2a2f3a;
+  --text: #e6e9ef;
+  --muted: #8a93a3;
+  --signal: #57c7d4;
+  --score-low: #e5484d;
+  --score-mid: #f5a524;
+  --score-high: #30a46c;
+}
+:root[data-theme="light"] {
+  --ink: #f7f8fa;
+  --surface: #ffffff;
+  --line: #e3e6eb;
+  --text: #14181f;
+  --muted: #5b6472;
+}
+html { color-scheme: dark; }
+body {
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+.mono { font-family: var(--font-mono), ui-monospace, monospace; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+
+@keyframes scan {
+  from { transform: translateY(-100%); opacity: 0.0; }
+  10% { opacity: 0.35; }
+  to { transform: translateY(1200%); opacity: 0.0; }
+}
+.scanline {
+  position: absolute; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--signal), transparent);
+  animation: scan 2.2s ease-out 1;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .scanline { animation: none; display: none; }
+}
+:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }
