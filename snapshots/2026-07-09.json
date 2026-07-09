@@ -1,0 +1,3335 @@
+{
+  "date": "2026-07-09",
+  "generatedAt": "2026-07-09T04:58:09.727Z",
+  "rubricVersion": "rubric_v1",
+  "companies": [
+    {
+      "slug": "parameta",
+      "name": "파라메타",
+      "homepageUrl": "https://parametacorp.com/",
+      "isSelf": true,
+      "category": "Infra",
+      "region": "국내",
+      "description": "Web2에서 Web3 전환을 돕는 국내 블록체인 인프라·솔루션 기업. 자체 엔진 loopchain, DID(MyID), 인터체인(BTP), 커스터디 지갑·STO·토큰 관리를 제공한다.",
+      "scores": [
+        {
+          "axis": "A",
+          "metricKey": "robots_allowed",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "robots.txt가 존재하며 크롤러 접근을 막지 않습니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "sitemap_present",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "sitemap.xml을 정상(200) 제공합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "llms_txt_present",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "/llms.txt가 없습니다(404 등)."
+        },
+        {
+          "axis": "A",
+          "metricKey": "ssr_rendered",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "서버 응답 HTML에 본문 약 4,900자가 담겨 있어 SSR로 판단합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "not_bot_blocked",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "봇 차단 없이 정상(200) 응답합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "pages_reachable",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "홈페이지가 정상(200) 응답합니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "json_ld_present",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "JSON-LD 구조화 데이터가 없습니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "semantic_ratio",
+          "model": "rule-based",
+          "score": 67,
+          "evidence": "시맨틱 태그 6개 중 4개 사용 (누락: article, footer)."
+        },
+        {
+          "axis": "B",
+          "metricKey": "meta_completeness",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "메타 4개 중 4개 존재."
+        },
+        {
+          "axis": "B",
+          "metricKey": "heading_hierarchy",
+          "model": "rule-based",
+          "score": 50,
+          "evidence": "h1 0개(1개 권장), 레벨 건너뜀 없음."
+        },
+        {
+          "axis": "B",
+          "metricKey": "alt_coverage",
+          "model": "rule-based",
+          "score": 45,
+          "evidence": "이미지 55개 중 25개에 alt 텍스트가 있습니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "load_time",
+          "model": "rule-based",
+          "score": 85,
+          "evidence": "홈페이지 응답에 약 874ms 걸렸습니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "mobile_ready",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "viewport 메타 태그가 있어 모바일 대응이 됩니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "https_secure",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "HTTPS 보안 연결을 사용합니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "multilingual",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "hreflang 대체 링크 1개로 다국어를 명시합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "agent_findability",
+          "model": "claude-sonnet-5",
+          "score": 55,
+          "evidence": "내비게이션과 프로모션 배너, 반복되는 슬로건('WEB3 ENABLER PARAMETA' x14) 뒤에야 'We empower the world's transformation...' 같은 핵심 소개 문장이 등장해 탐색에 다소 노력이 필요하다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "content_extractability",
+          "model": "claude-sonnet-5",
+          "score": 35,
+          "evidence": "내비게이션 메뉴가 두 번 중복되고 'WEB3 ENABLER PARAMETA' 슬로건이 캐러셀 형태로 20회 이상 반복 추출되어 순수 텍스트 품질이 크게 저하된다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "logical_organization",
+          "model": "claude-sonnet-5",
+          "score": 55,
+          "evidence": "ABOUT-TECH-SERVICE-PRODUCT-LEARN 순으로 섹션이 존재하나 추출된 텍스트에는 제목 위계 구분이 없이 문단이 이어져 있어 기계가 흐름을 파악하기 다소 어렵다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "info_scannability",
+          "model": "claude-sonnet-5",
+          "score": 40,
+          "evidence": "TECH/서비스/산업별 활용사례 설명이 목록이나 표 없이 연속된 문단으로 나열되어 있어 빠른 스캔이 어렵다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "clarity",
+          "model": "claude-sonnet-5",
+          "score": 85,
+          "evidence": "\"WEB3 ENABLER PARAMETA\"라는 문구와 함께 Loopchain, MyID(DID), BTP, PDS/BFS 등 자체 기술과 Web3 전환을 돕는 API 서비스라는 사업 성격이 명확히 설명되어 있다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "product_depth",
+          "model": "claude-sonnet-5",
+          "score": 80,
+          "evidence": "Parameta Wallet, Security Token, NFT, Token Management 각 제품별로 기능(커스터디 키관리, STO 자산 분할, NFT 발행·유통, 인터체인 토큰 발행 등)이 구체적으로 서술되어 있다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "key_info_present",
+          "model": "claude-sonnet-5",
+          "score": 75,
+          "evidence": "대표자명(김종협), 사업자등록번호, 주소, 전화, 팩스, 이메일 등 컨택 정보와 문의 폼이 있으나 토크노믹스나 백서 링크는 보이지 않는다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "freshness_clarity",
+          "model": "claude-sonnet-5",
+          "score": 80,
+          "evidence": "2025년 5월~8월의 최신 보도자료(스테이블코인, DID 인증 획득 등)가 날짜와 함께 게시되어 있고 과장 없이 사실 위주로 서술되어 있다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "technical_depth",
+          "model": "claude-sonnet-5",
+          "score": 65,
+          "evidence": "20,000~100,000 TPS 성능 수치, CSAP 인증 획득, 국내 최초 W3C DID Method Registry 등록, VASP 라이선스 거래소 커스터디 언급 등 기술적 신뢰 신호가 다수 포함되어 있다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "content_polish",
+          "model": "claude-sonnet-5",
+          "score": 50,
+          "evidence": "전반적으로 전문적인 한국어 서술이나 슬로건과 내비게이션의 대량 반복이 텍스트 품질과 완성도를 떨어뜨린다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "agent_findability",
+          "model": "gpt-5.5",
+          "score": 88,
+          "evidence": "상단 내비게이션과 첫 화면에서 Web3 Enabler, 블록체인 기술, 서비스 영역이 바로 노출되어 회사의 핵심 방향을 빠르게 파악할 수 있다. 기술·서비스·비즈니스·제품·콘텐츠 메뉴도 명확히 존재한다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "content_extractability",
+          "model": "gpt-5.5",
+          "score": 76,
+          "evidence": "대부분의 핵심 설명이 텍스트로 추출되어 기술, 서비스, 유스케이스, 연락처 정보를 확인할 수 있다. 다만 반복 문구와 메뉴 중복, 붙어 있는 텍스트가 많아 기계 추출 시 후처리가 필요하다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "logical_organization",
+          "model": "gpt-5.5",
+          "score": 82,
+          "evidence": "TECH, SERVICE, MULTI-INDUSTRY USE CASES, CONTENTS, CULTURE, PARTNERS/CONTACT 순으로 비교적 논리적인 흐름을 갖춘다. 그러나 원문 추출 상태에서는 제목과 본문 사이 구분이 일부 흐려져 위계 파악이 완벽하지는 않다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "info_scannability",
+          "model": "gpt-5.5",
+          "score": 79,
+          "evidence": "Loopchain, MyID, BTP, PDS/BFS 및 서비스 항목과 산업별 유스케이스가 구획별로 나열되어 스캔이 쉽다. 반면 표나 정형 데이터는 거의 없고 일부 문장이 길게 이어져 빠른 파싱에는 제한이 있다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "clarity",
+          "model": "gpt-5.5",
+          "score": 90,
+          "evidence": "파라메타가 Web2에서 Web3 생태계로의 전환을 지원하는 블록체인 기술·서비스 기업이라는 점이 명확하다. 블록체인 엔진, DID, 인터체인, 토큰 관리, STO/NFT 등 주요 사업 영역도 잘 드러난다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "product_depth",
+          "model": "gpt-5.5",
+          "score": 83,
+          "evidence": "Parameta Wallet, Security Token, NFT, Token Management 각각의 기능과 적용 방식이 구체적으로 설명되어 있다. 다만 제품별 상세 사양, 가격, 도입 절차, 실제 고객 사례 수준의 깊이는 홈페이지 본문만으로는 제한적이다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "key_info_present",
+          "model": "gpt-5.5",
+          "score": 78,
+          "evidence": "대표자, 사업자등록번호, 주소, 전화, 팩스, 이메일, 문의 양식 등 기본 회사·컨택 정보가 충실하다. 그러나 백서, 토크노믹스, 상세 팀 구성, 투자자용 자료 같은 Web3 핵심 검증 정보는 명시적으로 보이지 않는다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "freshness_clarity",
+          "model": "gpt-5.5",
+          "score": 86,
+          "evidence": "2025년 날짜가 포함된 유튜브·미디어 항목과 CSAP 인증, 스테이블코인 관련 뉴스가 있어 최신 활동성이 드러난다. 일부 표현은 ‘높은 보안성’, ‘강력한 웹3 월렛’처럼 정량 근거 없이 홍보적으로 보일 수 있다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "technical_depth",
+          "model": "gpt-5.5",
+          "score": 88,
+          "evidence": "Loopchain, W3C DID Method Registry, 금융권 DID 상용화, Trustless 인터체인 BTP, PDS/BFS, CSAP 인증, TPS 성능 데모 등 기술 신뢰 신호가 풍부하다. 다만 API 문서, SDK, 보안 아키텍처, 감사 자료로 직접 연결되는 상세 기술 문서는 원문에 포함되어 있지 않다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "content_polish",
+          "model": "gpt-5.5",
+          "score": 82,
+          "evidence": "전문 용어와 제품 설명은 대체로 일관적이고 기업 홈페이지로서 완성도가 있다. 다만 추출 원문 기준으로 띄어쓰기 누락, 메뉴 중복, 영문·국문 혼재, 반복 슬로건이 많아 콘텐츠 정돈감은 다소 떨어진다."
+        }
+      ]
+    },
+    {
+      "slug": "lambda256",
+      "name": "Lambda256",
+      "homepageUrl": "https://lambda256.io/",
+      "isSelf": false,
+      "category": "Infra",
+      "region": "국내",
+      "description": "두나무 계열 블록체인 기술 자회사. BaaS 플랫폼 Luniverse와 노드 API 서비스 Nodit으로 Web3 개발 인프라를 제공한다.",
+      "scores": [
+        {
+          "axis": "A",
+          "metricKey": "robots_allowed",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "robots.txt가 존재하며 크롤러 접근을 막지 않습니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "sitemap_present",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "sitemap.xml을 정상(200) 제공합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "llms_txt_present",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "/llms.txt를 제공합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "ssr_rendered",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "서버 응답 HTML에 본문 약 9,069자가 담겨 있어 SSR로 판단합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "not_bot_blocked",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "봇 차단 없이 정상(200) 응답합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "pages_reachable",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "홈페이지가 정상(200) 응답합니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "json_ld_present",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "JSON-LD 블록 1개를 발견했습니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "semantic_ratio",
+          "model": "rule-based",
+          "score": 83,
+          "evidence": "시맨틱 태그 6개 중 5개 사용 (누락: article)."
+        },
+        {
+          "axis": "B",
+          "metricKey": "meta_completeness",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "메타 4개 중 4개 존재."
+        },
+        {
+          "axis": "B",
+          "metricKey": "heading_hierarchy",
+          "model": "rule-based",
+          "score": 75,
+          "evidence": "h1 정확히 1개, 제목 레벨 건너뜀 있음."
+        },
+        {
+          "axis": "B",
+          "metricKey": "alt_coverage",
+          "model": "rule-based",
+          "score": 96,
+          "evidence": "이미지 143개 중 137개에 alt 텍스트가 있습니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "load_time",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "홈페이지 응답에 약 149ms 걸렸습니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "mobile_ready",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "viewport 메타 태그가 있어 모바일 대응이 됩니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "https_secure",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "HTTPS 보안 연결을 사용합니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "multilingual",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "hreflang 대체 링크 3개로 다국어를 명시합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "agent_findability",
+          "model": "claude-sonnet-5",
+          "score": 80,
+          "evidence": "FAQ 섹션에서 'Q1. 람다256은 어떤 회사인가요?'로 회사 정체성을 직접 문답 형태로 제공해 에이전트가 핵심 정보를 빠르게 찾을 수 있다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "content_extractability",
+          "model": "claude-sonnet-5",
+          "score": 55,
+          "evidence": "본문 자체는 텍스트로 잘 추출되나 고객 테스티모니얼 블록이 동일하게 4~5회 반복 삽입되어 있어 캐러셀 중복으로 인한 노이즈가 존재한다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "logical_organization",
+          "model": "claude-sonnet-5",
+          "score": 75,
+          "evidence": "히어로-핵심 솔루션-Why Work with Us-Testimonial-News-FAQ 순서로 정보가 흐르며, FAQ가 회사·제품·고객·도입절차를 체계적으로 정리해준다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "info_scannability",
+          "model": "claude-sonnet-5",
+          "score": 65,
+          "evidence": "01/02/03 번호가 붙은 핵심 지표와 Q1~Q6 FAQ 구조가 존재해 스캔이 용이하나 그 외 설명은 긴 문단으로 이어진다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "clarity",
+          "model": "claude-sonnet-5",
+          "score": 92,
+          "evidence": "FAQ에 '람다256은 금융기관이 디지털 자산 비즈니스를 안전하게 도입하고 운영할 수 있게 하는 온체인 금융 플랫폼'이라고 명시하고 두나무 계열 분사 연혁까지 설명해 회사 정체성이 매우 명확하다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "product_depth",
+          "model": "claude-sonnet-5",
+          "score": 90,
+          "evidence": "SCOPE(발행·커스터디·결제·정산·컴플라이언스 통합 API), CLAIR(온톨로지 기반 FRAML 리스크 엔진), NODIT(50개 이상 메인넷 노드·API·실시간 스트리밍) 세 제품이 기능 단위까지 구체적으로 설명되어 있다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "key_info_present",
+          "model": "claude-sonnet-5",
+          "score": 85,
+          "evidence": "회사 연혁·주소·문의 채널·SOC2 Type II 인증·고객사 목록(업비트, 코인원, 우리은행 등)이 FAQ와 본문에 상세히 제공되나 팀 구성원 소개나 백서 링크는 없다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "freshness_clarity",
+          "model": "claude-sonnet-5",
+          "score": 85,
+          "evidence": "뉴스에 2026.07.07, 2026.07.02 등 최근 날짜와 구체적 수치(SOC2 인증 시기, 일평균 2억 건 트랜잭션)가 명시되어 있어 최신성과 구체성이 높다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "technical_depth",
+          "model": "claude-sonnet-5",
+          "score": 85,
+          "evidence": "SOC2 Type II 인증, IDL 미해석 사례(솔라나 Phoenix 94,587건) 등 상세 기술 리포트, FRAML 온톨로지 엔진, API 통합 사례가 기술적 깊이를 뒷받침한다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "content_polish",
+          "model": "claude-sonnet-5",
+          "score": 70,
+          "evidence": "전문적이고 일관된 한국어 서술이나 고객 테스티모니얼이 여러 번 그대로 반복되는 부분이 완성도를 다소 낮춘다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "agent_findability",
+          "model": "gpt-5.5",
+          "score": 88,
+          "evidence": "상단 히어로와 FAQ에서 람다256이 온체인 금융 플랫폼이며 Nodit, CLAIR, SCOPE를 운영한다고 바로 설명한다. 제품 메뉴와 CTA, 주소, 문의 경로도 원문에 노출되어 핵심 정보 접근성이 높다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "content_extractability",
+          "model": "gpt-5.5",
+          "score": 72,
+          "evidence": "대부분의 핵심 설명, FAQ, 뉴스, 고객 사례가 텍스트로 추출되어 판단 가능하다. 다만 메뉴·CTA·문구가 반복되고 'Loading...' 및 중복 캐러셀 문장이 많아 기계 추출 시 노이즈가 있다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "logical_organization",
+          "model": "gpt-5.5",
+          "score": 78,
+          "evidence": "제품 소개, 신뢰 지표, 핵심 솔루션, 차별점, 인증, 고객 사례, 뉴스, FAQ 순으로 대체로 논리적 흐름이 있다. 그러나 추출 원문에서는 제목과 본문 경계가 붙어 있고 일부 섹션이 중복되어 계층 구조가 완전히 명확하지는 않다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "info_scannability",
+          "model": "gpt-5.5",
+          "score": 82,
+          "evidence": "제품별 요약, 01~03 신뢰 지표, FAQ Q&A, 뉴스 목록, 고객사 인용 등 스캔 가능한 구획이 충분하다. 다만 고객 사례가 과도하게 반복되고 표 형태의 정리나 명확한 구분자가 부족한 부분이 있다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "clarity",
+          "model": "gpt-5.5",
+          "score": 90,
+          "evidence": "FAQ에서 금융기관이 디지털 자산 비즈니스를 안전하게 도입·운영하도록 돕는 온체인 금융 플랫폼이라고 명확히 정의한다. 세 제품의 역할도 Web3 인프라, 리스크 엔진, 스테이블코인 플랫폼으로 구분된다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "product_depth",
+          "model": "gpt-5.5",
+          "score": 84,
+          "evidence": "Nodit, CLAIR, SCOPE 각각에 대해 API, 노드 서비스, 데이터 스트리밍, FRAML, KYC/AML, 결제·정산·컴플라이언스 등 구체적 기능을 설명한다. 다만 가격, 상세 아키텍처, 실제 API 예시 등 제품 상세 문서는 홈페이지 원문만으로는 부족하다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "key_info_present",
+          "model": "gpt-5.5",
+          "score": 80,
+          "evidence": "팀 상세나 토크노믹스·백서는 없지만 B2B 인프라 회사 맥락에서는 제품, 고객군, 인증, 고객사, 뉴스, 문의, 주소, Trust Center 경로가 포함되어 있다. 도입 절차와 데모/무료 플랜 안내도 FAQ에 제시된다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "freshness_clarity",
+          "model": "gpt-5.5",
+          "score": 91,
+          "evidence": "2026.07.07, 2026.07.02 등 최신 뉴스와 2026년 FAQ·인증 정보가 포함되어 최신성이 매우 분명하다. 일부 시장 규모 수치와 성과 주장은 있으나 대체로 날짜와 맥락이 붙어 과장만으로 보이지 않는다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "technical_depth",
+          "model": "gpt-5.5",
+          "score": 88,
+          "evidence": "SOC 2 Type II, 24/7 Node Operation Center, SLA, 일 2억 건 트랜잭션, 50개 이상 메인넷, Dedicated Node, 데이터셰어, FRAML, 스마트 컨트랙트 감사 협력 등 기술 신뢰 신호가 풍부하다. 단 홈페이지 원문에는 SDK/API 문서 링크나 코드 수준 설명은 직접 드러나지 않는다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "content_polish",
+          "model": "gpt-5.5",
+          "score": 75,
+          "evidence": "전문 용어와 제품 메시지는 대체로 일관되고 금융기관 대상 B2B 톤도 유지된다. 그러나 같은 문장과 고객 사례가 여러 번 반복되고 메뉴 텍스트가 붙어 보이는 등 추출 원문 기준의 편집 완성도는 다소 떨어진다."
+        }
+      ]
+    },
+    {
+      "slug": "dsrv",
+      "name": "DSRV",
+      "homepageUrl": "https://www.dsrv.com/en",
+      "isSelf": false,
+      "category": "Infra",
+      "region": "국내",
+      "description": "멀티체인 노드·스테이킹·검증인 인프라 전문 기업. RPC 서비스 'All That Node' 등 기관용 블록체인 인프라를 운영한다.",
+      "scores": [
+        {
+          "axis": "A",
+          "metricKey": "robots_allowed",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "robots.txt가 존재하며 크롤러 접근을 막지 않습니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "sitemap_present",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "sitemap.xml을 정상(200) 제공합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "llms_txt_present",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "/llms.txt가 없습니다(404 등)."
+        },
+        {
+          "axis": "A",
+          "metricKey": "ssr_rendered",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "서버 응답 HTML에 본문 약 6,547자가 담겨 있어 SSR로 판단합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "not_bot_blocked",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "봇 차단 없이 정상(200) 응답합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "pages_reachable",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "홈페이지가 정상(200) 응답합니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "json_ld_present",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "JSON-LD 구조화 데이터가 없습니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "semantic_ratio",
+          "model": "rule-based",
+          "score": 83,
+          "evidence": "시맨틱 태그 6개 중 5개 사용 (누락: article)."
+        },
+        {
+          "axis": "B",
+          "metricKey": "meta_completeness",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "메타 4개 중 4개 존재."
+        },
+        {
+          "axis": "B",
+          "metricKey": "heading_hierarchy",
+          "model": "rule-based",
+          "score": 25,
+          "evidence": "h1 2개(1개 권장), 제목 레벨 건너뜀 있음."
+        },
+        {
+          "axis": "B",
+          "metricKey": "alt_coverage",
+          "model": "rule-based",
+          "score": 98,
+          "evidence": "이미지 41개 중 40개에 alt 텍스트가 있습니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "load_time",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "홈페이지 응답에 약 129ms 걸렸습니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "mobile_ready",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "viewport 메타 태그가 있어 모바일 대응이 됩니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "https_secure",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "HTTPS 보안 연결을 사용합니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "multilingual",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "hreflang 대체 링크 2개로 다국어를 명시합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "agent_findability",
+          "model": "claude-sonnet-5",
+          "score": 60,
+          "evidence": "히어로 태그라인('Build the financial future you DeSeRVe')은 추상적이지만 바로 이어지는 About Us와 통계 섹션에서 검증인·기관 인프라 사업임이 곧바로 드러난다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "content_extractability",
+          "model": "claude-sonnet-5",
+          "score": 50,
+          "evidence": "동일한 히어로 문구가 4회 반복되고 제품 설명(All That Node, WaaS 등)도 두 번씩 중복 등장해 캐러셀/애니메이션에 의한 텍스트 중복이 눈에 띈다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "logical_organization",
+          "model": "claude-sonnet-5",
+          "score": 60,
+          "evidence": "히어로-About-핵심지표-제품(DSRV Portal)-연혁(Journey)-파트너 순으로 흐르나 추출 텍스트에 제목 구분이 없어 구조 파악에 노력이 필요하다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "info_scannability",
+          "model": "claude-sonnet-5",
+          "score": 55,
+          "evidence": "연도별 Journey 타임라인(2019~2025)은 스캔하기 쉬우나 '4 trillion$3B+ AUM'처럼 숫자와 단위가 뒤섞여 표시된 부분이 있어 스캔 시 혼란을 준다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "clarity",
+          "model": "claude-sonnet-5",
+          "score": 72,
+          "evidence": "'Build the financial future you DeSeRVe'와 함께 DSRV Portal, All That Node, WaaS, Payments, Staking Hub, Custody 등 제품군을 나열해 기관 대상 블록체인 인프라 회사임을 파악할 수 있으나, 한 문장 요약 없이 여러 마케팅 카피를 조합해야 전체 그림이 잡힌다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "product_depth",
+          "model": "claude-sonnet-5",
+          "score": 58,
+          "evidence": "각 제품(멀티체인 RPC, MPC 지갑, 온체인 결제, 스테이킹, 커스터디)에 1~2문장의 기능 설명이 있으나 구체적 스펙, 요금, 연동 방식 등 기술적 깊이는 없다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "key_info_present",
+          "model": "claude-sonnet-5",
+          "score": 68,
+          "evidence": "연도별 연혁(2019 설립~2025 시리즈B, VASP 라이선스, 파트너십), 연락처(이메일 contact@dsrvlabs.com, 전화, 서울 주소)는 있으나 팀 소개(경영진 이름)나 백서/토크노믹스는 없다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "freshness_clarity",
+          "model": "claude-sonnet-5",
+          "score": 52,
+          "evidence": "연도별 마일스톤(2019~2025)은 구체적이지만 'Not just a number, it's the result...', 'trust, once earned, compounds' 같은 반복적 과장·감성적 카피가 많고, 최신 연혁이 2025년으로 기준일(2026.07) 대비 다소 지나 있다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "technical_depth",
+          "model": "claude-sonnet-5",
+          "score": 68,
+          "evidence": "VASP 라이선스, ISMS·SOC1 인증, Top 10 Global Validator, MPC 기반 지갑 보안, 에어갭 커스터디 등 구체적 기술·신뢰 신호가 다수 제시된다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "content_polish",
+          "model": "claude-sonnet-5",
+          "score": 55,
+          "evidence": "영문 서술은 매끄러우나 히어로 문구 반복과 통계 숫자 표기 오류(글자 붙음)가 전체 완성도를 다소 저하시킨다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "agent_findability",
+          "model": "gpt-5.5",
+          "score": 86,
+          "evidence": "상단에 회사의 비전과 핵심 수치(AUM, Validator 순위, 프로토콜 수, 고객 수)가 바로 노출되고 제품 섹션도 이어져 핵심 정보 접근이 쉽다. 다만 원문에 반복 문구가 많아 탐색 효율을 일부 떨어뜨린다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "content_extractability",
+          "model": "gpt-5.5",
+          "score": 76,
+          "evidence": "대부분의 내용이 텍스트로 추출되어 제품명, 지표, 연혁, 연락처를 파악할 수 있다. 그러나 동일 문장과 제품 설명이 여러 번 중복되어 있고 구분자가 부족해 기계 추출 시 정제가 필요하다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "logical_organization",
+          "model": "gpt-5.5",
+          "score": 78,
+          "evidence": "회사 소개, 핵심 지표, 제품, 연혁, 파트너/연락처 순서로 대체로 논리적인 흐름을 갖는다. 하지만 헤더 위계가 원문에서 명확히 보이지 않고 일부 섹션과 반복 텍스트가 섞여 구조 파악이 완벽하지 않다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "info_scannability",
+          "model": "gpt-5.5",
+          "score": 82,
+          "evidence": "AUM, Validator 순위, 운영 프로토콜 수, 고객 수, 라이선스, 인증, 연도별 마일스톤 등 스캔 가능한 정보가 많다. 다만 표 형태는 아니며 일부 핵심 지표가 붙어서 나열되어 빠른 파싱에는 약간 불리하다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "clarity",
+          "model": "gpt-5.5",
+          "score": 87,
+          "evidence": "DSRV가 기관 대상 온체인 금융 인프라, 검증자, RPC, 지갑, 결제, 스테이킹, 커스터디 서비스를 제공한다는 점이 명확하다. 'financial future' 같은 추상적 문구가 있지만 제품 목록이 이를 충분히 보완한다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "product_depth",
+          "model": "gpt-5.5",
+          "score": 74,
+          "evidence": "DSRV Portal, All That Node, WaaS, Payments, Staking Hub, Custody 각각에 대해 용도와 핵심 가치가 짧게 설명되어 있다. 하지만 상세 기능, 지원 체인, 가격, API, 구현 방식 등 심층 제품 정보는 부족하다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "key_info_present",
+          "model": "gpt-5.5",
+          "score": 79,
+          "evidence": "팀 정보는 없지만 연락처, 주소, 제품, 고객 수, 인증(SOC, ISMS), VASP license, 연혁과 투자 이력이 포함되어 있다. 백서나 토크노믹스 같은 Web3 핵심 문서 링크는 원문상 확인되지 않는다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "freshness_clarity",
+          "model": "gpt-5.5",
+          "score": 84,
+          "evidence": "2025년 Series B와 파트너십, 2026 저작권 표기 등 비교적 최신 정보가 포함되어 있다. 다만 일부 수치의 기준일과 산정 방식이 명확하지 않고 '#1', 'Top 10' 같은 표현의 근거가 자세히 제시되지는 않는다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "technical_depth",
+          "model": "gpt-5.5",
+          "score": 72,
+          "evidence": "MPC security, air-gapped custody, multi-chain RPC, ERP/accounting 연동, 24/7 monitoring, SOC/ISMS 등 기술적 신뢰 신호가 있다. 그러나 API 문서, SDK, 성능 지표, 보안 아키텍처 같은 구체 기술 자료는 홈페이지 원문에 없다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "content_polish",
+          "model": "gpt-5.5",
+          "score": 73,
+          "evidence": "전반적으로 전문적인 영어 마케팅 문구와 일관된 용어를 사용하지만, 동일 문장과 제품 설명이 반복되어 완성도가 낮아 보인다. 'DeSeRVe' 같은 브랜드 말장난과 과장형 문구는 일부 명료성을 떨어뜨린다."
+        }
+      ]
+    },
+    {
+      "slug": "hexlant",
+      "name": "Hexlant",
+      "homepageUrl": "https://www.hexlant.com/",
+      "isSelf": false,
+      "category": "Custody",
+      "region": "국내",
+      "description": "블록체인 보안·커스터디·지갑 솔루션 기업. 기관용 디지털자산 지갑과 키 관리 기술을 제공한다.",
+      "scores": [
+        {
+          "axis": "A",
+          "metricKey": "robots_allowed",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "robots.txt가 존재하며 크롤러 접근을 막지 않습니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "sitemap_present",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "sitemap.xml을 정상(200) 제공합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "llms_txt_present",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "/llms.txt가 없습니다(404 등)."
+        },
+        {
+          "axis": "A",
+          "metricKey": "ssr_rendered",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "서버 응답 HTML에 본문 약 2,700자가 담겨 있어 SSR로 판단합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "not_bot_blocked",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "봇 차단 없이 정상(200) 응답합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "pages_reachable",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "홈페이지가 정상(200) 응답합니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "json_ld_present",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "JSON-LD 블록 1개를 발견했습니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "semantic_ratio",
+          "model": "rule-based",
+          "score": 83,
+          "evidence": "시맨틱 태그 6개 중 5개 사용 (누락: header)."
+        },
+        {
+          "axis": "B",
+          "metricKey": "meta_completeness",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "메타 4개 중 4개 존재."
+        },
+        {
+          "axis": "B",
+          "metricKey": "heading_hierarchy",
+          "model": "rule-based",
+          "score": 50,
+          "evidence": "h1 16개(1개 권장), 레벨 건너뜀 없음."
+        },
+        {
+          "axis": "B",
+          "metricKey": "alt_coverage",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "이미지 63개 중 63개에 alt 텍스트가 있습니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "load_time",
+          "model": "rule-based",
+          "score": 96,
+          "evidence": "홈페이지 응답에 약 594ms 걸렸습니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "mobile_ready",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "viewport 메타 태그가 있어 모바일 대응이 됩니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "https_secure",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "HTTPS 보안 연결을 사용합니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "multilingual",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "hreflang 다국어 표기가 없습니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "agent_findability",
+          "model": "claude-sonnet-5",
+          "score": 65,
+          "evidence": "상단 메뉴에 회사 소개·제품(옥텟·오하이)·제품 문의가 바로 노출되고 첫 화면에 '블록체인 비즈니스의 시작' 문구와 함께 두 핵심 제품으로 바로 연결돼 초기 탐색은 용이하다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "content_extractability",
+          "model": "claude-sonnet-5",
+          "score": 50,
+          "evidence": "본문이 구획 구분 없이 한 덩어리 텍스트로 이어져('고객사 후기금융 ・ Wallet고객 입장에서는...') 문단·제목 경계가 소실된 채 추출되어 있다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "logical_organization",
+          "model": "claude-sonnet-5",
+          "score": 55,
+          "evidence": "소개→산업별 솔루션→고객 후기→인증/보안→조직→FAQ→회사 정보 순으로 개념적 흐름은 있으나 추출된 텍스트에는 제목 위계 표시가 없어 기계가 구획을 구분하기 어렵다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "info_scannability",
+          "model": "claude-sonnet-5",
+          "score": 45,
+          "evidence": "금융/문화/게임/기술 등 여러 항목이 나열되지만 목록·표 마크업 없이 연속된 문장으로 뭉쳐 있어 빠르게 스캔하기 어렵다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "clarity",
+          "model": "claude-sonnet-5",
+          "score": 60,
+          "evidence": "'옥텟'(기업용 지갑)과 '오하이'(개인용 지갑) 서비스로 무엇을 하는지는 파악되지만, 채점 대상인 'Hexlant'라는 사명은 본문 어디에도 등장하지 않고 '월렛원/㈜헥토월렛원'으로만 표기돼 대상 회사 식별에 혼선이 있다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "product_depth",
+          "model": "claude-sonnet-5",
+          "score": 78,
+          "evidence": "STO 플랫폼 구축, KYC 입출금 지갑(VASP), NFT 마켓, 멀티시그, P2E 게임 온체인 지갑 등 산업별 구체적 활용 사례와 실제 고객사(신한은행, 신세계아이엔씨) 후기까지 제시한다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "key_info_present",
+          "model": "claude-sonnet-5",
+          "score": 65,
+          "evidence": "주소, 대표자명(최정록), 사업자등록번호, 통신판매업신고번호, 이용약관/개인정보처리방침 링크, FAQ, 문의 채널이 모두 있으나 팀 소개나 백서는 없다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "freshness_clarity",
+          "model": "claude-sonnet-5",
+          "score": 55,
+          "evidence": "2026년 1월 사명 변경(㈜월렛원→㈜헥토월렛원) 공지는 최신 정보로 명확히 게재돼 있으나, 정작 'Hexlant' 브랜드명이 페이지에 없어 채점 대상 회사와 현재 페이지 간 연결이 모호하다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "technical_depth",
+          "model": "claude-sonnet-5",
+          "score": 70,
+          "evidence": "국내 유일 ISMS&VASP 인증, 멀티시그 솔루션, 18개 이상 메인넷 노드 운영, 보안 사고 0건, 실시간 API 처리 등 구체적 기술·보안 신뢰 신호가 다수 제시된다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "content_polish",
+          "model": "claude-sonnet-5",
+          "score": 68,
+          "evidence": "전반적으로 문장은 자연스럽고 오탈자는 없으나, 이모지가 섞인 고객 피드백 항목 등 캐주얼한 서술과 정제된 기업 소개가 혼재돼 있다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "agent_findability",
+          "model": "gpt-5.5",
+          "score": 88,
+          "evidence": "상단에서 회사 소개, 제품, 옥텟, 오하이, 문의가 바로 노출되고 첫 문장부터 블록체인 지갑 솔루션임을 설명한다. 제품별 CTA와 고객사 후기, 인증 정보도 홈페이지 본문 안에서 찾을 수 있다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "content_extractability",
+          "model": "gpt-5.5",
+          "score": 82,
+          "evidence": "대부분의 핵심 설명이 텍스트로 추출되어 제품, 고객사, 인증, FAQ, 회사 정보가 확인된다. 다만 원문은 메뉴와 CTA, 섹션 텍스트가 붙어 있어 경계가 일부 흐리고 이모지/슬라이드성 문구가 섞여 있다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "logical_organization",
+          "model": "gpt-5.5",
+          "score": 78,
+          "evidence": "제품 소개, 비즈니스 라인업, 고객사 후기, 인증/보안, 조직, FAQ, 회사 정보 순으로 비교적 자연스럽게 이어진다. 그러나 추출된 원문에서는 제목 계층과 섹션 구분이 명확히 보존되지 않아 기계가 구조를 완전히 파악하기는 어렵다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "info_scannability",
+          "model": "gpt-5.5",
+          "score": 80,
+          "evidence": "금융·문화·게임, 지갑 유형, 고객 후기, 보안 수치, 지원 메인넷, FAQ 등 스캔 가능한 항목들이 많다. 표 형태나 명확한 리스트 마크업보다는 짧은 문구가 이어지는 방식이라 세부 파싱성은 제한적이다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "clarity",
+          "model": "gpt-5.5",
+          "score": 90,
+          "evidence": "헥토월렛원이 기업용 가상자산 지갑 관리 서비스와 개인 크립토 월렛을 제공하는 블록체인 지갑 인프라 기업이라는 점이 명확하다. 옥텟과 오하이라는 제품명과 용도도 본문에서 반복적으로 설명된다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "product_depth",
+          "model": "gpt-5.5",
+          "score": 82,
+          "evidence": "STO 지갑, 은행 앱 웹뷰 연동, KYC 입출금 지갑, 멀티시그 지갑, NFT 마켓, P2E/온체인 지갑 등 사용 사례와 기능 범위가 구체적으로 제시된다. 다만 요금, 상세 아키텍처, 제품별 기능 명세는 홈페이지 수준의 개요에 머문다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "key_info_present",
+          "model": "gpt-5.5",
+          "score": 70,
+          "evidence": "주소, 대표, 사업자등록번호, 약관, 개인정보처리방침, 제품 문의, 공지사항, 고객사 후기, FAQ 등 기본 신뢰 정보가 있다. 토크노믹스나 백서 같은 Web3 프로젝트형 정보는 없으며 팀 상세나 직접 연락처는 제한적으로만 보인다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "freshness_clarity",
+          "model": "gpt-5.5",
+          "score": 84,
+          "evidence": "2026년 1월 사명 변경 안내와 2016년 이후 보안 사고 0건, 현재까지의 보안 언급 등 최신성 신호가 있다. 일부 '국내 유일', '국내 최다', '증명된 솔루션' 같은 표현은 강한 주장에 비해 세부 근거가 부족하다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "technical_depth",
+          "model": "gpt-5.5",
+          "score": 86,
+          "evidence": "ISMS, VASP, 멀티시그, KYC 입출금, 메인넷 노드 18개 이상, API 처리와 자동 업데이트, 보안/컴플라이언스 조직 등 기술·규제 신뢰 신호가 풍부하다. 그러나 API 문서, SDK, 보안 감사 보고서, 인증서 링크 같은 깊은 기술 자료는 원문에 직접 드러나지 않는다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "content_polish",
+          "model": "gpt-5.5",
+          "score": 78,
+          "evidence": "전반적으로 전문 용어와 제품 메시지가 일관되고 고객사 사례도 자연스럽게 제시된다. 다만 추출 원문 기준으로 띄어쓰기 오류처럼 보이는 부분, 이모지 혼용, 반복 CTA와 붙어 있는 문장 때문에 완성도가 약간 떨어진다."
+        }
+      ]
+    },
+    {
+      "slug": "haechi-labs",
+      "name": "Haechi Labs",
+      "homepageUrl": "https://haechi.io/",
+      "isSelf": false,
+      "category": "Custody",
+      "region": "국내",
+      "description": "Web3 보안·개발 기업. 스마트컨트랙트 감사(Kalos)와 기관용 지갑(Henesis)을 제공한다.",
+      "scores": [
+        {
+          "axis": "A",
+          "metricKey": "robots_allowed",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "robots.txt가 존재하며 크롤러 접근을 막지 않습니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "sitemap_present",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "sitemap.xml을 정상(200) 제공합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "llms_txt_present",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "/llms.txt가 없습니다(404 등)."
+        },
+        {
+          "axis": "A",
+          "metricKey": "ssr_rendered",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "서버 응답 HTML에 본문 약 2,542자가 담겨 있어 SSR로 판단합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "not_bot_blocked",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "봇 차단 없이 정상(200) 응답합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "pages_reachable",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "홈페이지가 정상(200) 응답합니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "json_ld_present",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "JSON-LD 구조화 데이터가 없습니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "semantic_ratio",
+          "model": "rule-based",
+          "score": 17,
+          "evidence": "시맨틱 태그 6개 중 1개 사용 (누락: header, nav, main, article, footer)."
+        },
+        {
+          "axis": "B",
+          "metricKey": "meta_completeness",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "메타 4개 중 4개 존재."
+        },
+        {
+          "axis": "B",
+          "metricKey": "heading_hierarchy",
+          "model": "rule-based",
+          "score": 50,
+          "evidence": "h1 0개(1개 권장), 레벨 건너뜀 없음."
+        },
+        {
+          "axis": "B",
+          "metricKey": "alt_coverage",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "이미지 149개 중 0개에 alt 텍스트가 있습니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "load_time",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "홈페이지 응답에 약 147ms 걸렸습니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "mobile_ready",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "viewport 메타 태그가 있어 모바일 대응이 됩니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "https_secure",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "HTTPS 보안 연결을 사용합니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "multilingual",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "hreflang 다국어 표기가 없습니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "agent_findability",
+          "model": "claude-sonnet-5",
+          "score": 60,
+          "evidence": "상단 메뉴(고객·솔루션·언론·채용공고)와 첫 화면 슬로건들이 지갑·보안감사·법인 커스터디·장외거래 4개 축을 바로 보여줘 핵심 정보 탐색은 빠른 편이다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "content_extractability",
+          "model": "claude-sonnet-5",
+          "score": 45,
+          "evidence": "동일한 헤드라인과 뉴스 목록이 페이지 내에서 두 번 이상 중복 추출되어('해치랩스와 함께,WEB3를 쉽고 안전하게'가 반복) 텍스트 정제 상태가 깔끔하지 않다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "logical_organization",
+          "model": "claude-sonnet-5",
+          "score": 40,
+          "evidence": "동일 섹션(슬로건, 언론 보도)이 중복 반복되며 뚜렷한 제목 위계 없이 나열돼 정보 흐름을 기계가 파악하기 어렵다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "info_scannability",
+          "model": "claude-sonnet-5",
+          "score": 50,
+          "evidence": "언론 보도 목록은 매체명·날짜로 구조화돼 스캔 가능하지만, 제품 소개는 짧은 슬로건 나열뿐이라 항목별 세부 스캔이 어렵다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "clarity",
+          "model": "claude-sonnet-5",
+          "score": 68,
+          "evidence": "'해치랩스와 함께, WEB3를 쉽고 안전하게'라는 슬로건 아래 인게임 지갑, 보안감사, 법인용 가상자산 지갑, 장외거래 4개 사업을 제시하지만 각각 한 줄 태그라인뿐이라 구체적으로 무엇을 하는 회사인지는 다소 파편적으로 파악된다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "product_depth",
+          "model": "claude-sonnet-5",
+          "score": 35,
+          "evidence": "'시드문구, 다운로드 없는 간편한 인게임 지갑', '보안감사 견적 문의하기' 등 한 줄 카피만 있고 지갑 아키텍처, 감사 방법론, 거래 조건 등 구체적 기능 설명은 없다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "key_info_present",
+          "model": "claude-sonnet-5",
+          "score": 55,
+          "evidence": "사업자등록번호, 대표자명(문건기), 주소, 이메일(hello@haechi.io) 등 연락처와 넥슨·삼성전자·이더리움 재단 등과의 협업을 보여주는 다수의 언론보도 이력이 있으나, 팀 소개나 백서/토크노믹스는 없다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "freshness_clarity",
+          "model": "claude-sonnet-5",
+          "score": 32,
+          "evidence": "언론 속 해치랩스 목록의 최신 기사가 2023년 5월로, 현재(2026년 7월)까지 약 3년간 업데이트가 없어 정보가 오래된 인상을 준다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "technical_depth",
+          "model": "claude-sonnet-5",
+          "score": 45,
+          "evidence": "이더리움 재단 그랜트 수여, 클레이튼 보안 검증, 다수 메인넷 파트너십 등 언론 인용을 통한 기술 신뢰 신호는 있으나 자체 기술 설명(API, 감사 방법론 등)은 없다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "content_polish",
+          "model": "claude-sonnet-5",
+          "score": 55,
+          "evidence": "문장 자체는 자연스러운 한국어지만 슬로건과 언론 목록이 중복 배치돼 전체적으로 정돈되지 않은 인상을 준다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "agent_findability",
+          "model": "gpt-5.5",
+          "score": 76,
+          "evidence": "상단에 '해치랩스와 함께, WEB3를 쉽고 안전하게'와 지갑·보안감사·법인용 가상자산 지갑·장외거래 등 핵심 서비스가 바로 노출된다. 다만 원문 추출상 메뉴와 문구가 반복되어 회사/제품별 상세 탐색 경로는 다소 흐릿하다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "content_extractability",
+          "model": "gpt-5.5",
+          "score": 68,
+          "evidence": "대부분의 정보가 텍스트로 추출되어 제품 문구, 언론 기사, 연락처, 주소 등을 읽을 수 있다. 그러나 같은 섹션과 문구가 여러 번 중복되고 공백/구분자가 부족해 기계적으로 깔끔하게 추출되지는 않는다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "logical_organization",
+          "model": "gpt-5.5",
+          "score": 55,
+          "evidence": "제품 소개, 고객 신뢰 문구, 언론, 채용, 푸터 정보라는 큰 흐름은 보인다. 하지만 원문에서는 내비게이션과 섹션이 반복되고 제목 위계가 명확히 보존되지 않아 논리적 구조 파악이 제한적이다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "info_scannability",
+          "model": "gpt-5.5",
+          "score": 62,
+          "evidence": "서비스별 짧은 카피와 CTA, 언론 기사 목록, 날짜와 매체명이 있어 빠른 스캔은 가능하다. 다만 제품 설명이 목록/표로 정리되어 있지 않고 반복 텍스트가 많아 파싱 효율은 중간 수준이다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "clarity",
+          "model": "gpt-5.5",
+          "score": 80,
+          "evidence": "홈페이지만으로 해치랩스가 Web3 지갑, 보안감사, 법인용 가상자산 지갑, 장외거래 관련 솔루션을 제공한다는 점은 명확하다. '500개 이상의 기업들이 선택' 같은 신뢰 문구도 회사 포지션 이해에 도움을 준다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "product_depth",
+          "model": "gpt-5.5",
+          "score": 48,
+          "evidence": "각 제품은 '시드문구, 다운로드 없는 간편한 인게임 지갑', 'Web3 보안 파트너', '법인용 가상자산 지갑'처럼 한 줄 수준으로 소개된다. 기능, 대상 고객, 차별점, 작동 방식, 도입 절차 등 구체 설명은 부족하다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "key_info_present",
+          "model": "gpt-5.5",
+          "score": 54,
+          "evidence": "연락처 이메일, 사업자등록번호, 대표자, 주소, 채용, 언론 기사 등 기본 회사 정보는 포함되어 있다. 반면 백서, 팀 상세, 문서, 토크노믹스, 제품별 상세 자료 같은 핵심 심화 정보는 원문에 보이지 않는다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "freshness_clarity",
+          "model": "gpt-5.5",
+          "score": 50,
+          "evidence": "언론 기사 날짜가 2019년부터 2023년까지 제시되어 일부 시점 정보는 확인된다. 그러나 최신 업데이트가 2023년에 머물러 있고 현재 서비스 상태나 최근 성과를 보여주는 명확한 최신성 신호는 약하다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "technical_depth",
+          "model": "gpt-5.5",
+          "score": 45,
+          "evidence": "보안감사, 메인넷 파트너십, 이더리움 재단 Grant, 금융·블록체인 R&D 협약 등 기술 신뢰 신호는 언급된다. 하지만 API, SDK, 감사 방법론, 인증, 보안 표준, 성능 지표 같은 기술적 깊이는 본문에 드러나지 않는다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "content_polish",
+          "model": "gpt-5.5",
+          "score": 66,
+          "evidence": "문구 자체는 전문적이고 큰 오탈자나 과도한 과장은 많지 않다. 다만 원문 추출 기준으로 동일 문구와 기사 항목이 반복되고 띄어쓰기/구획이 깨져 있어 완성도는 다소 낮아 보인다."
+        }
+      ]
+    },
+    {
+      "slug": "koda",
+      "name": "KODA (한국디지털자산)",
+      "homepageUrl": "https://www.kodax.com/en",
+      "isSelf": false,
+      "category": "Custody",
+      "region": "국내",
+      "description": "KB국민은행·해시드 등이 출자한 기관 디지털자산 커스터디 기업. 국내 커스터디 시장 점유율 최상위권이다.",
+      "scores": [
+        {
+          "axis": "A",
+          "metricKey": "robots_allowed",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "robots.txt가 존재하며 크롤러 접근을 막지 않습니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "sitemap_present",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "sitemap.xml을 정상(200) 제공합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "llms_txt_present",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "/llms.txt를 제공합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "ssr_rendered",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "서버 응답 HTML에 본문 약 3,534자가 담겨 있어 SSR로 판단합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "not_bot_blocked",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "봇 차단 없이 정상(200) 응답합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "pages_reachable",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "홈페이지가 정상(200) 응답합니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "json_ld_present",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "JSON-LD 구조화 데이터가 없습니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "semantic_ratio",
+          "model": "rule-based",
+          "score": 83,
+          "evidence": "시맨틱 태그 6개 중 5개 사용 (누락: article)."
+        },
+        {
+          "axis": "B",
+          "metricKey": "meta_completeness",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "메타 4개 중 4개 존재."
+        },
+        {
+          "axis": "B",
+          "metricKey": "heading_hierarchy",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "h1 정확히 1개, 레벨 건너뜀 없음."
+        },
+        {
+          "axis": "B",
+          "metricKey": "alt_coverage",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "이미지 14개 중 14개에 alt 텍스트가 있습니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "load_time",
+          "model": "rule-based",
+          "score": 79,
+          "evidence": "홈페이지 응답에 약 1,019ms 걸렸습니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "mobile_ready",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "viewport 메타 태그가 있어 모바일 대응이 됩니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "https_secure",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "HTTPS 보안 연결을 사용합니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "multilingual",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "hreflang 대체 링크 3개로 다국어를 명시합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "agent_findability",
+          "model": "claude-sonnet-5",
+          "score": 85,
+          "evidence": "About·Services·Announcements·FAQ·Newsroom·Contact Us 메뉴가 상단에 있고 첫 화면에서 'The First VASP Certified as a Venture Business'와 시장점유율(86.6%)이 바로 제시돼 핵심 정보 도달이 빠르다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "content_extractability",
+          "model": "claude-sonnet-5",
+          "score": 80,
+          "evidence": "팝업이나 이미지 텍스트 없이 기능명(Cold Wallet, MPC System, Custody, Staking 등)과 수치가 순수 텍스트로 명확히 추출된다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "logical_organization",
+          "model": "claude-sonnet-5",
+          "score": 80,
+          "evidence": "인증 소개→AUC 실적→보안/보험→기능별 솔루션→뉴스→연락처 순으로 논리적 흐름이 유지되며 각 섹션 제목이 텍스트에도 뚜렷이 구분된다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "info_scannability",
+          "model": "claude-sonnet-5",
+          "score": 80,
+          "evidence": "Secure Custody, Staking, Circulation & Lock-up Management, Access Control 등 기능이 항목별로 짧게 나뉘어 있고 AUC $1.1B/$0.9B/86.6% 같은 수치가 표 형태로 스캔하기 좋다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "clarity",
+          "model": "claude-sonnet-5",
+          "score": 88,
+          "evidence": "'Digital Asset Partner for Corporate and Institutional Investors'와 '가상자산 커스터디 시장 점유율 86.6%' 등의 문구로 기관 대상 디지털자산 커스터디 기업임이 명확히 드러난다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "product_depth",
+          "model": "claude-sonnet-5",
+          "score": 80,
+          "evidence": "Cold Wallet, MPC(다자간 계산) 시스템, Custody/Staking/Circulation & Lock-up Management, Access Control 등 기능 단위로 구체적인 서비스 구성이 제시된다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "key_info_present",
+          "model": "claude-sonnet-5",
+          "score": 80,
+          "evidence": "CEO 이름, 사업자등록번호, VASP 등록번호, 주소, 전화, 이메일(hello@kodax.com) 등 회사 정보와 뉴스룸이 갖춰져 있으나 팀 소개나 백서는 없다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "freshness_clarity",
+          "model": "claude-sonnet-5",
+          "score": 88,
+          "evidence": "뉴스 항목에 2026년 6~7월 최신 인증 소식과 금융위원회 조사 출처를 명시한 시장점유율(86.6%) 등 구체적 수치가 제시되어 최신성이 높고 모호함이 적다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "technical_depth",
+          "model": "claude-sonnet-5",
+          "score": 85,
+          "evidence": "MPC(Multi-Party Computation), 콜드월렛, ISMS 인증, SOC1 Type 2 인증, VASP 라이선스, 삼성화재 $20M 보험 등 구체적 기술·규제 신뢰 신호가 풍부하다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "content_polish",
+          "model": "claude-sonnet-5",
+          "score": 85,
+          "evidence": "영문 서술이 전문적이고 일관되며 출처를 명시한 통계(Financial Services Commission)까지 인용해 과장 없이 신뢰도를 높인다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "agent_findability",
+          "model": "gpt-5.5",
+          "score": 92,
+          "evidence": "첫 화면에 VASP 인증, 디지털 자산 커스터디 1위, AUC, 보안·컴플라이언스, 서비스 항목이 바로 노출되어 회사와 핵심 서비스 파악이 쉽다. 내비게이션도 About, Services, FAQ, Newsroom, Contact로 명확하다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "content_extractability",
+          "model": "gpt-5.5",
+          "score": 86,
+          "evidence": "제공 원문은 대부분 순수 텍스트로 추출되어 핵심 수치, 서비스명, 인증, 연락처를 읽을 수 있다. 다만 일부 제목과 항목이 붙어 있고 뉴스 제목 일부가 잘린 듯 보여 완전히 깔끔한 구조는 아니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "logical_organization",
+          "model": "gpt-5.5",
+          "score": 88,
+          "evidence": "회사 신뢰도, 시장 지위, 보안·내부통제, 보험, 서비스 기능, 뉴스, 연락처 순으로 논리적 흐름이 있다. 제목 위계도 비교적 명확하지만 원문 추출 상태에서는 섹션 경계가 일부 붙어 보인다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "info_scannability",
+          "model": "gpt-5.5",
+          "score": 84,
+          "evidence": "AUC 수치, 인증·라이선스, 기능별 항목, 뉴스 목록, 회사 정보가 짧은 구획 단위로 제시되어 스캔하기 좋다. 표나 상세 비교 구조는 없고 일부 텍스트가 연속적으로 붙어 있어 파싱 편의성은 약간 떨어진다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "clarity",
+          "model": "gpt-5.5",
+          "score": 94,
+          "evidence": "KODA가 기업·기관 투자자를 위한 디지털 자산 커스터디 제공자라는 점이 명확하다. Secure Custody, Staking, Circulation & Lock-up Management 등 핵심 사업 영역도 직접적으로 제시된다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "product_depth",
+          "model": "gpt-5.5",
+          "score": 78,
+          "evidence": "콜드월렛, MPC, 출금 검증, 스테이킹, 락업 관리, 접근제어, 다중승인, 인증서 발급 등 서비스 기능은 구체적으로 나열되어 있다. 다만 실제 사용 흐름, 지원 자산, 수수료, 온보딩, 상세 제품 화면 수준의 설명은 부족하다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "key_info_present",
+          "model": "gpt-5.5",
+          "score": 82,
+          "evidence": "회사명, 주소, CEO, 사업자등록번호, VASP 등록번호, 전화번호, 이메일, 약관·개인정보처리방침, FAQ와 뉴스가 제공된다. 토크노믹스나 백서는 커스터디 기업 특성상 핵심성이 낮지만, 팀 상세나 투자자 상세 정보는 제한적이다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "freshness_clarity",
+          "model": "gpt-5.5",
+          "score": 91,
+          "evidence": "H2 2024 시장점유율 출처, 2025~2026 뉴스, 2026 저작권 표기가 있어 최신성이 뚜렷하다. 'Undisputed No.1' 같은 강한 표현은 있지만 금융위원회 조사 출처와 수치를 함께 제시해 모호성은 낮다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "technical_depth",
+          "model": "gpt-5.5",
+          "score": 86,
+          "evidence": "ISMS, VASP License, SOC Certification, Presidential Decree 보안 기준, 콜드월렛, MPC, OTP, IP whitelisting, 다중승인 등 기술·보안·규제 신뢰 신호가 풍부하다. API, SDK, 아키텍처, 성능 지표 같은 개발자용 기술 문서는 보이지 않는다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "content_polish",
+          "model": "gpt-5.5",
+          "score": 87,
+          "evidence": "영문 문구는 전반적으로 전문적이고 금융·보안 용어도 일관되게 사용된다. 다만 뉴스 영역에 한국어 제목이 섞여 있고 일부 문장이 중복되거나 잘린 듯한 부분이 있어 완성도에서 소폭 감점된다."
+        }
+      ]
+    },
+    {
+      "slug": "bdacs",
+      "name": "BDACS",
+      "homepageUrl": "https://www.bdacs.co.kr/en",
+      "isSelf": false,
+      "category": "Custody",
+      "region": "국내",
+      "description": "부산 기반 디지털자산 커스터디 기업. 우리은행과 원화 스테이블코인(KRW1) 등을 협업한다.",
+      "scores": [
+        {
+          "axis": "A",
+          "metricKey": "robots_allowed",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "robots.txt가 없어 기본 허용으로 간주합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "sitemap_present",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "sitemap.xml을 찾지 못했습니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "llms_txt_present",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "/llms.txt가 없습니다(404 등)."
+        },
+        {
+          "axis": "A",
+          "metricKey": "ssr_rendered",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "서버 응답 HTML에 본문 약 1,795자가 담겨 있어 SSR로 판단합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "not_bot_blocked",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "봇 차단 없이 정상(200) 응답합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "pages_reachable",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "홈페이지가 정상(200) 응답합니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "json_ld_present",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "JSON-LD 구조화 데이터가 없습니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "semantic_ratio",
+          "model": "rule-based",
+          "score": 83,
+          "evidence": "시맨틱 태그 6개 중 5개 사용 (누락: article)."
+        },
+        {
+          "axis": "B",
+          "metricKey": "meta_completeness",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "메타 4개 중 4개 존재."
+        },
+        {
+          "axis": "B",
+          "metricKey": "heading_hierarchy",
+          "model": "rule-based",
+          "score": 50,
+          "evidence": "h1 0개(1개 권장), 레벨 건너뜀 없음."
+        },
+        {
+          "axis": "B",
+          "metricKey": "alt_coverage",
+          "model": "rule-based",
+          "score": 67,
+          "evidence": "이미지 6개 중 4개에 alt 텍스트가 있습니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "load_time",
+          "model": "rule-based",
+          "score": 72,
+          "evidence": "홈페이지 응답에 약 1,197ms 걸렸습니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "mobile_ready",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "viewport 메타 태그가 있어 모바일 대응이 됩니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "https_secure",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "HTTPS 보안 연결을 사용합니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "multilingual",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "hreflang 다국어 표기가 없습니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "agent_findability",
+          "model": "claude-sonnet-5",
+          "score": 58,
+          "evidence": "히어로 문구('Assets Secured. Potential Unlocked.')와 About Us가 최상단에 바로 노출되지만 그 외 심층 정보로 가는 경로는 거의 없다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "content_extractability",
+          "model": "claude-sonnet-5",
+          "score": 60,
+          "evidence": "본문은 순수 텍스트로 깔끔히 추출되지만 연락처 블록이 두 번 중복 출력되는 등 스크래핑 잡음이 보인다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "logical_organization",
+          "model": "claude-sonnet-5",
+          "score": 48,
+          "evidence": "소개-About Us-솔루션 언급-연락처 순으로 흐르나 제목 위계 없이 문단이 이어져 구조가 얕다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "info_scannability",
+          "model": "claude-sonnet-5",
+          "score": 32,
+          "evidence": "목록이나 표 없이 긴 문장 나열과 내비게이션 텍스트만 이어져 있어 스캔하기 어렵다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "clarity",
+          "model": "claude-sonnet-5",
+          "score": 68,
+          "evidence": "'Beyond Digital Asset Custody Service'와 '기관 대상 커스터디 솔루션', '한국 최초의 기관용 인증 커스터디' 문구로 커스터디 회사임은 알 수 있으나 구체적 사업 구조 설명은 부족하다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "product_depth",
+          "model": "claude-sonnet-5",
+          "score": 35,
+          "evidence": "'wide range of specialized services'처럼 추상적 표현이 많고 콜드월렛·MPC 등 실제 기능 단위 설명이 거의 없어 제품 구체성이 낮다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "key_info_present",
+          "model": "claude-sonnet-5",
+          "score": 50,
+          "evidence": "일반/영업/미디어/규제 문의 이메일과 서울 주소는 제공되나 팀 소개, 인증 상세, 백서, 뉴스 본문 등은 확인되지 않는다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "freshness_clarity",
+          "model": "claude-sonnet-5",
+          "score": 40,
+          "evidence": "'cutting-edge technology', 'industry-leading', 'strongest custody solution' 등 과장된 마케팅 표현이 많고 날짜가 표기된 구체적 사실이나 수치가 없어 모호하다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "technical_depth",
+          "model": "claude-sonnet-5",
+          "score": 20,
+          "evidence": "'인증되고 규제 준수하는 커스터디'라는 주장은 있으나 API·문서·보안 인증 명칭 등 구체적 기술 신뢰 신호는 제시되지 않는다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "content_polish",
+          "model": "claude-sonnet-5",
+          "score": 55,
+          "evidence": "영문 문장 자체는 매끄럽지만 연락처 섹션이 두 번 반복되는 등 편집 완성도에 흠이 있다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "agent_findability",
+          "model": "gpt-5.5",
+          "score": 82,
+          "evidence": "첫 화면 원문에 'institutional-grade digital asset custody service'와 'Korea'가 반복적으로 노출되어 회사와 핵심 서비스는 빠르게 파악된다. 다만 솔루션 세부 페이지나 백서 등으로 이어지는 구체 정보는 본문에 거의 없다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "content_extractability",
+          "model": "gpt-5.5",
+          "score": 78,
+          "evidence": "제공된 원문은 대부분 순수 텍스트로 추출되어 핵심 문구와 연락처를 읽을 수 있다. 그러나 내비게이션과 푸터 텍스트가 중복되고 섹션 경계가 붙어 있어 기계적으로 깔끔한 추출은 다소 어렵다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "logical_organization",
+          "model": "gpt-5.5",
+          "score": 68,
+          "evidence": "히어로 소개, 서비스 설명, About Us, Solutions, 연락처 순서로 기본적인 흐름은 있다. 하지만 제목 위계가 명확하지 않고 'About UsSolutionsNewsroom' 같은 반복 텍스트가 섞여 구조 파악이 제한적이다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "info_scannability",
+          "model": "gpt-5.5",
+          "score": 62,
+          "evidence": "연락처는 용도별 이메일로 구분되어 스캔하기 쉽다. 반면 제품 가치 제안은 긴 마케팅 문장 중심이고 목록, 표, 기능별 구획이 부족하다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "clarity",
+          "model": "gpt-5.5",
+          "score": 84,
+          "evidence": "BDACS가 기관 고객을 위한 디지털 자산 커스터디 서비스를 제공한다는 점은 홈페이지 원문만으로 명확하다. 'South Korea’s first certified and regulated custody solution'이라는 포지셔닝도 확인된다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "product_depth",
+          "model": "gpt-5.5",
+          "score": 48,
+          "evidence": "보안 인프라, 블록체인 기반 저장과 이전, 기관 대상 커스터디라는 설명은 있으나 실제 기능, 지원 자산, 운영 방식, 신청 절차 등의 세부 정보가 부족하다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "key_info_present",
+          "model": "gpt-5.5",
+          "score": 45,
+          "evidence": "컨택 이메일, 주소, 약관과 개인정보처리방침 링크는 포함되어 있다. 하지만 백서, 팀, 토크노믹스, 인증 상세, 파트너, 수수료 등 핵심 신뢰 정보는 원문에 보이지 않는다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "freshness_clarity",
+          "model": "gpt-5.5",
+          "score": 55,
+          "evidence": "뉴스룸 링크는 있으나 원문 자체에는 날짜, 최신 업데이트, 인증 시점 등 최신성을 판단할 근거가 없다. 'cutting-edge', 'strongest', 'industry-leading' 같은 표현은 다소 과장되어 보이며 근거가 함께 제시되지 않는다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "technical_depth",
+          "model": "gpt-5.5",
+          "score": 42,
+          "evidence": "블록체인 인프라, 보안 저장 및 이전, 규제·AML 연락처 등 기술·신뢰 신호가 일부 있다. 그러나 API, SDK, 보안 아키텍처, 인증 세부, 감사, 규제 준수 문서 같은 구체적 기술 깊이는 드러나지 않는다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "content_polish",
+          "model": "gpt-5.5",
+          "score": 72,
+          "evidence": "문장 톤은 전반적으로 전문적이고 큰 오탈자는 보이지 않는다. 다만 'develop, expand, empower your digital assets'처럼 어색한 표현과 근거 없는 최상급 마케팅 문구가 있어 완성도는 중상 수준이다."
+        }
+      ]
+    },
+    {
+      "slug": "consensys",
+      "name": "ConsenSys",
+      "homepageUrl": "https://consensys.io/",
+      "isSelf": false,
+      "category": "Infra",
+      "region": "해외",
+      "description": "이더리움 대표 인프라·소프트웨어 기업. 노드 API(Infura), 지갑(MetaMask), L2(Linea), 엔터프라이즈 솔루션을 제공한다.",
+      "scores": [
+        {
+          "axis": "A",
+          "metricKey": "robots_allowed",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "robots.txt가 존재하며 크롤러 접근을 막지 않습니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "sitemap_present",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "sitemap.xml을 정상(200) 제공합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "llms_txt_present",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "/llms.txt를 제공합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "ssr_rendered",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "서버 응답 HTML에 본문 약 5,659자가 담겨 있어 SSR로 판단합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "not_bot_blocked",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "봇 차단 없이 정상(200) 응답합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "pages_reachable",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "홈페이지가 정상(200) 응답합니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "json_ld_present",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "JSON-LD 구조화 데이터가 없습니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "semantic_ratio",
+          "model": "rule-based",
+          "score": 83,
+          "evidence": "시맨틱 태그 6개 중 5개 사용 (누락: article)."
+        },
+        {
+          "axis": "B",
+          "metricKey": "meta_completeness",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "메타 4개 중 4개 존재."
+        },
+        {
+          "axis": "B",
+          "metricKey": "heading_hierarchy",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "h1 정확히 1개, 레벨 건너뜀 없음."
+        },
+        {
+          "axis": "B",
+          "metricKey": "alt_coverage",
+          "model": "rule-based",
+          "score": 77,
+          "evidence": "이미지 13개 중 10개에 alt 텍스트가 있습니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "load_time",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "홈페이지 응답에 약 135ms 걸렸습니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "mobile_ready",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "viewport 메타 태그가 있어 모바일 대응이 됩니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "https_secure",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "HTTPS 보안 연결을 사용합니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "multilingual",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "hreflang 다국어 표기가 없습니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "agent_findability",
+          "model": "claude-sonnet-5",
+          "score": 75,
+          "evidence": "'Consensys builds the consumer platform, developer, enterprise, and agentic infrastructure...' 문장이 상단에 바로 나와 핵심 소개를 빠르게 찾을 수 있다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "content_extractability",
+          "model": "claude-sonnet-5",
+          "score": 52,
+          "evidence": "본문은 텍스트로 추출되지만 'Users MConnected Dapps k'처럼 통계 위젯 숫자가 깨져 나오는 등 인터랙션 의존 요소의 잔재가 보인다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "logical_organization",
+          "model": "claude-sonnet-5",
+          "score": 60,
+          "evidence": "Products, Ecosystem, Building Ethereum, Company 등 섹션 순서는 논리적이나 제목 구분 없이 문단이 이어져 기계가 계층을 파악하기 어렵다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "info_scannability",
+          "model": "claude-sonnet-5",
+          "score": 48,
+          "evidence": "제품/업그레이드 이름별로 나뉘어 있지만 대부분 서술형 문단이라 표나 목록 형태의 스캔은 제한적이다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "clarity",
+          "model": "claude-sonnet-5",
+          "score": 68,
+          "evidence": "MetaMask, Infura, Ethereum 프로토콜 클라이언트(Besu, Teku) 등을 만든다는 것은 파악되지만 'Trustware', 'era of Decentralized Finance' 같은 마케팅 수사가 앞서 나와 있어 정확히 무슨 사업인지 파악하는 데 약간의 노력이 필요하다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "product_depth",
+          "model": "claude-sonnet-5",
+          "score": 58,
+          "evidence": "MetaMask/MetaMask Developer/Infura/Linea/Besu/Teku/Consensys Staking 각각에 한두 문장 설명이 있으나, 'Users M', 'Requests Served Per Year T' 처럼 수치가 렌더링되지 않아 정량적 근거가 소실된 부분이 많다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "key_info_present",
+          "model": "claude-sonnet-5",
+          "score": 55,
+          "evidence": "About/Press/Careers/Security/Contact 링크와 2014년 Joseph Lubin 설립 사실은 있지만, 팀 구성원 소개나 백서 직접 링크, 구체적 컨택 정보는 보이지 않는다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "freshness_clarity",
+          "model": "claude-sonnet-5",
+          "score": 55,
+          "evidence": "Pectra, Dencun, The Merge 같은 실제 프로토콜 업그레이드를 언급해 신뢰도는 있으나 구체적 날짜가 없고 'Let's Build the New Economy' 같은 다소 과장된 슬로건이 섞여 있다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "technical_depth",
+          "model": "claude-sonnet-5",
+          "score": 78,
+          "evidence": "실행/합의 클라이언트, 스테이킹 인프라, 프로토콜 업그레이드(Pectra, Dencun, The Merge) 세부 내용 등 기술적 깊이가 잘 드러난다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "content_polish",
+          "model": "claude-sonnet-5",
+          "score": 62,
+          "evidence": "전반적으로 전문적인 문장이지만 상단 내비게이션 텍스트가 중복 출력되고 통계 숫자가 깨지는 등 스크래핑 아티팩트가 남아있다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "agent_findability",
+          "model": "gpt-5.5",
+          "score": 90,
+          "evidence": "상단에 'Building the era of Decentralized Finance'와 Consensys가 소비자 플랫폼, 개발자·엔터프라이즈 인프라, 프로토콜 소프트웨어를 만든다는 핵심 소개가 바로 노출된다. MetaMask, Infura, Linea 등 주요 제품도 첫 화면 흐름 안에서 쉽게 찾을 수 있다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "content_extractability",
+          "model": "gpt-5.5",
+          "score": 84,
+          "evidence": "대부분의 핵심 정보가 순수 텍스트로 추출되어 제품명, 설명, 링크, 푸터 정보가 확인 가능하다. 다만 일부 지표가 'Users MConnected Dapps k'처럼 단위와 숫자가 깨져 추출되어 완전한 기계 판독성은 떨어진다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "logical_organization",
+          "model": "gpt-5.5",
+          "score": 86,
+          "evidence": "회사 비전, Trustware 설명, 제품 스택, Ethereum 프로토콜 기여, 회사 배경, 최신 글과 푸터로 이어지는 흐름이 비교적 논리적이다. 제품과 생태계 항목도 섹션별로 묶여 있어 정보 흐름을 파악하기 쉽다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "info_scannability",
+          "model": "gpt-5.5",
+          "score": 82,
+          "evidence": "MetaMask, MetaMask Developer, Infura, Linea, Staking, Teku, Besu 등이 구획화되어 빠르게 스캔할 수 있다. 하지만 원문 추출에서는 일부 제목과 문장이 붙어 있고 수치 데이터가 깨져 있어 표나 명확한 목록 수준의 파싱성은 제한된다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "clarity",
+          "model": "gpt-5.5",
+          "score": 88,
+          "evidence": "Consensys가 Ethereum 기반의 탈중앙화 금융 인프라와 제품 스택을 구축하는 회사라는 점이 명확하다. MetaMask, Infura, 프로토콜 클라이언트 등 대표 제품과 역할도 홈페이지만으로 파악 가능하다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "product_depth",
+          "model": "gpt-5.5",
+          "score": 83,
+          "evidence": "MetaMask의 송금·거래·수익·결제·연결 기능, MetaMask Developer의 SDK와 임베디드 월렛, Infura의 API 인프라와 고가용성 엔드포인트 등 제품별 설명이 구체적이다. 다만 각 제품의 상세 기능, 가격, 사용 사례, 통합 절차는 홈 원문 수준에서는 제한적이다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "key_info_present",
+          "model": "gpt-5.5",
+          "score": 76,
+          "evidence": "제품, 리서치, 보안, 컨택, 회사 소개, 창업자 Joseph Lubin, 소셜 링크 등 핵심 회사 정보가 포함되어 있다. 그러나 토크노믹스나 백서에 해당하는 직접 정보는 없고, 팀 정보도 창업자 언급 외에는 제한적이다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "freshness_clarity",
+          "model": "gpt-5.5",
+          "score": 82,
+          "evidence": "Pectra, Dencun, The Merge 등 최근 Ethereum 업그레이드와 'Latest from Consensys' 섹션이 있어 최신성 신호가 있다. 다만 'over millions of users'처럼 어색하거나 정확한 수치가 빠진 표현이 있어 일부 서술은 모호하다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "technical_depth",
+          "model": "gpt-5.5",
+          "score": 88,
+          "evidence": "zero-knowledge 기반 Layer 2, Ethereum execution/consensus clients, proto-danksharding, blobs, proof-of-stake, API 인프라, 기관용 staking 등 기술적 신뢰 신호가 풍부하다. Besu, Teku, Web3Signer, Infura 같은 개발자·프로토콜 제품이 명시되어 기술 깊이가 잘 드러난다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "content_polish",
+          "model": "gpt-5.5",
+          "score": 79,
+          "evidence": "전반적으로 전문적인 용어와 일관된 브랜드 메시지를 사용하지만, 'cryptographic, consensus-driven, and verifiable.We'처럼 공백이 누락된 부분과 깨진 지표 텍스트가 보인다. 'over millions of users' 같은 부자연스러운 표현도 있어 완성도는 높지만 완벽하지 않다."
+        }
+      ]
+    },
+    {
+      "slug": "alchemy",
+      "name": "Alchemy",
+      "homepageUrl": "https://www.alchemy.com/",
+      "isSelf": false,
+      "category": "Infra",
+      "region": "해외",
+      "description": "글로벌 Web3 개발 플랫폼. 노드 인프라·API·SDK로 수많은 디앱과 지갑의 백엔드를 담당한다.",
+      "scores": [
+        {
+          "axis": "A",
+          "metricKey": "robots_allowed",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "robots.txt가 존재하며 크롤러 접근을 막지 않습니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "sitemap_present",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "sitemap.xml을 정상(200) 제공합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "llms_txt_present",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "/llms.txt를 제공합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "ssr_rendered",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "서버 응답 HTML에 본문 약 3,725자가 담겨 있어 SSR로 판단합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "not_bot_blocked",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "봇 차단 없이 정상(200) 응답합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "pages_reachable",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "홈페이지가 정상(200) 응답합니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "json_ld_present",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "JSON-LD 블록 2개를 발견했습니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "semantic_ratio",
+          "model": "rule-based",
+          "score": 67,
+          "evidence": "시맨틱 태그 6개 중 4개 사용 (누락: header, article)."
+        },
+        {
+          "axis": "B",
+          "metricKey": "meta_completeness",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "메타 4개 중 4개 존재."
+        },
+        {
+          "axis": "B",
+          "metricKey": "heading_hierarchy",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "h1 정확히 1개, 레벨 건너뜀 없음."
+        },
+        {
+          "axis": "B",
+          "metricKey": "alt_coverage",
+          "model": "rule-based",
+          "score": 90,
+          "evidence": "이미지 49개 중 44개에 alt 텍스트가 있습니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "load_time",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "홈페이지 응답에 약 73ms 걸렸습니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "mobile_ready",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "viewport 메타 태그가 있어 모바일 대응이 됩니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "https_secure",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "HTTPS 보안 연결을 사용합니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "multilingual",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "hreflang 다국어 표기가 없습니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "agent_findability",
+          "model": "claude-sonnet-5",
+          "score": 85,
+          "evidence": "'Infrastructure that moves billions at scale' 히어로 문구와 'Get your API key' 등 핵심 액션이 최상단에 바로 노출된다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "content_extractability",
+          "model": "claude-sonnet-5",
+          "score": 65,
+          "evidence": "대부분 순수 텍스트로 잘 추출되지만 'Node RPC APIReal-time, block-perfect data'처럼 카드형 UI 요소가 공백 없이 붙어 나오는 부분이 있다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "logical_organization",
+          "model": "claude-sonnet-5",
+          "score": 75,
+          "evidence": "Platform-Products(Orchestration/Data/Devtools)-고객 사례-뉴스-Company 순으로 섹션이 명확히 구분되어 흐름을 파악하기 쉽다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "info_scannability",
+          "model": "claude-sonnet-5",
+          "score": 65,
+          "evidence": "$1T+, 100M+, 99.99% uptime 같은 수치와 제품명 목록이 있어 스캔이 용이하나 일부는 문장으로 뭉쳐 있다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "clarity",
+          "model": "claude-sonnet-5",
+          "score": 88,
+          "evidence": "'The complete blockchain developer platform trusted by leading fintechs and developers worldwide'라는 문구와 Node RPC API, Rollups, AI Agents 섹션으로 무슨 회사인지 명확히 드러난다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "product_depth",
+          "model": "claude-sonnet-5",
+          "score": 82,
+          "evidence": "Cortex 엔진, RPC API, Rollups, NFT API, Webhooks, Portfolio API, Token API, Gas Manager API, Bundler API 등 구체적 제품명과 각각의 기능(가스리스 트랜잭션, 실시간 데이터 등)이 설명되어 있다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "key_info_present",
+          "model": "claude-sonnet-5",
+          "score": 68,
+          "evidence": "Pricing, Contact sales, Careers, About us, Security, Docs, Support 링크가 있으나 경영진/팀 소개나 백서 같은 세부 회사 정보는 부족하다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "freshness_clarity",
+          "model": "claude-sonnet-5",
+          "score": 85,
+          "evidence": "'last updated: Jul 8, 2026'이라는 명시적 타임스탬프와 $1T+ transactions, 99.99% uptime 같은 구체적 수치로 최신성이 뚜렷하나, 'moves billions at scale' 식 일부 과장 표현도 있다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "technical_depth",
+          "model": "claude-sonnet-5",
+          "score": 85,
+          "evidence": "RPC 벤치마크, 99.99% 업타임, CLI/MCP 서버, 버그 바운티, 보안 페이지 등 기술적 신뢰 신호가 풍부하다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "content_polish",
+          "model": "claude-sonnet-5",
+          "score": 78,
+          "evidence": "전반적으로 전문적이고 일관된 용어를 사용하며 큰 오탈자나 어색한 표현이 눈에 띄지 않는다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "agent_findability",
+          "model": "gpt-5.5",
+          "score": 93,
+          "evidence": "상단에 'The complete blockchain developer platform'과 API key/세일즈 CTA가 바로 노출되어 회사와 제품 정체성을 즉시 파악할 수 있다. 주요 제품군도 Platform, Solutions, Developers, Pricing 등 내비게이션과 본문 섹션에 반복적으로 제시된다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "content_extractability",
+          "model": "gpt-5.5",
+          "score": 90,
+          "evidence": "원문 대부분이 순수 텍스트로 추출되어 제품명, 수치, 링크명, 섹션명이 기계적으로 읽기 쉽다. 다만 메뉴와 푸터 링크가 본문과 붙어 있어 일부 경계는 후처리가 필요하다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "logical_organization",
+          "model": "gpt-5.5",
+          "score": 86,
+          "evidence": "히어로 소개 이후 통합 플랫폼, 인프라, AI Agents, Orchestration, Data, Devtools, 고객 사례, 뉴스, 푸터 순으로 비교적 논리적인 흐름이다. 제목 위계는 보이지만 추출문에서는 섹션 간 구분이 완전히 명확하지 않은 부분이 있다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "info_scannability",
+          "model": "gpt-5.5",
+          "score": 88,
+          "evidence": "$1T+ transactions, 99.99% uptime, 제품별 짧은 설명, 고객 사례 수치처럼 핵심 정보가 짧은 블록과 수치 중심으로 잘 스캔된다. 긴 설명보다 항목형 구성에 가까워 파싱하기 쉽다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "clarity",
+          "model": "gpt-5.5",
+          "score": 94,
+          "evidence": "Alchemy가 블록체인 개발자 플랫폼이자 인프라, API, SDK, 데이터, 롤업, 가스리스 트랜잭션 도구를 제공한다는 점이 명확하다. 'trusted by leading fintechs and developers worldwide'와 제품 카테고리들이 대상 고객도 분명히 한다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "product_depth",
+          "model": "gpt-5.5",
+          "score": 83,
+          "evidence": "RPC API, Rollups, Webhooks, Portfolio APIs, Token APIs, Gas Manager API, Bundler API 등 구체적인 제품명이 다수 제시된다. 다만 홈페이지 원문만으로는 각 제품의 상세 기능, 사용 조건, 아키텍처 설명은 제한적이다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "key_info_present",
+          "model": "gpt-5.5",
+          "score": 78,
+          "evidence": "문서, API, 지원, 상태 페이지, 보안, 법무, 연락처, 세일즈, 버그 바운티 등 핵심 신뢰 정보 링크가 포함되어 있다. 웹3 회사지만 토크노믹스나 백서 중심 프로젝트가 아니며, 팀 정보는 푸터의 About/Careers 수준으로만 드러난다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "freshness_clarity",
+          "model": "gpt-5.5",
+          "score": 91,
+          "evidence": "RPC 벤치마크가 'last updated: Jul 8, 2026, 8:23 AM UTC'로 명시되어 최신성 신호가 강하다. 일부 'world's first', 'best-in-class', 'blockchain magic' 같은 마케팅 표현은 있으나 수치와 제품 설명이 함께 있어 과장만으로 보이지는 않는다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "technical_depth",
+          "model": "gpt-5.5",
+          "score": 89,
+          "evidence": "Cortex, RPC benchmarks, Node RPC API, MCP server, CLI, SDKs, rollups, webhooks, APIs, uptime, gasless transactions 등 기술적 신호가 풍부하다. 보안, 버그 바운티, 상태 페이지 링크도 있어 인프라 제공자로서의 신뢰 요소가 잘 드러난다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "content_polish",
+          "model": "gpt-5.5",
+          "score": 92,
+          "evidence": "문장과 용어가 전문적이고 일관되며 제품 카피가 간결하게 정리되어 있다. 다만 추출 원문에서는 메뉴와 문장이 붙어 보이는 부분이 있어 완전한 가독성 측면에서는 약간 감점된다."
+        }
+      ]
+    },
+    {
+      "slug": "fireblocks",
+      "name": "Fireblocks",
+      "homepageUrl": "https://www.fireblocks.com/",
+      "isSelf": false,
+      "category": "Custody",
+      "region": "해외",
+      "description": "기관용 디지털자산 커스터디·지갑 인프라 선도 기업. MPC 기반 키 관리와 전송 네트워크를 제공한다.",
+      "scores": [
+        {
+          "axis": "A",
+          "metricKey": "robots_allowed",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "robots.txt가 존재하며 크롤러 접근을 막지 않습니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "sitemap_present",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "sitemap.xml을 정상(200) 제공합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "llms_txt_present",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "/llms.txt를 제공합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "ssr_rendered",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "서버 응답 HTML에 본문 약 7,143자가 담겨 있어 SSR로 판단합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "not_bot_blocked",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "봇 차단 없이 정상(200) 응답합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "pages_reachable",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "홈페이지가 정상(200) 응답합니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "json_ld_present",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "JSON-LD 블록 1개를 발견했습니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "semantic_ratio",
+          "model": "rule-based",
+          "score": 67,
+          "evidence": "시맨틱 태그 6개 중 4개 사용 (누락: main, section)."
+        },
+        {
+          "axis": "B",
+          "metricKey": "meta_completeness",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "메타 4개 중 4개 존재."
+        },
+        {
+          "axis": "B",
+          "metricKey": "heading_hierarchy",
+          "model": "rule-based",
+          "score": 75,
+          "evidence": "h1 정확히 1개, 제목 레벨 건너뜀 있음."
+        },
+        {
+          "axis": "B",
+          "metricKey": "alt_coverage",
+          "model": "rule-based",
+          "score": 5,
+          "evidence": "이미지 39개 중 2개에 alt 텍스트가 있습니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "load_time",
+          "model": "rule-based",
+          "score": 96,
+          "evidence": "홈페이지 응답에 약 608ms 걸렸습니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "mobile_ready",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "viewport 메타 태그가 있어 모바일 대응이 됩니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "https_secure",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "HTTPS 보안 연결을 사용합니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "multilingual",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "hreflang 대체 링크 6개로 다국어를 명시합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "agent_findability",
+          "model": "claude-sonnet-5",
+          "score": 60,
+          "evidence": "핵심 소개문(\"Fireblocks is the world's most trusted digital asset and stablecoin infrastructure company...\")이 존재하지만 거대한 내비게이션·제품 목록 덩어리 뒤에 묻혀 있어 탐색 비용이 크다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "content_extractability",
+          "model": "claude-sonnet-5",
+          "score": 55,
+          "evidence": "팝업이나 이미지 텍스트는 없어 순수 텍스트 추출은 가능하지만, 동일한 메뉴 목록이 두 번 반복되고 문단 구분 없이 나열돼 노이즈가 많다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "logical_organization",
+          "model": "claude-sonnet-5",
+          "score": 40,
+          "evidence": "제목 위계 없이 내비게이션-히어로-고객사례-푸터가 평평한 텍스트로 이어져 있어 기계가 섹션 경계를 파악하기 어렵다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "info_scannability",
+          "model": "claude-sonnet-5",
+          "score": 50,
+          "evidence": "제품명·업종별 목록은 짧은 구 단위로 나열돼 스캔 가능하지만 표나 명확한 구획 표시는 없다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "clarity",
+          "model": "claude-sonnet-5",
+          "score": 74,
+          "evidence": "'digital asset and stablecoin infrastructure company'로 지갑·커스터디·결제·토큰화를 다룬다는 것이 드러나지만, 대부분 내비게이션 항목 나열이라 초반부는 다소 파편적이다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "product_depth",
+          "model": "claude-sonnet-5",
+          "score": 56,
+          "evidence": "Wallets, Treasury management, Tokenization, Earn, Compliance 등은 한 줄 태그라인 수준이고, ABN AMRO 토큰화 채권 발행이나 Bridge의 결제 시간을 12시간+ 에서 90분 미만으로 단축한 사례처럼 고객 사례에서만 구체적 디테일이 나온다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "key_info_present",
+          "model": "claude-sonnet-5",
+          "score": 50,
+          "evidence": "Executive team, Careers, Pricing, Customer stories 링크는 있지만 연락처 이메일이 '[email protected]'로 마스킹/미노출되어 있고 구체적 팀 구성원 정보나 백서는 없다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "freshness_clarity",
+          "model": "claude-sonnet-5",
+          "score": 58,
+          "evidence": "'Fireblocks Releases The Financial Grid 2026', '© 2026'으로 최신 시점은 드러나지만 'world's most trusted digital asset and stablecoin infrastructure company'라는 검증되지 않은 과장 표현이 사용된다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "technical_depth",
+          "model": "claude-sonnet-5",
+          "score": 65,
+          "evidence": "Developer Documentation, API Reference, Status, Changelog, Bug bounty, Security Policy Engine 등 기술·보안 신뢰 신호가 다수 언급된다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "content_polish",
+          "model": "claude-sonnet-5",
+          "score": 80,
+          "evidence": "영문 마케팅 카피가 전문적이고 일관된 용어를 사용하며 눈에 띄는 오탈자나 어색한 표현이 없다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "agent_findability",
+          "model": "gpt-5.5",
+          "score": 90,
+          "evidence": "상단에 'Infrastructure that powers financial possibility'와 디지털 자산/스테이블코인 인프라 설명이 바로 나오며, 제품·솔루션·산업별 메뉴도 전면에 노출된다. 핵심 회사 소개와 데모/세일즈 CTA까지 쉽게 찾을 수 있다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "content_extractability",
+          "model": "gpt-5.5",
+          "score": 76,
+          "evidence": "대부분의 핵심 정보가 텍스트로 추출되어 제품명, 산업군, 고객 사례, 푸터 링크를 파악할 수 있다. 다만 내비게이션이 중복되고 라이브챗/팝업 문구가 섞여 있어 원문 추출 품질은 다소 산만하다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "logical_organization",
+          "model": "gpt-5.5",
+          "score": 82,
+          "evidence": "제품, 솔루션, 산업, 고객 사례, CTA, 회사 설명, 푸터 링크로 이어지는 흐름이 비교적 논리적이다. 하지만 추출 원문에서는 메뉴가 반복되어 제목 위계와 본문 경계가 일부 흐려진다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "info_scannability",
+          "model": "gpt-5.5",
+          "score": 86,
+          "evidence": "Wallets, Treasury Management, Payments, Tokenization 등 제품 항목과 Fintech, Trading, Banks 등 대상 산업이 짧은 설명과 함께 구획화되어 빠르게 스캔 가능하다. 고객 사례도 회사명 중심으로 나열되어 파싱하기 쉽다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "clarity",
+          "model": "gpt-5.5",
+          "score": 92,
+          "evidence": "Fireblocks가 디지털 자산 및 스테이블코인 인프라 회사이며, 기업이 블록체인에서 비즈니스를 구축·관리·성장하도록 돕는다는 설명이 명확하다. 결제, 지갑, 토큰화, 트레저리 등 주요 사용처도 분명하다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "product_depth",
+          "model": "gpt-5.5",
+          "score": 82,
+          "evidence": "Wallet-as-a-service, Embedded Wallets, Security Policy Engine, Tokenization, Compliance integrations 등 제품군이 넓고 각 항목에 짧은 기능 설명이 붙어 있다. 다만 홈페이지 원문만으로는 각 제품의 동작 방식, 세부 기능, 도입 절차까지 깊게 설명되지는 않는다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "key_info_present",
+          "model": "gpt-5.5",
+          "score": 78,
+          "evidence": "개발자 문서, API Reference, Status, API Changelog, Help Center, Executive team, Pricing, Bug bounty, 이메일, 라이브챗 등 핵심 신뢰·연락 정보가 있다. 블록체인 인프라 회사라 토크노믹스나 백서 중심 정보는 보이지 않지만, B2B 인프라 관점의 핵심 정보는 상당히 갖춰져 있다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "freshness_clarity",
+          "model": "gpt-5.5",
+          "score": 88,
+          "evidence": "© 2026, 'Financial Grid 2026', Agentic Payments Suite, Earn 출시 등 최신 업데이트 신호가 명확하다. 표현은 다소 마케팅적이지만 구체 제품과 고객 사례가 함께 제시되어 과장만으로 구성되지는 않았다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "technical_depth",
+          "model": "gpt-5.5",
+          "score": 86,
+          "evidence": "Developer Documentation, API Reference, API Changelog, Status, Security Policy Engine, Security Posture Management, DeFi security suite, Compliance integrations, Bug bounty 등 기술·보안·운영 신뢰 신호가 풍부하다. 홈페이지 본문 자체는 개요 수준이라 API 세부나 아키텍처 설명까지는 포함하지 않는다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "content_polish",
+          "model": "gpt-5.5",
+          "score": 84,
+          "evidence": "전문 용어와 제품 명칭이 일관되고 B2B 금융 인프라에 맞는 문체를 유지한다. 다만 추출 원문에는 내비게이션 반복, 언어 전환 문구, 팝업 문구가 섞여 있어 읽기 경험은 약간 정돈되지 않았다."
+        }
+      ]
+    },
+    {
+      "slug": "blockdaemon",
+      "name": "Blockdaemon",
+      "homepageUrl": "https://www.blockdaemon.com/",
+      "isSelf": false,
+      "category": "Infra",
+      "region": "해외",
+      "description": "글로벌 노드·스테이킹·커스터디 인프라 기업. 다수 체인의 기관용 인프라와 API를 운영한다.",
+      "scores": [
+        {
+          "axis": "A",
+          "metricKey": "robots_allowed",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "robots.txt가 존재하며 크롤러 접근을 막지 않습니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "sitemap_present",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "sitemap.xml을 정상(200) 제공합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "llms_txt_present",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "/llms.txt가 없습니다(404 등)."
+        },
+        {
+          "axis": "A",
+          "metricKey": "ssr_rendered",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "서버 응답 HTML에 본문 약 9,994자가 담겨 있어 SSR로 판단합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "not_bot_blocked",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "봇 차단 없이 정상(200) 응답합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "pages_reachable",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "홈페이지가 정상(200) 응답합니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "json_ld_present",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "JSON-LD 블록 1개를 발견했습니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "semantic_ratio",
+          "model": "rule-based",
+          "score": 33,
+          "evidence": "시맨틱 태그 6개 중 2개 사용 (누락: header, main, article, footer)."
+        },
+        {
+          "axis": "B",
+          "metricKey": "meta_completeness",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "메타 4개 중 4개 존재."
+        },
+        {
+          "axis": "B",
+          "metricKey": "heading_hierarchy",
+          "model": "rule-based",
+          "score": 25,
+          "evidence": "h1 11개(1개 권장), 제목 레벨 건너뜀 있음."
+        },
+        {
+          "axis": "B",
+          "metricKey": "alt_coverage",
+          "model": "rule-based",
+          "score": 14,
+          "evidence": "이미지 133개 중 19개에 alt 텍스트가 있습니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "load_time",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "홈페이지 응답에 약 128ms 걸렸습니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "mobile_ready",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "viewport 메타 태그가 있어 모바일 대응이 됩니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "https_secure",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "HTTPS 보안 연결을 사용합니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "multilingual",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "hreflang 다국어 표기가 없습니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "agent_findability",
+          "model": "claude-sonnet-5",
+          "score": 50,
+          "evidence": "\"Built for Financial Institutions\", \"institutional operating system for on-chain finance\" 같은 핵심 소개가 있으나 제품 메뉴 덩어리 뒤 중반부에 위치해 바로 찾기 어렵다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "content_extractability",
+          "model": "claude-sonnet-5",
+          "score": 35,
+          "evidence": "\"ProductsTransaction Services\", \"CompanyCompanyAboutPress\"처럼 단어 간 공백 없이 붙어버린 구간이 많아 텍스트 추출 품질이 떨어진다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "logical_organization",
+          "model": "claude-sonnet-5",
+          "score": 45,
+          "evidence": "Products→Solutions→Institutional 360→Vision→Footer 순서 자체는 논리적이지만 붙어버린 텍스트 때문에 섹션 경계가 불명확하다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "info_scannability",
+          "model": "claude-sonnet-5",
+          "score": 45,
+          "evidence": "$110B+, 400+, 70+ 같은 수치 지표는 스캔하기 좋으나 전체적으로 줄바꿈 없는 밀집된 텍스트 블록이 많다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "clarity",
+          "model": "claude-sonnet-5",
+          "score": 86,
+          "evidence": "홈페이지가 'Digital asset backbone', 'Institutional Vault', 'Node Clusters', 'Staking & Earn' 등으로 기관 대상 디지털자산 커스터디·데이터·인프라·스테이킹 제공사임을 반복적으로 명시해 사업 정체성이 명확하다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "product_depth",
+          "model": "claude-sonnet-5",
+          "score": 85,
+          "evidence": "Institutional Vault, Builder Vault, Enterprise KMS, RPC API, Data Indexer, Event Streaming, Node Clusters, Staking APIs, Liquid Staking 등 제품/기능 목록이 매우 구체적으로 나열되어 있다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "key_info_present",
+          "model": "claude-sonnet-5",
+          "score": 68,
+          "evidence": "About, Careers, Press, Trust Center, Documentation, 'Get in touch' 컨택 링크와 '$110B+ Assets Secured/400+ Institutions/70+ Protocols' 같은 수치는 있으나, 팀 구성원·백서·토크노믹스 같은 심층 정보는 보이지 않는다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "freshness_clarity",
+          "model": "claude-sonnet-5",
+          "score": 74,
+          "evidence": "'institutional operating system for on-chain finance', 'the world's most regulated institutions' 같은 다소 홍보성 문구가 있지만 ISO 27001, OFAC/NORS 준수 등 구체적 근거가 함께 제시되어 모호함은 크지 않다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "technical_depth",
+          "model": "claude-sonnet-5",
+          "score": 80,
+          "evidence": "MPC Signer, Policy Engine, ISO 27001, OFAC/NORS 준수, REST API 문서, Validator Performance Report 등 기술·규제 신뢰 신호가 풍부하다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "content_polish",
+          "model": "claude-sonnet-5",
+          "score": 60,
+          "evidence": "내용 자체는 전문적이지만 텍스트가 여러 곳에서 단어 경계 없이 붙어 있어 완성도가 다소 떨어져 보인다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "agent_findability",
+          "model": "gpt-5.5",
+          "score": 88,
+          "evidence": "상단과 본문 초반에 'Built for Financial Institutions', 'Trusted by 400+ institutions', 'Digital Asset Platform' 등 회사의 핵심 포지셔닝이 바로 드러난다. 제품군도 Transaction, Data, Infrastructure, Staking & Earn으로 반복 노출되어 에이전트가 핵심 정보를 찾기 쉽다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "content_extractability",
+          "model": "gpt-5.5",
+          "score": 82,
+          "evidence": "대부분의 제품명, 설명, 수치, 링크 텍스트가 본문 텍스트로 추출되어 있으며 이미지 내 텍스트 의존은 낮아 보인다. 다만 내비게이션과 본문이 중복되어 붙어 있고 일부 구분자가 부족해 추출 후 정리가 다소 필요하다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "logical_organization",
+          "model": "gpt-5.5",
+          "score": 79,
+          "evidence": "제품 카테고리, 대상 고객, 플랫폼 설명, 사용 사례, 기술 기반, 푸터 리소스 순으로 큰 흐름은 논리적이다. 그러나 원문에는 메뉴 항목이 여러 번 반복되고 일부 Featured Capabilities가 다른 섹션에 섞여 있어 위계가 완전히 깨끗하지는 않다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "info_scannability",
+          "model": "gpt-5.5",
+          "score": 86,
+          "evidence": "제품군, 프로토콜, 고객 유형, 수치 지표, 기능 목록이 짧은 구획과 리스트 형태로 제공되어 빠르게 스캔하기 좋다. '$110B+ Assets Secured', '400+ Institutions', '70+ Protocols' 같은 핵심 신뢰 지표도 눈에 띄게 제시된다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "clarity",
+          "model": "gpt-5.5",
+          "score": 91,
+          "evidence": "Blockdaemon이 금융기관용 디지털 자산 인프라 플랫폼으로 custody, tokenization, staking, payments, settlement를 지원한다는 점이 명확하다. 'institutional operating system for on-chain finance'라는 포지셔닝도 일관되게 반복된다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "product_depth",
+          "model": "gpt-5.5",
+          "score": 87,
+          "evidence": "Institutional Vault, Builder Vault, Enterprise KMS, RPC API, Data Indexer, Event Streaming, Node Clusters, Earn Widget, Staking APIs 등 제품별 설명이 구체적으로 제공된다. 다만 각 제품의 상세 사양이나 가격, 구현 절차까지는 홈페이지만으로 충분히 깊게 설명되지는 않는다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "key_info_present",
+          "model": "gpt-5.5",
+          "score": 77,
+          "evidence": "문서, Trust Center, System Status, Vulnerability Disclosure, 연락처, 회사 정보, 프로토콜 목록 등 기관 고객에게 중요한 정보가 다수 포함되어 있다. 반면 토크노믹스나 백서, 팀 상세 소개는 홈페이지 원문에서 직접 확인되지 않는다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "freshness_clarity",
+          "model": "gpt-5.5",
+          "score": 78,
+          "evidence": "Monad, Tempo, Stablecoin Infrastructure, Agentic Wallets 등 비교적 최신 업계 용어와 제품 영역이 포함되어 현재성이 느껴진다. 하지만 명시적 업데이트 날짜나 최신 공지 기준은 없어 정보의 시점을 확정하기는 어렵다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "technical_depth",
+          "model": "gpt-5.5",
+          "score": 90,
+          "evidence": "MPC, policy engine, on-prem deployment, RPC, data indexing, event streaming, reporting APIs, DVT, remote signing, ISO 27001, OFAC/NORS compliance 등 기술 및 신뢰 신호가 풍부하다. 기관 실사와 보안 요구를 겨냥한 인프라 수준의 설명이 잘 드러난다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "content_polish",
+          "model": "gpt-5.5",
+          "score": 84,
+          "evidence": "전반적으로 전문 용어와 기관 대상 메시지가 일관되고 문장 품질도 높다. 다만 원문 추출상 메뉴 중복, 붙어 있는 단어, 일부 카테고리와 Featured Capabilities의 혼선이 있어 완성도 점수를 소폭 낮췄다."
+        }
+      ]
+    },
+    {
+      "slug": "kaleido",
+      "name": "Kaleido",
+      "homepageUrl": "https://www.kaleido.io/",
+      "isSelf": false,
+      "category": "Enterprise",
+      "region": "해외",
+      "description": "엔터프라이즈 블록체인·디지털자산 플랫폼. 기업용 BaaS와 토큰화·자산 오케스트레이션을 제공한다.",
+      "scores": [
+        {
+          "axis": "A",
+          "metricKey": "robots_allowed",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "robots.txt가 존재하며 크롤러 접근을 막지 않습니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "sitemap_present",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "sitemap.xml을 정상(200) 제공합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "llms_txt_present",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "/llms.txt를 제공합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "ssr_rendered",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "서버 응답 HTML에 본문 약 8,248자가 담겨 있어 SSR로 판단합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "not_bot_blocked",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "봇 차단 없이 정상(200) 응답합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "pages_reachable",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "홈페이지가 정상(200) 응답합니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "json_ld_present",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "JSON-LD 블록 3개를 발견했습니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "semantic_ratio",
+          "model": "rule-based",
+          "score": 33,
+          "evidence": "시맨틱 태그 6개 중 2개 사용 (누락: header, main, article, footer)."
+        },
+        {
+          "axis": "B",
+          "metricKey": "meta_completeness",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "메타 4개 중 4개 존재."
+        },
+        {
+          "axis": "B",
+          "metricKey": "heading_hierarchy",
+          "model": "rule-based",
+          "score": 75,
+          "evidence": "h1 정확히 1개, 제목 레벨 건너뜀 있음."
+        },
+        {
+          "axis": "B",
+          "metricKey": "alt_coverage",
+          "model": "rule-based",
+          "score": 9,
+          "evidence": "이미지 101개 중 9개에 alt 텍스트가 있습니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "load_time",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "홈페이지 응답에 약 200ms 걸렸습니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "mobile_ready",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "viewport 메타 태그가 있어 모바일 대응이 됩니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "https_secure",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "HTTPS 보안 연결을 사용합니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "multilingual",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "hreflang 다국어 표기가 없습니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "agent_findability",
+          "model": "claude-sonnet-5",
+          "score": 70,
+          "evidence": "내비게이션 다음에 \"The institutional platform for tokenization, custody and digital assets\"라는 명확한 히어로 문구가 비교적 이른 위치에 등장한다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "content_extractability",
+          "model": "claude-sonnet-5",
+          "score": 55,
+          "evidence": "파이프(|) 구분자와 짧은 구문 위주로 비교적 읽기 쉬우나 \"Digital AssetsCustody | Tokenize\"처럼 일부 단어가 붙어 있는 구간도 존재한다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "logical_organization",
+          "model": "claude-sonnet-5",
+          "score": 55,
+          "evidence": "Products→Solutions→플랫폼 소개→통계→수상 내역→고객 사례→연락처 순으로 흐름이 있으나 제목 태그 없이 평문으로 이어져 있다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "info_scannability",
+          "model": "claude-sonnet-5",
+          "score": 60,
+          "evidence": "1B+ Blocks mined, 10K+ Developers, 1000+ projects 같은 통계와 자산/체인 목록이 짧은 항목으로 나열돼 스캔이 비교적 쉽다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "clarity",
+          "model": "claude-sonnet-5",
+          "score": 90,
+          "evidence": "'The institutional platform for tokenization, custody and digital assets'라는 문구와 CBDC·자본시장·자산운용 대상 솔루션 설명으로 회사가 하는 일이 매우 명확하게 드러난다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "product_depth",
+          "model": "claude-sonnet-5",
+          "score": 88,
+          "evidence": "Custody, Tokenize, Digital Cash Hub, FireFly Enterprise, Interop Hub, Public/Permissioned Chains, CBDC Sandbox, Digital Asset Studio, Paladin/Zeto/Besu 오픈소스 컴포넌트까지 제품이 매우 구체적으로 설명되어 있다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "key_info_present",
+          "model": "claude-sonnet-5",
+          "score": 85,
+          "evidence": "About Us, Careers, Newsroom, Security & Compliance, Contact Us, 실제 주소(Raleigh NC, Southampton UK)와 전화번호, Documentation/API Reference/Quick Starts까지 핵심 정보가 폭넓게 제공된다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "freshness_clarity",
+          "model": "claude-sonnet-5",
+          "score": 72,
+          "evidence": "'Rated #1', 'the most trusted digital asset infrastructure' 같은 홍보성 표현이 있지만 'Project Agorá' 최신 뉴스, G2 랭킹, SOC 2/ISO 인증 등 구체적 근거가 병기되어 있다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "technical_depth",
+          "model": "claude-sonnet-5",
+          "score": 85,
+          "evidence": "SOC 2 Type 2, ISO 27001/27017/27018 인증, API Reference, Quick Starts, Service Status, Paladin/Zeto/Besu/Hyperledger FireFly 등 기술 신뢰 신호가 매우 풍부하다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "content_polish",
+          "model": "claude-sonnet-5",
+          "score": 75,
+          "evidence": "전문적인 마케팅 용어와 일관된 브랜드 표현을 사용하며, 일부 붙은 단어를 제외하면 전반적으로 완성도가 높다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "agent_findability",
+          "model": "gpt-5.5",
+          "score": 94,
+          "evidence": "상단 첫 화면에 'institutional platform for tokenization, custody and digital assets'라는 핵심 설명과 주요 제품군이 바로 노출된다. 제품, 솔루션, 개발자 문서, 보안/컴플라이언스, 연락처로 이어지는 탐색 경로도 명확하다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "content_extractability",
+          "model": "gpt-5.5",
+          "score": 90,
+          "evidence": "대부분의 핵심 정보가 메뉴명, 제목, 설명, 수치, 주소 등 순수 텍스트로 추출되어 에이전트가 파싱하기 쉽다. 다만 원문은 내비게이션과 본문이 붙어 있어 일부 경계가 압축되어 보인다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "logical_organization",
+          "model": "gpt-5.5",
+          "score": 88,
+          "evidence": "제품군, 네트워크 운영자 솔루션, 오픈소스, 개발자 리소스, 회사 정보 순으로 비교적 논리적인 정보 구조를 갖는다. 본문도 플랫폼 소개에서 제품, 인프라 신뢰성, 사용 사례, 고객 신호, 연락처로 자연스럽게 이어진다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "info_scannability",
+          "model": "gpt-5.5",
+          "score": 91,
+          "evidence": "제품 카테고리, 체인 목록, 자산 유형, 사용 사례, 성과 수치가 짧은 항목과 구획으로 나뉘어 빠르게 스캔 가능하다. 'Rated #1', '1B+ Blocks', '10K+ Developers' 같은 핵심 지표도 잘 드러난다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "clarity",
+          "model": "gpt-5.5",
+          "score": 94,
+          "evidence": "Kaleido가 기관용 토큰화, 커스터디, 디지털 자산, 블록체인 인프라 플랫폼을 제공한다는 점이 명확하다. CBDC, 자본시장, 자산운용, FMI, 공공부문 등 대상 산업도 구체적으로 제시된다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "product_depth",
+          "model": "gpt-5.5",
+          "score": 89,
+          "evidence": "Custody, Tokenize, Digital Cash Hub, FireFly Enterprise, Interop Hub, Public/Permissioned Chains 등 제품 라인과 기능이 상당히 구체적이다. 다만 홈페이지 수준이라 각 제품의 상세 아키텍처나 가격·구현 방식은 제한적이다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "key_info_present",
+          "model": "gpt-5.5",
+          "score": 84,
+          "evidence": "문서, API Reference, Quick Starts, Service Status, Security & Compliance, Contact, 주소와 전화번호가 포함되어 핵심 신뢰 정보가 풍부하다. 블록체인 프로젝트 관점의 백서나 팀 상세, 토크노믹스는 홈페이지 원문에 직접 보이지 않는다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "freshness_clarity",
+          "model": "gpt-5.5",
+          "score": 87,
+          "evidence": "Project Agorá, ECB wCBDC, 2026 저작권, 최신 뉴스와 최근 게시글이 있어 최신성 신호가 있다. 다만 일부 '#1' 및 수상·랭킹 주장은 구체적 날짜나 검증 링크 없이 제시되어 완전한 명확성은 떨어진다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "technical_depth",
+          "model": "gpt-5.5",
+          "score": 88,
+          "evidence": "API Reference, SDK/문서성 리소스, FireFly, Besu, Paladin, Zeto, post-quantum ZKP privacy, SOC 2 Type 2 및 ISO 인증 등 기술·보안 신뢰 신호가 뚜렷하다. 홈페이지 자체에는 세부 프로토콜 설계나 성능 벤치마크까지는 제공되지 않는다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "content_polish",
+          "model": "gpt-5.5",
+          "score": 91,
+          "evidence": "전문 용어 사용이 일관되고 기관 금융·디지털 자산 대상의 메시지가 전반적으로 매끄럽다. 일부 마케팅성 최상급 표현은 있지만 오탈자나 어색한 표현은 거의 보이지 않는다."
+        }
+      ]
+    },
+    {
+      "slug": "r3",
+      "name": "R3 (Corda)",
+      "homepageUrl": "https://r3.com/",
+      "isSelf": false,
+      "category": "Enterprise",
+      "region": "해외",
+      "description": "엔터프라이즈 분산원장 Corda를 만든 기업. 금융권 중심의 규제 준수형 블록체인 인프라를 제공한다.",
+      "scores": [
+        {
+          "axis": "A",
+          "metricKey": "robots_allowed",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "robots.txt가 존재하며 크롤러 접근을 막지 않습니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "sitemap_present",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "sitemap.xml을 찾지 못했습니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "llms_txt_present",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "/llms.txt가 없습니다(404 등)."
+        },
+        {
+          "axis": "A",
+          "metricKey": "ssr_rendered",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "서버 응답 본문이 약 58자로 빈약해 JS 렌더링 의존으로 추정합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "not_bot_blocked",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "봇 User-Agent를 403으로 차단합니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "pages_reachable",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "홈페이지 응답 실패(status 403)입니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "json_ld_present",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "JSON-LD 구조화 데이터가 없습니다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "semantic_ratio",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "시맨틱 태그 6개 중 0개 사용 (누락: header, nav, main, article, section, footer)."
+        },
+        {
+          "axis": "B",
+          "metricKey": "meta_completeness",
+          "model": "rule-based",
+          "score": 25,
+          "evidence": "메타 4개 중 1개 존재 (누락: description, og:title, og:description)."
+        },
+        {
+          "axis": "B",
+          "metricKey": "heading_hierarchy",
+          "model": "rule-based",
+          "score": 50,
+          "evidence": "h1 0개(1개 권장), 레벨 건너뜀 없음."
+        },
+        {
+          "axis": "B",
+          "metricKey": "alt_coverage",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "이미지가 없어 감점 대상이 아닙니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "load_time",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "홈페이지 응답에 약 55ms 걸렸습니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "mobile_ready",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "viewport 메타 태그가 있어 모바일 대응이 됩니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "https_secure",
+          "model": "rule-based",
+          "score": 100,
+          "evidence": "HTTPS 보안 연결을 사용합니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "multilingual",
+          "model": "rule-based",
+          "score": 0,
+          "evidence": "hreflang 다국어 표기가 없습니다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "agent_findability",
+          "model": "claude-sonnet-5",
+          "score": 0,
+          "evidence": "홈페이지 원문이 'Just a moment...'뿐인 Cloudflare 봇 차단 페이지로, 에이전트가 회사·제품 정보에 전혀 도달할 수 없다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "content_extractability",
+          "model": "claude-sonnet-5",
+          "score": 0,
+          "evidence": "실제 본문 텍스트가 존재하지 않고 JS 챌린지 대기 문구만 있어 추출할 콘텐츠 자체가 없다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "logical_organization",
+          "model": "claude-sonnet-5",
+          "score": 0,
+          "evidence": "제목 위계나 콘텐츠 구조가 전혀 없고 단일 문구만 존재해 논리적 조직을 평가할 수 없다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "info_scannability",
+          "model": "claude-sonnet-5",
+          "score": 0,
+          "evidence": "목록·표·구획 등 스캔 가능한 구조가 전무하며 페이지에 실질적 정보가 없다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "clarity",
+          "model": "claude-sonnet-5",
+          "score": 0,
+          "evidence": "회사가 무엇을 하는지 알 수 있는 어떠한 설명도 원문에 없다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "product_depth",
+          "model": "claude-sonnet-5",
+          "score": 0,
+          "evidence": "제품/서비스에 대한 언급이 전혀 없어 깊이를 평가할 근거가 없다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "key_info_present",
+          "model": "claude-sonnet-5",
+          "score": 0,
+          "evidence": "토크노믹스·백서·팀·컨택 등 핵심 정보가 전혀 노출되지 않는다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "freshness_clarity",
+          "model": "claude-sonnet-5",
+          "score": 0,
+          "evidence": "최신성이나 서술 자체가 없어 판단 불가하며 봇 차단 문구만 존재한다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "technical_depth",
+          "model": "claude-sonnet-5",
+          "score": 0,
+          "evidence": "문서·API·보안·인증 등 기술적 신뢰 신호가 전혀 드러나지 않는다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "content_polish",
+          "model": "claude-sonnet-5",
+          "score": 0,
+          "evidence": "실질적 서술이 없어 문장 품질이나 전문성을 평가할 대상이 없다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "agent_findability",
+          "model": "gpt-5.5",
+          "score": 0,
+          "evidence": "홈페이지 원문이 'Just a moment...'뿐이라 회사·제품의 핵심 정보를 찾을 수 없다. 봇 차단 또는 로딩 대기 화면으로 판단된다."
+        },
+        {
+          "axis": "A",
+          "metricKey": "content_extractability",
+          "model": "gpt-5.5",
+          "score": 5,
+          "evidence": "추출 가능한 텍스트는 매우 짧게 존재하지만 실질 본문은 없다. 제품 설명이나 회사 소개가 순수 텍스트로 제공되지 않는다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "logical_organization",
+          "model": "gpt-5.5",
+          "score": 0,
+          "evidence": "제목, 섹션, 정보 흐름이 전혀 확인되지 않는다. 단일 대기 문구만 있어 논리적 조직성을 평가할 콘텐츠가 없다."
+        },
+        {
+          "axis": "B",
+          "metricKey": "info_scannability",
+          "model": "gpt-5.5",
+          "score": 0,
+          "evidence": "목록, 표, 구획 등 스캔 가능한 정보 구조가 없다. 핵심 정보를 빠르게 파싱할 수 있는 요소도 없다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "clarity",
+          "model": "gpt-5.5",
+          "score": 0,
+          "evidence": "원문만으로 R3나 Corda가 무엇을 하는지 전혀 알 수 없다. 회사의 정체성이나 서비스 설명이 제공되지 않는다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "product_depth",
+          "model": "gpt-5.5",
+          "score": 0,
+          "evidence": "제품이나 서비스에 대한 구체적 설명이 없다. Corda 관련 기능, 대상 고객, 사용 사례를 확인할 수 없다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "key_info_present",
+          "model": "gpt-5.5",
+          "score": 0,
+          "evidence": "백서, 팀, 연락처, 문서, 제품 링크 등 핵심 정보가 원문에 포함되어 있지 않다. 토크노믹스나 기타 신뢰 정보도 없다."
+        },
+        {
+          "axis": "C",
+          "metricKey": "freshness_clarity",
+          "model": "gpt-5.5",
+          "score": 0,
+          "evidence": "최신성이나 날짜, 업데이트 여부를 판단할 수 있는 내용이 없다. 'Just a moment...'는 정보성 서술이 아니다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "technical_depth",
+          "model": "gpt-5.5",
+          "score": 0,
+          "evidence": "API, SDK, 보안, 규제 준수, 성능 등 기술적 신뢰 신호가 전혀 드러나지 않는다. 기술 콘텐츠가 차단되어 있거나 제공되지 않았다."
+        },
+        {
+          "axis": "D",
+          "metricKey": "content_polish",
+          "model": "gpt-5.5",
+          "score": 10,
+          "evidence": "문구 자체에는 오탈자나 어색함이 없지만, 홈페이지 콘텐츠로서 완성도와 전문성을 판단할 본문이 없다. 대기 화면만 노출되어 콘텐츠 품질은 매우 낮다."
+        }
+      ]
+    }
+  ]
+}
