@@ -1,12 +1,15 @@
 // 실측 데이터 생성기: raw/ 스냅샷의 규칙 점수 + scoring/outbox/<model>/의 축 C 점수를
 // 합쳐 packages/web/src/lib/data/measured.ts (measuredCompanies)를 만든다.
 // 사용: pnpm exec tsx packages/scoring/scripts/gen-measured.ts
-import { readFileSync, readdirSync, writeFileSync, existsSync } from "node:fs";
+import { readFileSync, readdirSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadCompanies, scoreRules, type RawSnapshot } from "@ai-benchmark/crawler";
 import type { MetricScore } from "@ai-benchmark/core";
-import { parseAndValidate, toLlmScores, loadLlmMetrics, llmAxisByKey } from "../src/index.js";
+import {
+  parseAndValidate, toLlmScores, loadLlmMetrics, llmAxisByKey,
+  buildSnapshotFile, snapshotFilename, localDateString,
+} from "../src/index.js";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = resolve(here, "../../..");
@@ -67,3 +70,20 @@ const body =
   `  return ${JSON.stringify(records, null, 2)} as CompanyRecord[];\n}\n`;
 writeFileSync(resolve(root, "packages/web/src/lib/data/measured.ts"), banner + body);
 console.log(`wrote measured.ts with ${records.length} companies (models: ${models.join(", ") || "none"})`);
+
+// 날짜별 전 회사 스냅샷 아카이브. --date=YYYY-MM-DD 로 날짜 지정(백필용), 없으면 오늘.
+const RUBRIC_VERSION = "rubric_v1";
+const dateArg = process.argv.find((a) => a.startsWith("--date="));
+const snapshotDate = dateArg ? dateArg.slice("--date=".length) : localDateString(new Date());
+const snapshotsDir = resolve(root, "snapshots");
+mkdirSync(snapshotsDir, { recursive: true });
+const snapshot = buildSnapshotFile(records, {
+  date: snapshotDate,
+  generatedAt: new Date().toISOString(),
+  rubricVersion: RUBRIC_VERSION,
+});
+writeFileSync(
+  resolve(snapshotsDir, snapshotFilename(snapshotDate)),
+  JSON.stringify(snapshot, null, 2),
+);
+console.log(`wrote snapshots/${snapshotFilename(snapshotDate)} (${records.length} companies)`);
