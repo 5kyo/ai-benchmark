@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { mkdtempSync, writeFileSync, mkdirSync } from "node:fs";
+import { mkdtempSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { resolve } from "node:path";
 import { loadWeights } from "@ai-benchmark/core";
@@ -16,6 +16,24 @@ function selfRecord(): CompanyRecord {
     homepageUrl: "https://example.com",
     isSelf: true,
     scores: [{ axis: "A", metricKey: "robots_allowed", model: "rule-based", score: 100 }],
+  };
+}
+
+/** 4개 축(A/B/C/D) 모두에 실데이터 기준 지표를 하나씩 채워 서로 다른 값으로 집계되게 한다.
+ * (B/C/D 필드가 뒤섞이는 매핑 버그를 잡기 위함 — 축당 지표가 하나뿐이면 가중 재정규화 결과가
+ * 곧 그 지표의 score와 같아지므로 기대값을 축별로 명확히 구분할 수 있다.) */
+function selfRecordAllAxes(): CompanyRecord {
+  return {
+    slug: "parameta",
+    name: "파라메타",
+    homepageUrl: "https://example.com",
+    isSelf: true,
+    scores: [
+      { axis: "A", metricKey: "robots_allowed", model: "rule-based", score: 100 },
+      { axis: "B", metricKey: "json_ld_present", model: "rule-based", score: 60 },
+      { axis: "C", metricKey: "clarity", model: "claude-sonnet-5", score: 75 },
+      { axis: "D", metricKey: "load_time", model: "rule-based", score: 40 },
+    ],
   };
 }
 
@@ -37,13 +55,24 @@ describe("loadSnapshotHistory", () => {
 
 describe("buildSelfTrend", () => {
   it("자사 레코드의 종합/축 점수를 core로 파생한다", () => {
-    const self = selfRecord();
+    const self = selfRecordAllAxes();
     const hist = [{ date: "2026-07-08", companies: [self] }];
     const trend = buildSelfTrend(hist, weights, "average");
+    const point = trend[0];
     expect(trend).toHaveLength(1);
-    expect(trend[0].date).toBe("2026-07-08");
-    expect(trend[0].overall).toBe(overallForView(self.scores, weights, "average"));
-    expect(trend[0].A).toBe(axisForView(self.scores, "A", weights, "average"));
+    expect(point.date).toBe("2026-07-08");
+    expect(point.overall).toBe(overallForView(self.scores, weights, "average"));
+    expect(point.A).toBe(axisForView(self.scores, "A", weights, "average"));
+    expect(point.B).toBe(axisForView(self.scores, "B", weights, "average"));
+    expect(point.C).toBe(axisForView(self.scores, "C", weights, "average"));
+    expect(point.D).toBe(axisForView(self.scores, "D", weights, "average"));
+    // 모든 축이 null이 아니고, 서로 다른 값이어야 B/C/D 필드가 뒤섞이는 매핑 버그를 잡는다.
+    expect(point.A).not.toBeNull();
+    expect(point.B).not.toBeNull();
+    expect(point.C).not.toBeNull();
+    expect(point.D).not.toBeNull();
+    const axisValues = [point.A, point.B, point.C, point.D];
+    expect(new Set(axisValues).size).toBe(axisValues.length);
   });
 
   it("자사 레코드가 없는 날은 제외한다", () => {
