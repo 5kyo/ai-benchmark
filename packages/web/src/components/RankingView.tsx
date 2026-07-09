@@ -1,6 +1,7 @@
 "use client";
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import type { Axis, ScoreView, Weights } from "@ai-benchmark/core";
 import type { CompanyRecord } from "../lib/data/types.js";
 import { buildRanking, industryAverage } from "../lib/data/build.js";
@@ -41,6 +42,7 @@ function AxisMeter({ score }: { score: number | null }) {
 }
 
 export function RankingView({ companies, weights, models }: { companies: CompanyRecord[]; weights: Weights; models: string[] }) {
+  const router = useRouter();
   const [view, setView] = useState<ScoreView>("average");
   const rows = useMemo(() => buildRanking(companies, weights, view), [companies, weights, view]);
   const avg = industryAverage(rows);
@@ -125,7 +127,8 @@ export function RankingView({ companies, weights, models }: { companies: Company
                 return (
                   <tr
                     key={r.slug}
-                    className="border-t transition-colors hover:bg-[rgba(255,255,255,0.02)]"
+                    onClick={() => router.push(`/company/${r.slug}`)}
+                    className="cursor-pointer border-t transition-colors hover:bg-[rgba(255,255,255,0.02)]"
                     style={{ borderColor: "var(--line)", background: r.isSelf ? "rgba(87,199,212,0.08)" : "transparent" }}
                   >
                     <td className="mono px-4 py-3 text-sm tabular-nums" style={{ color: i < 3 ? "var(--text)" : "var(--muted)" }}>
