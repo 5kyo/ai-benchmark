@@ -11,6 +11,7 @@
   --signal: #57c7d4;
   --score-low: #e5484d;
   --score-mid: #f5a524;
+  --score-good: #a5c93a;
   --score-high: #30a46c;
 }
 :root[data-theme="light"] {
