@@ -80,4 +80,19 @@ describe("buildSelfTrend", () => {
     const hist = [{ date: "2026-07-08", companies: [other] }];
     expect(buildSelfTrend(hist, weights, "average")).toEqual([]);
   });
+
+  it("자사 레코드의 scores가 배열이 아니면(누락 포함) 예외 없이 해당 날짜를 skip한다", () => {
+    // 런타임에 손상된 스냅샷(scores 누락)을 고의로 모델링하는 테스트 픽스처이므로,
+    // 실제 타입을 약화하지 않고 object 리터럴을 만든 뒤 unknown을 경유해 좁게 캐스팅한다.
+    const malformedSelf = {
+      slug: "parameta",
+      name: "파라메타",
+      homepageUrl: "https://example.com",
+      isSelf: true,
+      // scores 필드 자체가 없음(undefined) — 배열이 아닌 경우를 대표
+    } as unknown as CompanyRecord;
+    const hist = [{ date: "2026-07-08", companies: [malformedSelf] }];
+    expect(() => buildSelfTrend(hist, weights, "average")).not.toThrow();
+    expect(buildSelfTrend(hist, weights, "average")).toHaveLength(0);
+  });
 });

@@ -48,7 +48,7 @@ export function buildSelfTrend(history: SnapshotHistory, w: Weights, view: Score
   const out: TrendPoint[] = [];
   for (const day of history) {
     const self = day.companies.find((c) => c.isSelf);
-    if (!self) continue;
+    if (!self || !Array.isArray(self.scores)) continue;
     const [a, b, c, d] = axes.map((ax) => axisForView(self.scores, ax, w, view));
     out.push({
       date: day.date,
