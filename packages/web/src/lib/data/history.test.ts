@@ -57,28 +57,38 @@ describe("buildSelfTrend", () => {
   it("자사 레코드의 종합/축 점수를 core로 파생한다", () => {
     const self = selfRecordAllAxes();
     const hist = [{ date: "2026-07-08", companies: [self] }];
-    const trend = buildSelfTrend(hist, weights, "average");
-    const point = trend[0];
-    expect(trend).toHaveLength(1);
+    const { points } = buildSelfTrend(hist, weights, "average");
+    const point = points[0];
+    expect(points).toHaveLength(1);
     expect(point.date).toBe("2026-07-08");
-    expect(point.overall).toBe(overallForView(self.scores, weights, "average"));
-    expect(point.A).toBe(axisForView(self.scores, "A", weights, "average"));
-    expect(point.B).toBe(axisForView(self.scores, "B", weights, "average"));
-    expect(point.C).toBe(axisForView(self.scores, "C", weights, "average"));
-    expect(point.D).toBe(axisForView(self.scores, "D", weights, "average"));
+    expect(point.overall.average).toBe(overallForView(self.scores, weights, "average"));
+    expect(point.A.average).toBe(axisForView(self.scores, "A", weights, "average"));
+    expect(point.B.average).toBe(axisForView(self.scores, "B", weights, "average"));
+    expect(point.C.average).toBe(axisForView(self.scores, "C", weights, "average"));
+    expect(point.D.average).toBe(axisForView(self.scores, "D", weights, "average"));
     // 모든 축이 null이 아니고, 서로 다른 값이어야 B/C/D 필드가 뒤섞이는 매핑 버그를 잡는다.
-    expect(point.A).not.toBeNull();
-    expect(point.B).not.toBeNull();
-    expect(point.C).not.toBeNull();
-    expect(point.D).not.toBeNull();
-    const axisValues = [point.A, point.B, point.C, point.D];
+    expect(point.A.average).not.toBeNull();
+    expect(point.B.average).not.toBeNull();
+    expect(point.C.average).not.toBeNull();
+    expect(point.D.average).not.toBeNull();
+    const axisValues = [point.A.average, point.B.average, point.C.average, point.D.average];
     expect(new Set(axisValues).size).toBe(axisValues.length);
+  });
+
+  it("자사 점수의 LLM 모델을 수집해 지표별 모델값을 파생한다(규칙·평균 제외)", () => {
+    const self = selfRecordAllAxes(); // C축에 claude-sonnet-5 LLM 점수 포함
+    const hist = [{ date: "2026-07-08", companies: [self] }];
+    const { points, models } = buildSelfTrend(hist, weights, "average");
+    expect(models).toEqual(["claude-sonnet-5"]);
+    expect(points[0].C.byModel["claude-sonnet-5"]).toBe(
+      axisForView(self.scores, "C", weights, { model: "claude-sonnet-5" }),
+    );
   });
 
   it("자사 레코드가 없는 날은 제외한다", () => {
     const other: CompanyRecord = { ...selfRecord(), slug: "x", isSelf: false };
     const hist = [{ date: "2026-07-08", companies: [other] }];
-    expect(buildSelfTrend(hist, weights, "average")).toEqual([]);
+    expect(buildSelfTrend(hist, weights, "average").points).toEqual([]);
   });
 
   it("자사 레코드의 scores가 배열이 아니면(누락 포함) 예외 없이 해당 날짜를 skip한다", () => {
@@ -93,6 +103,6 @@ describe("buildSelfTrend", () => {
     } as unknown as CompanyRecord;
     const hist = [{ date: "2026-07-08", companies: [malformedSelf] }];
     expect(() => buildSelfTrend(hist, weights, "average")).not.toThrow();
-    expect(buildSelfTrend(hist, weights, "average")).toHaveLength(0);
+    expect(buildSelfTrend(hist, weights, "average").points).toHaveLength(0);
   });
 });

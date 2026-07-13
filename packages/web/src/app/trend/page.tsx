@@ -6,6 +6,6 @@ import { SelfTrendView } from "../../components/SelfTrendView.js";
 export default function TrendPage() {
   const weights = loadWeights(resolve(process.cwd(), "../../config/weights.yaml"));
   const history = loadSnapshotHistory(resolve(process.cwd(), "../../snapshots"));
-  const trend = buildSelfTrend(history, weights, "average");
-  return <SelfTrendView trend={trend} />;
+  const { points, models } = buildSelfTrend(history, weights, "average");
+  return <SelfTrendView trend={points} models={models} />;
 }
