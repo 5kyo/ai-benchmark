@@ -14,16 +14,8 @@
   --score-mid: #f5a524;
   --score-good: #a5c93a;
   --score-high: #30a46c;
-}
-:root[data-theme="light"] {
-  color-scheme: light;
-  --ink: #f7f8fa;
-  --surface: #ffffff;
-  --line: #e3e6eb;
-  --text: #14181f;
-  --muted: #5b6472;
-  /* 밝은 배경에서 시안 액센트가 충분한 대비를 갖도록 어둡게 */
-  --signal: #0e7f8c;
+  /* 순위 테이블 행 호버 배경 */
+  --row-hover: rgba(87,199,212,0.10);
 }
 html { scroll-behavior: smooth; }
 body {

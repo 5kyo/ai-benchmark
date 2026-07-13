@@ -47,6 +47,7 @@ export function RankingView({ companies, weights, models }: { companies: Company
   const [view, setView] = useState<ScoreView>("average");
   const rows = useMemo(() => buildRanking(companies, weights, view), [companies, weights, view]);
   const avg = industryAverage(rows);
+  const [hovered, setHovered] = useState<string | null>(null);
   // 모델이 2개 이상이고 평균 뷰일 때 종합을 모델별로 함께 보여준다.
   const splitModels = models.length >= 2 && view === "average";
 
@@ -125,6 +126,15 @@ export function RankingView({ companies, weights, models }: { companies: Company
             <tbody>
               {rows.map((r, i) => {
                 const delta = avg != null && r.overall != null ? r.overall - avg : null;
+                const isHovered = hovered === r.slug;
+                // 인라인 background가 Tailwind hover:클래스를 덮어써서, 호버 배경을 직접 계산한다.
+                const rowBg = isHovered
+                  ? r.isSelf
+                    ? "rgba(87,199,212,0.16)"
+                    : "var(--row-hover)"
+                  : r.isSelf
+                    ? "rgba(87,199,212,0.08)"
+                    : "transparent";
                 return (
                   <tr
                     key={r.slug}
@@ -135,11 +145,15 @@ export function RankingView({ companies, weights, models }: { companies: Company
                         router.push(`/company/${r.slug}`);
                       }
                     }}
+                    onMouseEnter={() => setHovered(r.slug)}
+                    onMouseLeave={() => setHovered((prev) => (prev === r.slug ? null : prev))}
+                    onFocus={() => setHovered(r.slug)}
+                    onBlur={() => setHovered((prev) => (prev === r.slug ? null : prev))}
                     tabIndex={0}
                     role="link"
                     aria-label={`${r.name} 상세 보기`}
-                    className="cursor-pointer border-t transition-colors hover:bg-[rgba(255,255,255,0.02)]"
-                    style={{ borderColor: "var(--line)", background: r.isSelf ? "rgba(87,199,212,0.08)" : "transparent" }}
+                    className="cursor-pointer border-t transition-colors"
+                    style={{ borderColor: "var(--line)", background: rowBg }}
                   >
                     <td className="mono px-4 py-3 text-sm tabular-nums" style={{ color: i < 3 ? "var(--text)" : "var(--muted)" }}>
                       {i + 1}

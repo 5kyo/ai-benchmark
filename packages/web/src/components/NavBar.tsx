@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
 
 const NAV = [
   { href: "/", label: "순위" },
@@ -12,34 +11,6 @@ const NAV = [
 
 function isActive(pathname: string, href: string): boolean {
   return href === "/" ? pathname === "/" : pathname.startsWith(href);
-}
-
-function ThemeToggle() {
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
-  useEffect(() => {
-    const t = document.documentElement.getAttribute("data-theme");
-    setTheme(t === "light" ? "light" : "dark");
-  }, []);
-  const toggle = () => {
-    const next = theme === "dark" ? "light" : "dark";
-    setTheme(next);
-    document.documentElement.setAttribute("data-theme", next);
-    try {
-      localStorage.setItem("theme", next);
-    } catch {
-      /* ignore */
-    }
-  };
-  return (
-    <button
-      onClick={toggle}
-      aria-label={theme === "dark" ? "밝은 테마로 전환" : "어두운 테마로 전환"}
-      className="shrink-0 rounded-md border px-2 py-1 text-sm leading-none transition-colors hover:text-[var(--text)]"
-      style={{ borderColor: "var(--line)", color: "var(--muted)" }}
-    >
-      {theme === "dark" ? "☀" : "☾"}
-    </button>
-  );
 }
 
 export function NavBar() {
@@ -70,7 +41,6 @@ export function NavBar() {
             );
           })}
         </ul>
-        <ThemeToggle />
       </nav>
     </header>
   );
