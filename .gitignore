@@ -9,3 +9,6 @@ out/
 
 # 비주얼 컴패니언 스크래치
 .superpowers/
+
+# Playwright MCP 스크래치
+.playwright-mcp/
