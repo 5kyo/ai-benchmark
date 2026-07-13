@@ -12,7 +12,7 @@ const TIER_ORDER: Tier[] = ["high", "mid", "low"];
 
 function AxisTag({ axis }: { axis: Axis }) {
   return (
-    <span className="mono text-[10px]" style={{ color: "var(--muted)" }}>
+    <span className="mono text-[11px]" style={{ color: "var(--muted)" }}>
       {axis} {AXIS_INFO[axis].label}
     </span>
   );

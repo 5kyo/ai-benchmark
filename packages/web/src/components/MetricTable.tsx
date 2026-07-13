@@ -55,7 +55,7 @@ export function MetricTable({ rows, axisScores }: { rows: MetricRow[]; axisScore
                   <div className="min-w-0 flex-1">
                     <div className="flex items-baseline gap-2">
                       <span className="text-[15px] font-semibold">{metricLabel(r.metricKey)}</span>
-                      <span className="mono text-[10px]" style={{ color: "var(--muted)" }}>{r.metricKey}</span>
+                      <span className="mono text-[11px]" style={{ color: "var(--muted)" }}>{r.metricKey}</span>
                     </div>
                     <p className="mt-0.5 text-xs leading-snug" style={{ color: "var(--muted)" }}>
                       {metricDescription(r.metricKey)}

@@ -22,26 +22,26 @@ export function SelfTrendView({ trend }: { trend: TrendPoint[] }) {
 
   if (trend.length === 0) {
     return (
-      <section className="mx-auto max-w-6xl px-6 py-10">
+      <div>
         <h1 className="font-display text-2xl font-semibold tracking-tight">자사 추이</h1>
         <p className="mt-4 text-sm" style={{ color: "var(--muted)" }}>
           아직 추이 데이터가 없습니다. 다음을 1회 이상 실행하세요:
           <code className="mono ml-1">pnpm exec tsx packages/scoring/scripts/gen-measured.ts</code>
         </p>
-      </section>
+      </div>
     );
   }
 
   const label = METRICS.find((m) => m.key === metric)!.label;
 
   return (
-    <section className="mx-auto max-w-6xl px-6 py-10">
+    <div>
       <h1 className="font-display text-2xl font-semibold tracking-tight">자사 추이</h1>
       <p className="mt-2 text-sm" style={{ color: "var(--muted)" }}>
         측정 시점별 자사(파라메타) 점수 변화. 항상 현재 평가 기준으로 재계산됩니다.
       </p>
 
-      <div className="mt-6 inline-flex rounded-md border" style={{ borderColor: "var(--line)" }} role="tablist">
+      <div className="mt-6 inline-flex overflow-hidden rounded-md border" style={{ borderColor: "var(--line)" }} role="tablist">
         {METRICS.map((m) => (
           <button
             key={m.key}
@@ -87,6 +87,6 @@ export function SelfTrendView({ trend }: { trend: TrendPoint[] }) {
           </LineChart>
         </ResponsiveContainer>
       </div>
-    </section>
+    </div>
   );
 }

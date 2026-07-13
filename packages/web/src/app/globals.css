@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: dark;
   --ink: #0e1116;
   --surface: #171b22;
   --line: #2a2f3a;
@@ -15,13 +16,16 @@
   --score-high: #30a46c;
 }
 :root[data-theme="light"] {
+  color-scheme: light;
   --ink: #f7f8fa;
   --surface: #ffffff;
   --line: #e3e6eb;
   --text: #14181f;
   --muted: #5b6472;
+  /* 밝은 배경에서 시안 액센트가 충분한 대비를 갖도록 어둡게 */
+  --signal: #0e7f8c;
 }
-html { color-scheme: dark; scroll-behavior: smooth; }
+html { scroll-behavior: smooth; }
 body {
   background: var(--ink);
   color: var(--text);

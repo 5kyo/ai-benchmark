@@ -1,5 +1,6 @@
 "use client";
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import type { Axis, ScoreView, Weights } from "@ai-benchmark/core";
 import { overallForView, axisForView } from "@ai-benchmark/core";
 import type { CompanyRecord } from "../lib/data/types.js";
@@ -38,7 +39,14 @@ export function CompanyDetailView({ company, weights, models }: { company: Compa
 
   return (
     <div>
-      <div className="mb-6 flex items-start justify-between">
+      <Link
+        href="/"
+        className="mono mb-4 inline-block text-xs transition-colors hover:text-[var(--text)]"
+        style={{ color: "var(--muted)" }}
+      >
+        ← 순위
+      </Link>
+      <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div className="max-w-2xl">
           <h1 className="font-display text-2xl font-semibold">{company.name}</h1>
           <a href={company.homepageUrl} className="mono text-sm" style={{ color: "var(--muted)" }} target="_blank" rel="noreferrer">

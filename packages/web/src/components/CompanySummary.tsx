@@ -6,7 +6,7 @@ import { scoreColor } from "../lib/scoreColor.js";
 
 function AxisTag({ axis }: { axis: SummaryItem["axis"] }) {
   return (
-    <span className="mono text-[10px]" style={{ color: "var(--muted)" }}>
+    <span className="mono text-[11px]" style={{ color: "var(--muted)" }}>
       {axis} {AXIS_INFO[axis].label}
     </span>
   );

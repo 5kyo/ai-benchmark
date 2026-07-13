@@ -17,7 +17,7 @@ function Chip({ children, accent }: { children: React.ReactNode; accent?: "signa
   const color = accent === "signal" ? "var(--signal)" : "var(--muted)";
   return (
     <span
-      className="mono rounded px-1.5 py-0.5 text-[10px] leading-none"
+      className="mono rounded px-1.5 py-0.5 text-[11px] leading-none"
       style={{ color, border: `1px solid ${accent === "signal" ? "var(--signal)" : "var(--line)"}` }}
     >
       {children}
@@ -28,7 +28,8 @@ function Chip({ children, accent }: { children: React.ReactNode; accent?: "signa
 /** 0~100 점수를 숫자 + 가는 미터바로 표시. */
 function AxisMeter({ score }: { score: number | null }) {
   const c = scoreColor(score);
-  const pct = score == null ? 0 : Math.max(2, Math.round(score));
+  // null(미측정)과 실제 0점은 모두 빈 바로 두고 숫자(— vs 0)로 구분한다.
+  const pct = score == null || score <= 0 ? 0 : Math.max(2, Math.round(score));
   return (
     <div className="flex flex-col items-center gap-1">
       <span className="mono text-sm tabular-nums" style={{ color: c }}>
@@ -128,6 +129,15 @@ export function RankingView({ companies, weights, models }: { companies: Company
                   <tr
                     key={r.slug}
                     onClick={() => router.push(`/company/${r.slug}`)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        router.push(`/company/${r.slug}`);
+                      }
+                    }}
+                    tabIndex={0}
+                    role="link"
+                    aria-label={`${r.name} 상세 보기`}
                     className="cursor-pointer border-t transition-colors hover:bg-[rgba(255,255,255,0.02)]"
                     style={{ borderColor: "var(--line)", background: r.isSelf ? "rgba(87,199,212,0.08)" : "transparent" }}
                   >
