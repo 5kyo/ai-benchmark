@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import type { Axis, Weights } from "@ai-benchmark/core";
 import type { Fingerprint } from "./fingerprint.js";
 import {
-  detectChanges, diffContent, diffScores, wordChangedPct, type CompanyLike,
+  detectChanges, diffContent, diffMetrics, diffScores, wordChangedPct, type CompanyLike,
 } from "./detect.js";
 
 const W: Weights = {
@@ -47,6 +47,13 @@ describe("diffScores", () => {
       co("a", { m1: 60, m2: 66, m3: 60, m4: 60 }), W); // 종합 60→61.5(반올림 62, Δ2)
     expect(d?.overall).toBeUndefined();
     expect(d?.axes).toEqual([{ axis: "B", from: 60, to: 66 }]);
+  });
+});
+
+describe("diffMetrics", () => {
+  it("반올림 정수 기준으로 임계값을 판정한다: 60.2→62.9 (반올림 60→63, Δ3)는 포함", () => {
+    const d = diffMetrics(co("a", { m1: 60.2 }), co("a", { m1: 62.9 }));
+    expect(d).toEqual([{ axis: "A", metricKey: "m1", from: 60, to: 63, evidence: "m1=62.9" }]);
   });
 });
 

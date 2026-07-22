@@ -91,18 +91,21 @@ export function diffMetrics(from: CompanyLike, to: CompanyLike): MetricChange[] 
     if (s.model !== RULE_MODEL) continue;
     const prev = fromRule.get(key(s));
     if (!prev) continue;
-    if (Math.abs(s.score - prev.score) >= THRESHOLDS.scoreDelta) {
+    // 임계값 판정은 반올림 정수 기준으로 수행하고, 저장값도 그 반올림 정수를 그대로 쓴다.
+    const rFrom = Math.round(prev.score);
+    const rTo = Math.round(s.score);
+    if (Math.abs(rTo - rFrom) >= THRESHOLDS.scoreDelta) {
       out.push({
         axis: s.axis, metricKey: s.metricKey,
-        from: Math.round(prev.score), to: Math.round(s.score), evidence: s.evidence,
+        from: rFrom, to: rTo, evidence: s.evidence,
       });
     }
   }
   return out;
 }
 
-/** 본문 단어(공백 분리) 집합의 대칭차/합집합 비율(%) — 소수 1자리. */
-export function wordChangedPct(fromText: string, toText: string): number {
+/** 본문 단어(공백 분리) 집합의 대칭차/합집합 비율(%, 반올림 전) — diffContent와 계산 로직을 공유한다. */
+function wordDiffRatio(fromText: string, toText: string): number {
   const a = new Set(fromText.split(/\s+/).filter(Boolean));
   const b = new Set(toText.split(/\s+/).filter(Boolean));
   if (a.size === 0 && b.size === 0) return 0;
@@ -110,7 +113,12 @@ export function wordChangedPct(fromText: string, toText: string): number {
   for (const w of a) if (b.has(w)) inter += 1;
   const union = a.size + b.size - inter;
   const symDiff = union - inter;
-  return Math.round((symDiff / union) * 1000) / 10;
+  return (symDiff / union) * 100;
+}
+
+/** 본문 단어(공백 분리) 집합의 대칭차/합집합 비율(%) — 소수 1자리. */
+export function wordChangedPct(fromText: string, toText: string): number {
+  return Math.round(wordDiffRatio(fromText, toText) * 10) / 10;
 }
 
 /** 지문 비교. 의미 있는 변화 없으면 null. */
@@ -124,19 +132,9 @@ export function diffContent(from: Fingerprint, to: Fingerprint): ContentChange |
   // 임계값 검사는 반올림 전 값으로 수행해야 함 (0.995%는 < 1%로 취급)
   let textChangedPct = 0;
   if (from.textHash !== to.textHash) {
-    const a = new Set(from.text.split(/\s+/).filter(Boolean));
-    const b = new Set(to.text.split(/\s+/).filter(Boolean));
-    if (a.size > 0 || b.size > 0) {
-      let inter = 0;
-      for (const w of a) if (b.has(w)) inter += 1;
-      const union = a.size + b.size - inter;
-      if (union > 0) {
-        const symDiff = union - inter;
-        const unroundedPct = (symDiff / union) * 100;
-        if (unroundedPct >= THRESHOLDS.textChangedPct) {
-          textChangedPct = wordChangedPct(from.text, to.text);
-        }
-      }
+    const unroundedPct = wordDiffRatio(from.text, to.text);
+    if (unroundedPct >= THRESHOLDS.textChangedPct) {
+      textChangedPct = Math.round(unroundedPct * 10) / 10;
     }
   }
   if (!titleChanged && !metaChanged && headingsAdded.length === 0 &&
