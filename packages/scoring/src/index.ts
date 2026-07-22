@@ -6,3 +6,4 @@ export * from "./snapshot.js";
 export * from "./fingerprint.js";
 export * from "./detect.js";
 export * from "./changeReport.js";
+export * from "./summaries.js";
