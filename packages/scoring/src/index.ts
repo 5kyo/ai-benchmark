@@ -5,3 +5,4 @@ export * from "./schema.js";
 export * from "./snapshot.js";
 export * from "./fingerprint.js";
 export * from "./detect.js";
+export * from "./changeReport.js";
