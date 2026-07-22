@@ -5,6 +5,8 @@ import type { ChangesFile } from "./detect.js";
 import { buildChangeReport } from "./changeReport.js";
 import { mergeSummaries, parseSummaryFile, type ChangeSummary } from "./summaries.js";
 
+const DATE_JSON_RE = /^\d{4}-\d{2}-\d{2}\.json$/;
+
 async function main(): Promise<void> {
   const here = dirname(fileURLToPath(import.meta.url));
   const root = resolve(here, "../../..");
@@ -12,7 +14,7 @@ async function main(): Promise<void> {
   const outboxDir = resolve(root, "scoring/changes-outbox");
 
   const files = existsSync(changesDir)
-    ? readdirSync(changesDir).filter((f) => f.endsWith(".json")).sort()
+    ? readdirSync(changesDir).filter((f) => DATE_JSON_RE.test(f)).sort()
     : [];
   if (files.length === 0) {
     console.log("changes/ 에 변화 기록이 없습니다 — 먼저 `pnpm detect-changes`를 실행하세요.");

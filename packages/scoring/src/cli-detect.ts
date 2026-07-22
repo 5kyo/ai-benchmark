@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { loadWeights } from "@ai-benchmark/core";
@@ -7,10 +7,12 @@ import type { Fingerprint } from "./fingerprint.js";
 import { detectChanges, type CompanyLike } from "./detect.js";
 import { buildChangeInboxDoc, buildChangeReport, formatEntryLines } from "./changeReport.js";
 
+const DATE_JSON_RE = /^\d{4}-\d{2}-\d{2}\.json$/;
+
 function listSnapshotDates(dir: string): string[] {
   if (!existsSync(dir)) return [];
   return readdirSync(dir)
-    .filter((f) => f.endsWith(".json"))
+    .filter((f) => DATE_JSON_RE.test(f))
     .map((f) => f.slice(0, -".json".length))
     .sort();
 }
@@ -74,6 +76,10 @@ async function main(): Promise<void> {
     loadCompanies(resolve(root, "config/companies.yaml")).map((c) => [c.slug, c.homepageUrl]),
   );
   const inboxDir = resolve(root, "scoring/changes-inbox");
+  const outboxDir = resolve(root, "scoring/changes-outbox");
+  // 이전 사이클의 잔여 inbox/outbox가 새 기록에 섞이지 않게 매 실행마다 비운다.
+  rmSync(inboxDir, { recursive: true, force: true });
+  rmSync(outboxDir, { recursive: true, force: true });
   mkdirSync(inboxDir, { recursive: true });
   let inboxCount = 0;
   for (const e of changes.entries) {
