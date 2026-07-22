@@ -8,7 +8,7 @@ import { loadCompanies, scoreRules, type RawSnapshot } from "@ai-benchmark/crawl
 import type { MetricScore } from "@ai-benchmark/core";
 import {
   parseAndValidate, toLlmScores, loadLlmMetrics, llmAxisByKey,
-  buildSnapshotFile, snapshotFilename, localDateString,
+  buildSnapshotFile, snapshotFilename, localDateString, extractFingerprint,
 } from "../src/index.js";
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -26,6 +26,16 @@ function pickLatest(files: string[]): string | null {
   return j.length ? j[j.length - 1] : null;
 }
 
+// 날짜별 아카이브 키. --date=YYYY-MM-DD 로 지정(백필용), 없으면 오늘.
+const RUBRIC_VERSION = "rubric_v1";
+const dateArg = process.argv.find((a) => a.startsWith("--date="));
+const snapshotDate = dateArg ? dateArg.slice("--date=".length) : localDateString(new Date());
+const snapshotsDir = resolve(root, "snapshots");
+// 콘텐츠 지문 아카이브: 변화 감지(detect-changes)의 비교 재료.
+const contentDir = resolve(snapshotsDir, "content", snapshotDate);
+mkdirSync(contentDir, { recursive: true });
+let fingerprintCount = 0;
+
 const records = companies.map((c) => {
   const scores: MetricScore[] = [];
 
@@ -35,6 +45,13 @@ const records = companies.map((c) => {
     if (latest) {
       const snap = JSON.parse(readFileSync(resolve(rawDir, latest), "utf8")) as RawSnapshot;
       scores.push(...scoreRules(snap));
+      if (snap.homepage && snap.homepage.status === 200) {
+        const fp = extractFingerprint(snap.homepage.body, {
+          slug: c.slug, date: snapshotDate, url: c.homepageUrl,
+        });
+        writeFileSync(resolve(contentDir, `${c.slug}.json`), JSON.stringify(fp, null, 2));
+        fingerprintCount += 1;
+      }
     }
   }
 
@@ -71,11 +88,7 @@ const body =
 writeFileSync(resolve(root, "packages/web/src/lib/data/measured.ts"), banner + body);
 console.log(`wrote measured.ts with ${records.length} companies (models: ${models.join(", ") || "none"})`);
 
-// 날짜별 전 회사 스냅샷 아카이브. --date=YYYY-MM-DD 로 날짜 지정(백필용), 없으면 오늘.
-const RUBRIC_VERSION = "rubric_v1";
-const dateArg = process.argv.find((a) => a.startsWith("--date="));
-const snapshotDate = dateArg ? dateArg.slice("--date=".length) : localDateString(new Date());
-const snapshotsDir = resolve(root, "snapshots");
+// 날짜별 전 회사 스냅샷 아카이브.
 mkdirSync(snapshotsDir, { recursive: true });
 const snapshot = buildSnapshotFile(records, {
   date: snapshotDate,
@@ -87,3 +100,4 @@ writeFileSync(
   JSON.stringify(snapshot, null, 2),
 );
 console.log(`wrote snapshots/${snapshotFilename(snapshotDate)} (${records.length} companies)`);
+console.log(`wrote snapshots/content/${snapshotDate}/ (${fingerprintCount} fingerprints)`);
