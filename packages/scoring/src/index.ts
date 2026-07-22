@@ -3,3 +3,4 @@ export * from "./text.js";
 export * from "./prepare.js";
 export * from "./schema.js";
 export * from "./snapshot.js";
+export * from "./fingerprint.js";
