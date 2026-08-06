@@ -1,12 +1,15 @@
 companies:
   # 우리 회사 — Web3 인프라·솔루션·SI 제공사
+  # www가 정본이다(2026-08-06 리뉴얼 컷오버). 사이트의 canonical·og:url·sitemap이 전부
+  # www를 가리키고, non-www는 현재 522로 응답하지 않는다 — 여기를 non-www로 두면 자사만
+  # 크롤 실패로 0점이 된다.
   - name: "파라메타"
     slug: "parameta"
-    homepage_url: "https://parametacorp.com/"
+    homepage_url: "https://www.parametacorp.com/"
     is_self: true
     category: "Infra"
     region: "국내"
-    description: "Web2에서 Web3 전환을 돕는 국내 블록체인 인프라·솔루션 기업. 자체 엔진 loopchain, DID(MyID), 인터체인(BTP), 커스터디 지갑·STO·토큰 관리를 제공한다."
+    description: "금융·공공 기관이 규제 환경 안에서 디지털자산을 발행·운영하도록 돕는 국내 블록체인 인프라 기업. ParaSta(발행·지갑·온체인 KYC), PortX(화이트라벨 거래), MyID(DID·K-BTF 공공 SaaS), broof(블록체인 증명서)를 제공한다."
 
   # 국내 경쟁사 — 동일 포지션(BaaS·노드·커스터디·엔터프라이즈 솔루션)
   - name: "Lambda256"

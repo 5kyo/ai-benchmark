@@ -60,4 +60,17 @@ describe("axisForView / overallForView", () => {
     // claude: 0.5*80 + 0.5*50 = 65
     expect(overallForView(scores, w, { model: "claude-x" })).toBe(65);
   });
+
+  it("a model that did not score this company is null, not a rule-only score", () => {
+    // 규칙 점수(A)만 있고 그 모델의 LLM 점수가 없으면, 규칙 점수를 그 모델 몫으로 돌려선 안 된다.
+    expect(overallForView(scores, w, { model: "absent-model" })).toBeNull();
+    expect(axisForView(scores, "A", w, { model: "absent-model" })).toBeNull();
+    expect(axisForView(scores, "C", w, { model: "absent-model" })).toBeNull();
+    // 채점한 모델은 그대로 동작한다.
+    expect(axisForView(scores, "A", w, { model: "claude-x" })).toBe(80);
+  });
+
+  it("average view is unaffected by the guard", () => {
+    expect(axisForView(scores, "A", w, "average")).toBe(80);
+  });
 });

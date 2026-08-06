@@ -37,10 +37,22 @@ export function collapseForView(scores: MetricScore[], view: ScoreView): MetricS
   return [...rule, ...collapsed];
 }
 
+/** 그 모델이 이 회사를 채점했는가. LLM 점수가 하나도 없으면 채점하지 않은 것이다. */
+function scoredByModel(scores: MetricScore[], model: string): boolean {
+  return scores.some((s) => !isRuleBased(s.model) && s.model === model);
+}
+
+/**
+ * {model} 뷰인데 그 모델의 LLM 점수가 없으면 null이다.
+ * 이 가드가 없으면 규칙 점수만으로 축 A·B·D가 계산되고(축 C는 null) 가중치가 재정규화돼,
+ * "채점하지 않은 모델"이 규칙 만점짜리 회사를 100점으로 평가한 것처럼 보인다.
+ */
 export function axisForView(scores: MetricScore[], axis: Axis, w: Weights, view: ScoreView): number | null {
+  if (view !== "average" && !scoredByModel(scores, view.model)) return null;
   return axisScore(collapseForView(scores, view), axis, w);
 }
 
 export function overallForView(scores: MetricScore[], w: Weights, view: ScoreView): number | null {
+  if (view !== "average" && !scoredByModel(scores, view.model)) return null;
   return overallScore(collapseForView(scores, view), w);
 }

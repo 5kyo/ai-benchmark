@@ -7,11 +7,11 @@ export function measuredCompanies(): CompanyRecord[] {
   {
     "slug": "parameta",
     "name": "파라메타",
-    "homepageUrl": "https://parametacorp.com/",
+    "homepageUrl": "https://www.parametacorp.com/",
     "isSelf": true,
     "category": "Infra",
     "region": "국내",
-    "description": "Web2에서 Web3 전환을 돕는 국내 블록체인 인프라·솔루션 기업. 자체 엔진 loopchain, DID(MyID), 인터체인(BTP), 커스터디 지갑·STO·토큰 관리를 제공한다.",
+    "description": "금융·공공 기관이 규제 환경 안에서 디지털자산을 발행·운영하도록 돕는 국내 블록체인 인프라 기업. ParaSta(발행·지갑·온체인 KYC), PortX(화이트라벨 거래), MyID(DID·K-BTF 공공 SaaS), broof(블록체인 증명서)를 제공한다.",
     "scores": [
       {
         "axis": "A",
@@ -25,21 +25,21 @@ export function measuredCompanies(): CompanyRecord[] {
         "metricKey": "sitemap_present",
         "model": "rule-based",
         "score": 100,
-        "evidence": "sitemap.xml을 정상(200) 제공합니다."
+        "evidence": "sitemap을 정상(200) 제공합니다 (/sitemap-index.xml)."
       },
       {
         "axis": "A",
         "metricKey": "llms_txt_present",
         "model": "rule-based",
-        "score": 0,
-        "evidence": "/llms.txt가 없습니다(404 등)."
+        "score": 100,
+        "evidence": "/llms.txt를 제공합니다."
       },
       {
         "axis": "A",
         "metricKey": "ssr_rendered",
         "model": "rule-based",
         "score": 100,
-        "evidence": "서버 응답 HTML에 본문 약 4,900자가 담겨 있어 SSR로 판단합니다."
+        "evidence": "서버 응답 HTML에 본문 약 2,319자가 담겨 있어 SSR로 판단합니다."
       },
       {
         "axis": "A",
@@ -59,15 +59,15 @@ export function measuredCompanies(): CompanyRecord[] {
         "axis": "B",
         "metricKey": "json_ld_present",
         "model": "rule-based",
-        "score": 0,
-        "evidence": "JSON-LD 구조화 데이터가 없습니다."
+        "score": 100,
+        "evidence": "JSON-LD 블록 1개를 발견했습니다."
       },
       {
         "axis": "B",
         "metricKey": "semantic_ratio",
         "model": "rule-based",
-        "score": 67,
-        "evidence": "시맨틱 태그 6개 중 4개 사용 (누락: article, footer)."
+        "score": 100,
+        "evidence": "시맨틱 태그 6개 중 6개 사용."
       },
       {
         "axis": "B",
@@ -80,22 +80,22 @@ export function measuredCompanies(): CompanyRecord[] {
         "axis": "B",
         "metricKey": "heading_hierarchy",
         "model": "rule-based",
-        "score": 50,
-        "evidence": "h1 0개(1개 권장), 레벨 건너뜀 없음."
+        "score": 100,
+        "evidence": "h1 정확히 1개, 레벨 건너뜀 없음."
       },
       {
         "axis": "B",
         "metricKey": "alt_coverage",
         "model": "rule-based",
-        "score": 45,
-        "evidence": "이미지 55개 중 25개에 alt 텍스트가 있습니다."
+        "score": 100,
+        "evidence": "이미지 14개 중 14개에 alt 텍스트가 있습니다 (장식용 13개 제외)."
       },
       {
         "axis": "D",
         "metricKey": "load_time",
         "model": "rule-based",
-        "score": 85,
-        "evidence": "홈페이지 응답에 약 874ms 걸렸습니다."
+        "score": 100,
+        "evidence": "홈페이지 응답에 약 106ms 걸렸습니다."
       },
       {
         "axis": "D",
@@ -116,147 +116,77 @@ export function measuredCompanies(): CompanyRecord[] {
         "metricKey": "multilingual",
         "model": "rule-based",
         "score": 100,
-        "evidence": "hreflang 대체 링크 1개로 다국어를 명시합니다."
+        "evidence": "hreflang 대체 링크 3개로 다국어를 명시합니다."
       },
       {
         "axis": "A",
         "metricKey": "agent_findability",
-        "model": "claude-sonnet-5",
-        "score": 55,
-        "evidence": "내비게이션과 프로모션 배너, 반복되는 슬로건('WEB3 ENABLER PARAMETA' x14) 뒤에야 'We empower the world's transformation...' 같은 핵심 소개 문장이 등장해 탐색에 다소 노력이 필요하다."
+        "model": "claude-opus-5",
+        "score": 92,
+        "evidence": "h1 'Blockchain Infrastructure for Digital Assets' 직후 트랙레코드 지표 4종, 제품 4종, 솔루션 6종, 사례 8건이 순서대로 나와 한 번의 통독으로 회사·제품·실적이 모두 잡힌다."
       },
       {
         "axis": "A",
         "metricKey": "content_extractability",
-        "model": "claude-sonnet-5",
-        "score": 35,
-        "evidence": "내비게이션 메뉴가 두 번 중복되고 'WEB3 ENABLER PARAMETA' 슬로건이 캐러셀 형태로 20회 이상 반복 추출되어 순수 텍스트 품질이 크게 저하된다."
-      },
-      {
-        "axis": "B",
-        "metricKey": "logical_organization",
-        "model": "claude-sonnet-5",
-        "score": 55,
-        "evidence": "ABOUT-TECH-SERVICE-PRODUCT-LEARN 순으로 섹션이 존재하나 추출된 텍스트에는 제목 위계 구분이 없이 문단이 이어져 있어 기계가 흐름을 파악하기 다소 어렵다."
-      },
-      {
-        "axis": "B",
-        "metricKey": "info_scannability",
-        "model": "claude-sonnet-5",
-        "score": 40,
-        "evidence": "TECH/서비스/산업별 활용사례 설명이 목록이나 표 없이 연속된 문단으로 나열되어 있어 빠른 스캔이 어렵다."
-      },
-      {
-        "axis": "C",
-        "metricKey": "clarity",
-        "model": "claude-sonnet-5",
-        "score": 85,
-        "evidence": "\"WEB3 ENABLER PARAMETA\"라는 문구와 함께 Loopchain, MyID(DID), BTP, PDS/BFS 등 자체 기술과 Web3 전환을 돕는 API 서비스라는 사업 성격이 명확히 설명되어 있다."
-      },
-      {
-        "axis": "C",
-        "metricKey": "product_depth",
-        "model": "claude-sonnet-5",
-        "score": 80,
-        "evidence": "Parameta Wallet, Security Token, NFT, Token Management 각 제품별로 기능(커스터디 키관리, STO 자산 분할, NFT 발행·유통, 인터체인 토큰 발행 등)이 구체적으로 서술되어 있다."
-      },
-      {
-        "axis": "C",
-        "metricKey": "key_info_present",
-        "model": "claude-sonnet-5",
-        "score": 75,
-        "evidence": "대표자명(김종협), 사업자등록번호, 주소, 전화, 팩스, 이메일 등 컨택 정보와 문의 폼이 있으나 토크노믹스나 백서 링크는 보이지 않는다."
-      },
-      {
-        "axis": "C",
-        "metricKey": "freshness_clarity",
-        "model": "claude-sonnet-5",
-        "score": 80,
-        "evidence": "2025년 5월~8월의 최신 보도자료(스테이블코인, DID 인증 획득 등)가 날짜와 함께 게시되어 있고 과장 없이 사실 위주로 서술되어 있다."
-      },
-      {
-        "axis": "D",
-        "metricKey": "technical_depth",
-        "model": "claude-sonnet-5",
-        "score": 65,
-        "evidence": "20,000~100,000 TPS 성능 수치, CSAP 인증 획득, 국내 최초 W3C DID Method Registry 등록, VASP 라이선스 거래소 커스터디 언급 등 기술적 신뢰 신호가 다수 포함되어 있다."
-      },
-      {
-        "axis": "D",
-        "metricKey": "content_polish",
-        "model": "claude-sonnet-5",
-        "score": 50,
-        "evidence": "전반적으로 전문적인 한국어 서술이나 슬로건과 내비게이션의 대량 반복이 텍스트 품질과 완성도를 떨어뜨린다."
-      },
-      {
-        "axis": "A",
-        "metricKey": "agent_findability",
-        "model": "gpt-5.5",
-        "score": 88,
-        "evidence": "상단 내비게이션과 첫 화면에서 Web3 Enabler, 블록체인 기술, 서비스 영역이 바로 노출되어 회사의 핵심 방향을 빠르게 파악할 수 있다. 기술·서비스·비즈니스·제품·콘텐츠 메뉴도 명확히 존재한다."
-      },
-      {
-        "axis": "A",
-        "metricKey": "content_extractability",
-        "model": "gpt-5.5",
-        "score": 76,
-        "evidence": "대부분의 핵심 설명이 텍스트로 추출되어 기술, 서비스, 유스케이스, 연락처 정보를 확인할 수 있다. 다만 반복 문구와 메뉴 중복, 붙어 있는 텍스트가 많아 기계 추출 시 후처리가 필요하다."
-      },
-      {
-        "axis": "B",
-        "metricKey": "logical_organization",
-        "model": "gpt-5.5",
-        "score": 82,
-        "evidence": "TECH, SERVICE, MULTI-INDUSTRY USE CASES, CONTENTS, CULTURE, PARTNERS/CONTACT 순으로 비교적 논리적인 흐름을 갖춘다. 그러나 원문 추출 상태에서는 제목과 본문 사이 구분이 일부 흐려져 위계 파악이 완벽하지는 않다."
-      },
-      {
-        "axis": "B",
-        "metricKey": "info_scannability",
-        "model": "gpt-5.5",
-        "score": 79,
-        "evidence": "Loopchain, MyID, BTP, PDS/BFS 및 서비스 항목과 산업별 유스케이스가 구획별로 나열되어 스캔이 쉽다. 반면 표나 정형 데이터는 거의 없고 일부 문장이 길게 이어져 빠른 파싱에는 제한이 있다."
-      },
-      {
-        "axis": "C",
-        "metricKey": "clarity",
-        "model": "gpt-5.5",
-        "score": 90,
-        "evidence": "파라메타가 Web2에서 Web3 생태계로의 전환을 지원하는 블록체인 기술·서비스 기업이라는 점이 명확하다. 블록체인 엔진, DID, 인터체인, 토큰 관리, STO/NFT 등 주요 사업 영역도 잘 드러난다."
-      },
-      {
-        "axis": "C",
-        "metricKey": "product_depth",
-        "model": "gpt-5.5",
-        "score": 83,
-        "evidence": "Parameta Wallet, Security Token, NFT, Token Management 각각의 기능과 적용 방식이 구체적으로 설명되어 있다. 다만 제품별 상세 사양, 가격, 도입 절차, 실제 고객 사례 수준의 깊이는 홈페이지 본문만으로는 제한적이다."
-      },
-      {
-        "axis": "C",
-        "metricKey": "key_info_present",
-        "model": "gpt-5.5",
-        "score": 78,
-        "evidence": "대표자, 사업자등록번호, 주소, 전화, 팩스, 이메일, 문의 양식 등 기본 회사·컨택 정보가 충실하다. 그러나 백서, 토크노믹스, 상세 팀 구성, 투자자용 자료 같은 Web3 핵심 검증 정보는 명시적으로 보이지 않는다."
-      },
-      {
-        "axis": "C",
-        "metricKey": "freshness_clarity",
-        "model": "gpt-5.5",
+        "model": "claude-opus-5",
         "score": 86,
-        "evidence": "2025년 날짜가 포함된 유튜브·미디어 항목과 CSAP 인증, 스테이블코인 관련 뉴스가 있어 최신 활동성이 드러난다. 일부 표현은 ‘높은 보안성’, ‘강력한 웹3 월렛’처럼 정량 근거 없이 홍보적으로 보일 수 있다."
+        "evidence": "슬로건 반복이나 이미지 의존 없이 본문이 깨끗하게 추출된다. 다만 말미에 챗봇 프롬프트와 모바일 메뉴가 재출력돼 전체 2,087자 중 약 30%가 본문 외 요소다."
+      },
+      {
+        "axis": "B",
+        "metricKey": "logical_organization",
+        "model": "claude-opus-5",
+        "score": 92,
+        "evidence": "h1 1개 + h2 4개 + h3 10개로 Products → Solutions → Cases → Contact 흐름이 제목 위계로 드러나고 레벨 건너뜀이 없다."
+      },
+      {
+        "axis": "B",
+        "metricKey": "info_scannability",
+        "model": "claude-opus-5",
+        "score": 88,
+        "evidence": "지표 4종(10년+·100+·370만+·TI-1), 제품별 기능 태그, 솔루션 6개 카드, 사례별 산업 라벨로 구획이 뚜렷하다. 다만 비교표 같은 정형 데이터는 홈에 없다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "clarity",
+        "model": "claude-opus-5",
+        "score": 93,
+        "evidence": "'디지털자산을 위한 블록체인 인프라'라는 정의와 함께 ParaSta(발행·지갑·온체인 KYC), PortX(화이트라벨 거래), MyID(공공 DID SaaS), broof(증명서) 네 제품의 역할이 각각 분명하다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "product_depth",
+        "model": "claude-opus-5",
+        "score": 84,
+        "evidence": "제품마다 2~3문장 설명과 기능 태그가 붙어 무엇을 하는지는 명확하나, 홈은 관문 역할이라 사양·가격·도입 절차 수준의 깊이는 하위 페이지로 넘긴다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "key_info_present",
+        "model": "claude-opus-5",
+        "score": 84,
+        "evidence": "대표·사업자등록번호·주소·전화·이메일·개인정보처리방침·이용약관이 모두 있고 누적 이용자 370만+, 파트너 100+, TI-1 등 검증 지표도 노출된다. 백서와 팀 소개는 없다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "freshness_clarity",
+        "model": "claude-opus-5",
+        "score": 84,
+        "evidence": "ⓒ2026 표기와 함께 제주안심코드 218만 명·9,100만 건처럼 검증 가능한 수치로 서술해 과장이 적다. 다만 날짜가 붙은 콘텐츠(보도자료)가 홈 본문에는 없다."
       },
       {
         "axis": "D",
         "metricKey": "technical_depth",
-        "model": "gpt-5.5",
-        "score": 88,
-        "evidence": "Loopchain, W3C DID Method Registry, 금융권 DID 상용화, Trustless 인터체인 BTP, PDS/BFS, CSAP 인증, TPS 성능 데모 등 기술 신뢰 신호가 풍부하다. 다만 API 문서, SDK, 보안 아키텍처, 감사 자료로 직접 연결되는 상세 기술 문서는 원문에 포함되어 있지 않다."
+        "model": "claude-opus-5",
+        "score": 85,
+        "evidence": "온체인 KYC, PDS, DID, CSAP 인증 공공 클라우드, K-BTF, EU DPP 대응 등 규제·인증 신호가 구체적이다. 다만 API 문서·SDK 레퍼런스로 가는 링크가 홈에 없다."
       },
       {
         "axis": "D",
         "metricKey": "content_polish",
-        "model": "gpt-5.5",
-        "score": 82,
-        "evidence": "전문 용어와 제품 설명은 대체로 일관적이고 기업 홈페이지로서 완성도가 있다. 다만 추출 원문 기준으로 띄어쓰기 누락, 메뉴 중복, 영문·국문 혼재, 반복 슬로건이 많아 콘텐츠 정돈감은 다소 떨어진다."
+        "model": "claude-opus-5",
+        "score": 91,
+        "evidence": "용어와 문체가 일관되고 오탈자·어색한 번역이 없다. 감점 요인은 말미에 섞이는 챗봇 위젯 텍스트 정도다."
       }
     ]
   },
@@ -281,7 +211,7 @@ export function measuredCompanies(): CompanyRecord[] {
         "metricKey": "sitemap_present",
         "model": "rule-based",
         "score": 100,
-        "evidence": "sitemap.xml을 정상(200) 제공합니다."
+        "evidence": "sitemap을 정상(200) 제공합니다 (/sitemap.xml)."
       },
       {
         "axis": "A",
@@ -295,7 +225,7 @@ export function measuredCompanies(): CompanyRecord[] {
         "metricKey": "ssr_rendered",
         "model": "rule-based",
         "score": 100,
-        "evidence": "서버 응답 HTML에 본문 약 9,069자가 담겨 있어 SSR로 판단합니다."
+        "evidence": "서버 응답 HTML에 본문 약 9,089자가 담겨 있어 SSR로 판단합니다."
       },
       {
         "axis": "A",
@@ -343,15 +273,15 @@ export function measuredCompanies(): CompanyRecord[] {
         "axis": "B",
         "metricKey": "alt_coverage",
         "model": "rule-based",
-        "score": 96,
-        "evidence": "이미지 143개 중 137개에 alt 텍스트가 있습니다."
+        "score": 97,
+        "evidence": "이미지 141개 중 137개에 alt 텍스트가 있습니다 (장식용 2개 제외)."
       },
       {
         "axis": "D",
         "metricKey": "load_time",
         "model": "rule-based",
         "score": 100,
-        "evidence": "홈페이지 응답에 약 149ms 걸렸습니다."
+        "evidence": "홈페이지 응답에 약 255ms 걸렸습니다."
       },
       {
         "axis": "D",
@@ -373,6 +303,76 @@ export function measuredCompanies(): CompanyRecord[] {
         "model": "rule-based",
         "score": 100,
         "evidence": "hreflang 대체 링크 3개로 다국어를 명시합니다."
+      },
+      {
+        "axis": "A",
+        "metricKey": "agent_findability",
+        "model": "claude-opus-5",
+        "score": 86,
+        "evidence": "상단 내비게이션과 히어로에서 SCOPE·CLAIR·NODIT 세 제품과 '규제 대응 스테이블코인 금융스택'이라는 포지션이 바로 드러난다."
+      },
+      {
+        "axis": "A",
+        "metricKey": "content_extractability",
+        "model": "claude-opus-5",
+        "score": 62,
+        "evidence": "고객 인용(업비트·코인원·Radius·Merkle Trade) 블록이 동일하게 4회 반복 추출되고 'Loading...' 문자열이 본문에 섞인다. 순수 텍스트 품질이 크게 떨어진다."
+      },
+      {
+        "axis": "B",
+        "metricKey": "logical_organization",
+        "model": "claude-opus-5",
+        "score": 74,
+        "evidence": "제품 → 강점 → 인증 → 사례 → 뉴스 흐름은 있으나 같은 문단이 반복되어 기계가 위계와 경계를 잡기 어렵다."
+      },
+      {
+        "axis": "B",
+        "metricKey": "info_scannability",
+        "model": "claude-opus-5",
+        "score": 72,
+        "evidence": "제품 카드와 SOC2·200M Daily Transactions 같은 지표가 구획돼 있으나, 반복 블록이 스캔을 방해한다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "clarity",
+        "model": "claude-opus-5",
+        "score": 90,
+        "evidence": "금융기관의 디지털자산 전환을 지원하는 온체인 금융 플랫폼 기업이라는 정의와 세 제품의 역할 분담이 명확하다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "product_depth",
+        "model": "claude-opus-5",
+        "score": 86,
+        "evidence": "SCOPE(발행·커스터디·결제·정산·컴플라이언스 통합 API), CLAIR(온톨로지+AI 기반 FDS/AML), NODIT(20+ 체인 노드·데이터 API)가 각각 구체적으로 서술된다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "key_info_present",
+        "model": "claude-opus-5",
+        "score": 74,
+        "evidence": "주소는 있으나 대표·사업자등록번호·대표 연락처가 보이지 않고, 백서나 투자자용 자료도 없다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "freshness_clarity",
+        "model": "claude-opus-5",
+        "score": 88,
+        "evidence": "2026.07 카드사 공동 PoC, 케이뱅크 오프램프 PoC 등 날짜가 붙은 최신 보도자료가 다수이고 서술이 사실 위주다."
+      },
+      {
+        "axis": "D",
+        "metricKey": "technical_depth",
+        "model": "claude-opus-5",
+        "score": 88,
+        "evidence": "SOC 2 Type II, 일 2억 트랜잭션, 20개 이상 메인넷, 24/7 NOC, 디코딩 커버리지 리포트 등 기술 신뢰 신호가 풍부하다."
+      },
+      {
+        "axis": "D",
+        "metricKey": "content_polish",
+        "model": "claude-opus-5",
+        "score": 70,
+        "evidence": "전문성은 높으나 동일 인용 블록 4회 반복과 'Loading...' 노출이 완성도를 떨어뜨린다."
       },
       {
         "axis": "A",
@@ -537,7 +537,7 @@ export function measuredCompanies(): CompanyRecord[] {
         "metricKey": "sitemap_present",
         "model": "rule-based",
         "score": 100,
-        "evidence": "sitemap.xml을 정상(200) 제공합니다."
+        "evidence": "sitemap을 정상(200) 제공합니다 (/sitemap.xml)."
       },
       {
         "axis": "A",
@@ -551,7 +551,7 @@ export function measuredCompanies(): CompanyRecord[] {
         "metricKey": "ssr_rendered",
         "model": "rule-based",
         "score": 100,
-        "evidence": "서버 응답 HTML에 본문 약 6,547자가 담겨 있어 SSR로 판단합니다."
+        "evidence": "서버 응답 HTML에 본문 약 5,543자가 담겨 있어 SSR로 판단합니다."
       },
       {
         "axis": "A",
@@ -599,15 +599,15 @@ export function measuredCompanies(): CompanyRecord[] {
         "axis": "B",
         "metricKey": "alt_coverage",
         "model": "rule-based",
-        "score": 98,
-        "evidence": "이미지 41개 중 40개에 alt 텍스트가 있습니다."
+        "score": 89,
+        "evidence": "이미지 45개 중 40개에 alt 텍스트가 있습니다."
       },
       {
         "axis": "D",
         "metricKey": "load_time",
         "model": "rule-based",
         "score": 100,
-        "evidence": "홈페이지 응답에 약 129ms 걸렸습니다."
+        "evidence": "홈페이지 응답에 약 247ms 걸렸습니다."
       },
       {
         "axis": "D",
@@ -629,6 +629,76 @@ export function measuredCompanies(): CompanyRecord[] {
         "model": "rule-based",
         "score": 100,
         "evidence": "hreflang 대체 링크 2개로 다국어를 명시합니다."
+      },
+      {
+        "axis": "A",
+        "metricKey": "agent_findability",
+        "model": "claude-opus-5",
+        "score": 82,
+        "evidence": "상단 슬로건과 About, 지표 배지로 밸리데이터·노드 인프라 기업임이 비교적 빨리 파악된다."
+      },
+      {
+        "axis": "A",
+        "metricKey": "content_extractability",
+        "model": "claude-opus-5",
+        "score": 66,
+        "evidence": "같은 문장이 2~3회 연속 반복되는 구간이 많고, 'Zero'·'4 trillion'처럼 라벨과 수치가 어긋나 붙어 나온다."
+      },
+      {
+        "axis": "B",
+        "metricKey": "logical_organization",
+        "model": "claude-opus-5",
+        "score": 74,
+        "evidence": "About → 지표 → 제품 → 연혁 순서는 있으나 반복 문장 때문에 경계가 흐리다."
+      },
+      {
+        "axis": "B",
+        "metricKey": "info_scannability",
+        "model": "claude-opus-5",
+        "score": 78,
+        "evidence": "AUM·밸리데이터 순위·프로토콜 수·무사고 기간 등 지표가 배지로 구획돼 스캔은 쉬운 편이다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "clarity",
+        "model": "claude-opus-5",
+        "score": 86,
+        "evidence": "온체인 금융 OS를 지향하는 노드·밸리데이터·기관 인프라 기업이라는 점이 드러난다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "product_depth",
+        "model": "claude-opus-5",
+        "score": 80,
+        "evidence": "DSRV Portal(토큰화·결제·임베디드 지갑·스테이킹·커스터디), All That Node, Validator로 나뉘어 각 기능이 서술된다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "key_info_present",
+        "model": "claude-opus-5",
+        "score": 70,
+        "evidence": "Contact Us 메뉴는 있으나 주소·대표·사업자 정보 등 기본 식별 정보가 본문에 없다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "freshness_clarity",
+        "model": "claude-opus-5",
+        "score": 82,
+        "evidence": "2025년 시리즈 B, VASP 라이선스 취득 등 연도별 마일스톤이 있으나 일부 지표가 '4 trillion'처럼 단위가 모호하다."
+      },
+      {
+        "axis": "D",
+        "metricKey": "technical_depth",
+        "model": "claude-opus-5",
+        "score": 82,
+        "evidence": "VASP·ISMS·SOC 인증, 170+ 프로토콜, 70+ 체인, 5년 무중단 운영 등 운영 신뢰 신호가 구체적이다."
+      },
+      {
+        "axis": "D",
+        "metricKey": "content_polish",
+        "model": "claude-opus-5",
+        "score": 68,
+        "evidence": "동일 문장 반복이 광범위해 정돈감이 떨어진다."
       },
       {
         "axis": "A",
@@ -793,7 +863,7 @@ export function measuredCompanies(): CompanyRecord[] {
         "metricKey": "sitemap_present",
         "model": "rule-based",
         "score": 100,
-        "evidence": "sitemap.xml을 정상(200) 제공합니다."
+        "evidence": "sitemap을 정상(200) 제공합니다 (/sitemap.xml)."
       },
       {
         "axis": "A",
@@ -862,8 +932,8 @@ export function measuredCompanies(): CompanyRecord[] {
         "axis": "D",
         "metricKey": "load_time",
         "model": "rule-based",
-        "score": 96,
-        "evidence": "홈페이지 응답에 약 594ms 걸렸습니다."
+        "score": 100,
+        "evidence": "홈페이지 응답에 약 409ms 걸렸습니다."
       },
       {
         "axis": "D",
@@ -885,6 +955,76 @@ export function measuredCompanies(): CompanyRecord[] {
         "model": "rule-based",
         "score": 0,
         "evidence": "hreflang 다국어 표기가 없습니다."
+      },
+      {
+        "axis": "A",
+        "metricKey": "agent_findability",
+        "model": "claude-opus-5",
+        "score": 80,
+        "evidence": "상단에서 옥텟(기업용 지갑)과 오하이(개인 지갑) 두 제품이 바로 제시돼 사업 영역이 빠르게 파악된다."
+      },
+      {
+        "axis": "A",
+        "metricKey": "content_extractability",
+        "model": "claude-opus-5",
+        "score": 84,
+        "evidence": "본문이 방해 요소 없이 추출되고 중복도 적다."
+      },
+      {
+        "axis": "B",
+        "metricKey": "logical_organization",
+        "model": "claude-opus-5",
+        "score": 76,
+        "evidence": "제품 → 산업별 활용 → 고객 후기 → 인증 → FAQ 흐름은 있으나 제목 위계 구분이 약하다."
+      },
+      {
+        "axis": "B",
+        "metricKey": "info_scannability",
+        "model": "claude-opus-5",
+        "score": 78,
+        "evidence": "산업별 활용(금융·문화·게임)과 지원 체인, FAQ가 구획돼 있으나 긴 문단도 섞여 있다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "clarity",
+        "model": "claude-opus-5",
+        "score": 84,
+        "evidence": "기업용 가상자산 지갑·키관리 솔루션 기업이라는 점이 명확하다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "product_depth",
+        "model": "claude-opus-5",
+        "score": 82,
+        "evidence": "STO 플랫폼, 은행 앱 웹뷰 연동, 멀티시그, KYC 입출금 지갑 등 적용 시나리오가 구체적이다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "key_info_present",
+        "model": "claude-opus-5",
+        "score": 84,
+        "evidence": "대표, 사업자등록번호, 통신판매업 신고번호, 주소, 약관·개인정보처리방침이 갖춰져 있다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "freshness_clarity",
+        "model": "claude-opus-5",
+        "score": 76,
+        "evidence": "2026년 1월 사명 변경(월렛원 → 헥토월렛원) 공지가 최신이나 그 외 날짜 있는 콘텐츠가 적다."
+      },
+      {
+        "axis": "D",
+        "metricKey": "technical_depth",
+        "model": "claude-opus-5",
+        "score": 80,
+        "evidence": "ISMS·VASP 동시 보유, 멀티시그, 18개 이상 메인넷 노드 운영, 보안사고 0건 등 신호가 구체적이다."
+      },
+      {
+        "axis": "D",
+        "metricKey": "content_polish",
+        "model": "claude-opus-5",
+        "score": 78,
+        "evidence": "서술은 무난하나 사명 변경 전후 브랜드(월렛원/헥토월렛원)가 본문에 혼재해 혼동을 준다."
       },
       {
         "axis": "A",
@@ -1049,7 +1189,7 @@ export function measuredCompanies(): CompanyRecord[] {
         "metricKey": "sitemap_present",
         "model": "rule-based",
         "score": 100,
-        "evidence": "sitemap.xml을 정상(200) 제공합니다."
+        "evidence": "sitemap을 정상(200) 제공합니다 (/sitemap.xml)."
       },
       {
         "axis": "A",
@@ -1119,7 +1259,7 @@ export function measuredCompanies(): CompanyRecord[] {
         "metricKey": "load_time",
         "model": "rule-based",
         "score": 100,
-        "evidence": "홈페이지 응답에 약 147ms 걸렸습니다."
+        "evidence": "홈페이지 응답에 약 257ms 걸렸습니다."
       },
       {
         "axis": "D",
@@ -1141,6 +1281,76 @@ export function measuredCompanies(): CompanyRecord[] {
         "model": "rule-based",
         "score": 0,
         "evidence": "hreflang 다국어 표기가 없습니다."
+      },
+      {
+        "axis": "A",
+        "metricKey": "agent_findability",
+        "model": "claude-opus-5",
+        "score": 66,
+        "evidence": "채용 공고가 본문 최상단을 차지하고 회사·제품 소개가 링크 문구 수준이라 핵심 정보에 도달하기 어렵다."
+      },
+      {
+        "axis": "A",
+        "metricKey": "content_extractability",
+        "model": "claude-opus-5",
+        "score": 54,
+        "evidence": "히어로 문구, 언론 목록, 채용 안내 블록이 각각 2~3회 통째로 반복 추출된다."
+      },
+      {
+        "axis": "B",
+        "metricKey": "logical_organization",
+        "model": "claude-opus-5",
+        "score": 48,
+        "evidence": "제목 위계가 거의 없고 같은 섹션이 반복돼 정보 흐름을 파악하기 어렵다."
+      },
+      {
+        "axis": "B",
+        "metricKey": "info_scannability",
+        "model": "claude-opus-5",
+        "score": 56,
+        "evidence": "언론 목록은 날짜와 함께 나열되나 제품·솔루션 정보는 구조화돼 있지 않다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "clarity",
+        "model": "claude-opus-5",
+        "score": 72,
+        "evidence": "Web3 보안·지갑 기업이라는 정도는 전달되지만 제품 구성과 대상 고객이 홈만으로는 흐릿하다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "product_depth",
+        "model": "claude-opus-5",
+        "score": 50,
+        "evidence": "인게임 지갑, 보안감사, 법인 지갑, 장외거래라는 항목명만 있고 각각의 기능 설명이 본문에 없다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "key_info_present",
+        "model": "claude-opus-5",
+        "score": 62,
+        "evidence": "사업자등록번호·대표·주소·이메일은 있으나 제품 문서, 백서, 팀 정보가 없다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "freshness_clarity",
+        "model": "claude-opus-5",
+        "score": 46,
+        "evidence": "언론 보도 목록의 최신 항목이 2023년 5월이라 최근 활동을 확인할 수 없다."
+      },
+      {
+        "axis": "D",
+        "metricKey": "technical_depth",
+        "model": "claude-opus-5",
+        "score": 52,
+        "evidence": "이더리움 재단 그랜트, 클레이튼 보안 검증 등 과거 이력 언급에 그치고 현재의 기술·인증·규제 대응 정보가 없다."
+      },
+      {
+        "axis": "D",
+        "metricKey": "content_polish",
+        "model": "claude-opus-5",
+        "score": 58,
+        "evidence": "반복 블록이 많고 문구가 정돈되지 않아 완성도가 낮다."
       },
       {
         "axis": "A",
@@ -1305,7 +1515,7 @@ export function measuredCompanies(): CompanyRecord[] {
         "metricKey": "sitemap_present",
         "model": "rule-based",
         "score": 100,
-        "evidence": "sitemap.xml을 정상(200) 제공합니다."
+        "evidence": "sitemap을 정상(200) 제공합니다 (/sitemap.xml)."
       },
       {
         "axis": "A",
@@ -1319,7 +1529,7 @@ export function measuredCompanies(): CompanyRecord[] {
         "metricKey": "ssr_rendered",
         "model": "rule-based",
         "score": 100,
-        "evidence": "서버 응답 HTML에 본문 약 3,534자가 담겨 있어 SSR로 판단합니다."
+        "evidence": "서버 응답 HTML에 본문 약 3,613자가 담겨 있어 SSR로 판단합니다."
       },
       {
         "axis": "A",
@@ -1368,14 +1578,14 @@ export function measuredCompanies(): CompanyRecord[] {
         "metricKey": "alt_coverage",
         "model": "rule-based",
         "score": 100,
-        "evidence": "이미지 14개 중 14개에 alt 텍스트가 있습니다."
+        "evidence": "이미지 15개 중 15개에 alt 텍스트가 있습니다."
       },
       {
         "axis": "D",
         "metricKey": "load_time",
         "model": "rule-based",
-        "score": 79,
-        "evidence": "홈페이지 응답에 약 1,019ms 걸렸습니다."
+        "score": 80,
+        "evidence": "홈페이지 응답에 약 988ms 걸렸습니다."
       },
       {
         "axis": "D",
@@ -1397,6 +1607,76 @@ export function measuredCompanies(): CompanyRecord[] {
         "model": "rule-based",
         "score": 100,
         "evidence": "hreflang 대체 링크 3개로 다국어를 명시합니다."
+      },
+      {
+        "axis": "A",
+        "metricKey": "agent_findability",
+        "model": "claude-opus-5",
+        "score": 90,
+        "evidence": "첫 화면부터 VASP 벤처기업 인증, 주주 구성, 커스터디 시장점유율 86.6%가 나와 회사 성격과 위상이 즉시 파악된다."
+      },
+      {
+        "axis": "A",
+        "metricKey": "content_extractability",
+        "model": "claude-opus-5",
+        "score": 86,
+        "evidence": "본문이 방해 요소 없이 깔끔하게 추출된다. 회사 정보 블록이 두 번 반복되는 정도가 유일한 중복이다."
+      },
+      {
+        "axis": "B",
+        "metricKey": "logical_organization",
+        "model": "claude-opus-5",
+        "score": 84,
+        "evidence": "About → 점유율 → 내부통제 → 보험 → 기능 → 뉴스 → 회사정보 순으로 논리적이나 제목 위계 표시가 다소 평평하다."
+      },
+      {
+        "axis": "B",
+        "metricKey": "info_scannability",
+        "model": "claude-opus-5",
+        "score": 86,
+        "evidence": "AUC 수치, 인증 목록, 기능을 Secure Custody / Comprehensive / Enterprise 세 묶음으로 구획해 스캔이 쉽다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "clarity",
+        "model": "claude-opus-5",
+        "score": 92,
+        "evidence": "기관 투자자 대상 디지털자산 커스터디 사업자이며 국내 점유율 1위라는 점이 근거와 함께 분명하다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "product_depth",
+        "model": "claude-opus-5",
+        "score": 82,
+        "evidence": "콜드월렛·MPC·스테이킹·유통락업 관리·권한제어·컴플라이언스 증명서 발급까지 기능 단위로 서술된다. 다만 API·연동 방식 설명은 없다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "key_info_present",
+        "model": "claude-opus-5",
+        "score": 86,
+        "evidence": "대표명, 사업자등록번호, VASP 등록번호, 주소, 전화, 이메일, 약관·윤리경영·운영지침이 모두 갖춰져 있다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "freshness_clarity",
+        "model": "claude-opus-5",
+        "score": 90,
+        "evidence": "2026년 8월 보험 한도 확대, 7월 삼일PwC 인증 등 날짜가 명시된 최신 뉴스가 이어지고 출처(금융위 조사)도 밝힌다."
+      },
+      {
+        "axis": "D",
+        "metricKey": "technical_depth",
+        "model": "claude-opus-5",
+        "score": 84,
+        "evidence": "ISMS, VASP, SOC1 Type 2, 삼일PwC SOC 인증, 콜드월렛, MPC, 4천만 달러 보험 등 신뢰 신호가 구체적이다."
+      },
+      {
+        "axis": "D",
+        "metricKey": "content_polish",
+        "model": "claude-opus-5",
+        "score": 86,
+        "evidence": "영문 서술이 일관되고 과장 표현에 각주로 근거를 다는 등 완성도가 높다."
       },
       {
         "axis": "A",
@@ -1561,7 +1841,7 @@ export function measuredCompanies(): CompanyRecord[] {
         "metricKey": "sitemap_present",
         "model": "rule-based",
         "score": 0,
-        "evidence": "sitemap.xml을 찾지 못했습니다."
+        "evidence": "sitemap을 찾지 못했습니다(robots.txt의 Sitemap 지시자·관례 경로 모두 확인)."
       },
       {
         "axis": "A",
@@ -1630,8 +1910,8 @@ export function measuredCompanies(): CompanyRecord[] {
         "axis": "D",
         "metricKey": "load_time",
         "model": "rule-based",
-        "score": 72,
-        "evidence": "홈페이지 응답에 약 1,197ms 걸렸습니다."
+        "score": 100,
+        "evidence": "홈페이지 응답에 약 105ms 걸렸습니다."
       },
       {
         "axis": "D",
@@ -1653,6 +1933,76 @@ export function measuredCompanies(): CompanyRecord[] {
         "model": "rule-based",
         "score": 0,
         "evidence": "hreflang 다국어 표기가 없습니다."
+      },
+      {
+        "axis": "A",
+        "metricKey": "agent_findability",
+        "model": "claude-opus-5",
+        "score": 72,
+        "evidence": "히어로에서 기관용 커스터디 기업임이 제시되지만 그 이상의 정보가 홈에 거의 없다."
+      },
+      {
+        "axis": "A",
+        "metricKey": "content_extractability",
+        "model": "claude-opus-5",
+        "score": 78,
+        "evidence": "분량이 적은 대신 방해 요소 없이 깨끗하게 추출된다. 연락처 블록이 두 번 반복된다."
+      },
+      {
+        "axis": "B",
+        "metricKey": "logical_organization",
+        "model": "claude-opus-5",
+        "score": 60,
+        "evidence": "섹션 구분이 얕고 제목 위계가 사실상 없어 기계가 잡을 구조가 빈약하다."
+      },
+      {
+        "axis": "B",
+        "metricKey": "info_scannability",
+        "model": "claude-opus-5",
+        "score": 50,
+        "evidence": "전부 산문 문단이며 목록·표·수치가 전혀 없어 스캔할 단위가 없다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "clarity",
+        "model": "claude-opus-5",
+        "score": 78,
+        "evidence": "기관 대상 디지털자산 커스터디 기업이라는 점은 분명하다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "product_depth",
+        "model": "claude-opus-5",
+        "score": 44,
+        "evidence": "'Our Solutions' 링크만 있고 실제 서비스 구성·기능 설명이 본문에 없다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "key_info_present",
+        "model": "claude-opus-5",
+        "score": 60,
+        "evidence": "용도별 이메일 4종과 주소는 있으나 대표·사업자등록번호·VASP 정보가 없다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "freshness_clarity",
+        "model": "claude-opus-5",
+        "score": 50,
+        "evidence": "날짜가 붙은 콘텐츠가 하나도 없어 최신성을 판단할 수 없고, '유일한'·'최초' 같은 표현에 근거가 없다."
+      },
+      {
+        "axis": "D",
+        "metricKey": "technical_depth",
+        "model": "claude-opus-5",
+        "score": 40,
+        "evidence": "'첫 규제 인증 커스터디'라는 주장 외에 인증명·보안 구조·감사 자료 등 검증 가능한 기술 신호가 없다."
+      },
+      {
+        "axis": "D",
+        "metricKey": "content_polish",
+        "model": "claude-opus-5",
+        "score": 68,
+        "evidence": "영문 서술은 매끄러우나 내용이 얇고 연락처 블록이 중복된다."
       },
       {
         "axis": "A",
@@ -1817,7 +2167,7 @@ export function measuredCompanies(): CompanyRecord[] {
         "metricKey": "sitemap_present",
         "model": "rule-based",
         "score": 100,
-        "evidence": "sitemap.xml을 정상(200) 제공합니다."
+        "evidence": "sitemap을 정상(200) 제공합니다 (/sitemap.xml)."
       },
       {
         "axis": "A",
@@ -1879,15 +2229,15 @@ export function measuredCompanies(): CompanyRecord[] {
         "axis": "B",
         "metricKey": "alt_coverage",
         "model": "rule-based",
-        "score": 77,
-        "evidence": "이미지 13개 중 10개에 alt 텍스트가 있습니다."
+        "score": 100,
+        "evidence": "이미지 10개 중 10개에 alt 텍스트가 있습니다 (장식용 3개 제외)."
       },
       {
         "axis": "D",
         "metricKey": "load_time",
         "model": "rule-based",
         "score": 100,
-        "evidence": "홈페이지 응답에 약 135ms 걸렸습니다."
+        "evidence": "홈페이지 응답에 약 159ms 걸렸습니다."
       },
       {
         "axis": "D",
@@ -1909,6 +2259,76 @@ export function measuredCompanies(): CompanyRecord[] {
         "model": "rule-based",
         "score": 0,
         "evidence": "hreflang 다국어 표기가 없습니다."
+      },
+      {
+        "axis": "A",
+        "metricKey": "agent_findability",
+        "model": "claude-opus-5",
+        "score": 84,
+        "evidence": "히어로에서 탈중앙 금융 인프라 기업임을 선언하고 MetaMask·Infura·Linea 등 대표 제품이 이어져 파악이 빠르다."
+      },
+      {
+        "axis": "A",
+        "metricKey": "content_extractability",
+        "model": "claude-opus-5",
+        "score": 74,
+        "evidence": "텍스트는 깨끗하나 'Users M', 'Connected Dapps k'처럼 수치가 렌더되지 않아 숫자가 빠진 채 추출된다."
+      },
+      {
+        "axis": "B",
+        "metricKey": "logical_organization",
+        "model": "claude-opus-5",
+        "score": 78,
+        "evidence": "Trustware 개념 → 제품 스택 → 프로토콜 기여 순으로 흐름은 명확하나 제목 위계 표시가 평평하다."
+      },
+      {
+        "axis": "B",
+        "metricKey": "info_scannability",
+        "model": "claude-opus-5",
+        "score": 70,
+        "evidence": "제품 블록은 구분되나 개념 설명이 긴 문단으로 이어지고 지표는 숫자가 비어 있어 스캔 가치가 떨어진다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "clarity",
+        "model": "claude-opus-5",
+        "score": 84,
+        "evidence": "이더리움 기반 소비자·개발자·엔터프라이즈 소프트웨어를 만드는 회사임이 분명하다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "product_depth",
+        "model": "claude-opus-5",
+        "score": 78,
+        "evidence": "MetaMask, MetaMask Developer, Infura, Linea, Teku, Besu가 각각 무엇인지 설명되나 도입 방법·사양은 없다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "key_info_present",
+        "model": "claude-opus-5",
+        "score": 66,
+        "evidence": "회사 주소·연락처·법인 정보가 본문에 없고 문의 경로도 드러나지 않는다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "freshness_clarity",
+        "model": "claude-opus-5",
+        "score": 74,
+        "evidence": "Pectra·Dencun 등 최근 업그레이드를 다루지만 날짜 표기가 없고 지표 숫자가 비어 신뢰도를 깎는다."
+      },
+      {
+        "axis": "D",
+        "metricKey": "technical_depth",
+        "model": "claude-opus-5",
+        "score": 86,
+        "evidence": "프로토콜 클라이언트(Teku·Besu), L2(Linea), 노드 API(Infura)까지 이더리움 스택 전반의 기여가 구체적으로 드러난다."
+      },
+      {
+        "axis": "D",
+        "metricKey": "content_polish",
+        "model": "claude-opus-5",
+        "score": 72,
+        "evidence": "서술 자체는 전문적이나 지표 숫자 누락이 눈에 띄게 완성도를 떨어뜨린다."
       },
       {
         "axis": "A",
@@ -2073,7 +2493,7 @@ export function measuredCompanies(): CompanyRecord[] {
         "metricKey": "sitemap_present",
         "model": "rule-based",
         "score": 100,
-        "evidence": "sitemap.xml을 정상(200) 제공합니다."
+        "evidence": "sitemap을 정상(200) 제공합니다 (/sitemap.xml)."
       },
       {
         "axis": "A",
@@ -2087,7 +2507,7 @@ export function measuredCompanies(): CompanyRecord[] {
         "metricKey": "ssr_rendered",
         "model": "rule-based",
         "score": 100,
-        "evidence": "서버 응답 HTML에 본문 약 3,725자가 담겨 있어 SSR로 판단합니다."
+        "evidence": "서버 응답 HTML에 본문 약 9,596자가 담겨 있어 SSR로 판단합니다."
       },
       {
         "axis": "A",
@@ -2135,15 +2555,15 @@ export function measuredCompanies(): CompanyRecord[] {
         "axis": "B",
         "metricKey": "alt_coverage",
         "model": "rule-based",
-        "score": 90,
-        "evidence": "이미지 49개 중 44개에 alt 텍스트가 있습니다."
+        "score": 97,
+        "evidence": "이미지 92개 중 89개에 alt 텍스트가 있습니다 (장식용 1개 제외)."
       },
       {
         "axis": "D",
         "metricKey": "load_time",
         "model": "rule-based",
         "score": 100,
-        "evidence": "홈페이지 응답에 약 73ms 걸렸습니다."
+        "evidence": "홈페이지 응답에 약 146ms 걸렸습니다."
       },
       {
         "axis": "D",
@@ -2165,6 +2585,76 @@ export function measuredCompanies(): CompanyRecord[] {
         "model": "rule-based",
         "score": 0,
         "evidence": "hreflang 다국어 표기가 없습니다."
+      },
+      {
+        "axis": "A",
+        "metricKey": "agent_findability",
+        "model": "claude-opus-5",
+        "score": 90,
+        "evidence": "'The complete blockchain developer platform' 선언과 $1T+·500M+·100+·99.99% 지표가 상단에 있어 무엇을 하는 회사인지 바로 잡힌다."
+      },
+      {
+        "axis": "A",
+        "metricKey": "content_extractability",
+        "model": "claude-opus-5",
+        "score": 72,
+        "evidence": "고객 인용 블록이 통째로 두 번 반복되어 본문 상당 부분이 중복이다. 그 외에는 텍스트 추출이 깨끗하다."
+      },
+      {
+        "axis": "B",
+        "metricKey": "logical_organization",
+        "model": "claude-opus-5",
+        "score": 80,
+        "evidence": "플랫폼 → 제품 → 에이전트 스택 → 고객 인용 흐름은 명확하나 인용 반복 구간에서 구조가 흐트러진다."
+      },
+      {
+        "axis": "B",
+        "metricKey": "info_scannability",
+        "model": "claude-opus-5",
+        "score": 80,
+        "evidence": "제품을 Node API·Data APIs·Webhooks·Dedicated Infra 등으로 나열하고 지표 배지를 붙여 스캔이 쉽다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "clarity",
+        "model": "claude-opus-5",
+        "score": 92,
+        "evidence": "블록체인 개발자 플랫폼이며 노드·데이터·지갑·결제 인프라를 제공한다는 점이 명확하다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "product_depth",
+        "model": "claude-opus-5",
+        "score": 88,
+        "evidence": "제품별 기능이 구체적이고 curl 예시까지 본문에 포함돼 있으며, MCP 서버 160+ 도구·CLI·Agent Wallets 등 신규 라인업도 상세하다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "key_info_present",
+        "model": "claude-opus-5",
+        "score": 72,
+        "evidence": "가격 페이지와 문의 경로는 있으나 회사 주소·대표·법인 정보 등 기본 식별 정보가 본문에 없다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "freshness_clarity",
+        "model": "claude-opus-5",
+        "score": 86,
+        "evidence": "CLI 사용량 데이터 출시 같은 최신 공지가 상단에 있고 수치 기반 서술이지만, 날짜 표기가 거의 없어 시점 판단이 어렵다."
+      },
+      {
+        "axis": "D",
+        "metricKey": "technical_depth",
+        "model": "claude-opus-5",
+        "score": 92,
+        "evidence": "실행 가능한 API 호출 예시, 100+ 체인, 99.99% 가동률, MCP 서버, 전용 인프라 등 기술 깊이가 가장 높은 축이다."
+      },
+      {
+        "axis": "D",
+        "metricKey": "content_polish",
+        "model": "claude-opus-5",
+        "score": 82,
+        "evidence": "서술은 전문적이나 인용 블록 반복이 완성도를 떨어뜨린다."
       },
       {
         "axis": "A",
@@ -2329,7 +2819,7 @@ export function measuredCompanies(): CompanyRecord[] {
         "metricKey": "sitemap_present",
         "model": "rule-based",
         "score": 100,
-        "evidence": "sitemap.xml을 정상(200) 제공합니다."
+        "evidence": "sitemap을 정상(200) 제공합니다 (/sitemap_index.xml)."
       },
       {
         "axis": "A",
@@ -2343,7 +2833,7 @@ export function measuredCompanies(): CompanyRecord[] {
         "metricKey": "ssr_rendered",
         "model": "rule-based",
         "score": 100,
-        "evidence": "서버 응답 HTML에 본문 약 7,143자가 담겨 있어 SSR로 판단합니다."
+        "evidence": "서버 응답 HTML에 본문 약 7,183자가 담겨 있어 SSR로 판단합니다."
       },
       {
         "axis": "A",
@@ -2391,15 +2881,15 @@ export function measuredCompanies(): CompanyRecord[] {
         "axis": "B",
         "metricKey": "alt_coverage",
         "model": "rule-based",
-        "score": 5,
-        "evidence": "이미지 39개 중 2개에 alt 텍스트가 있습니다."
+        "score": 7,
+        "evidence": "이미지 30개 중 2개에 alt 텍스트가 있습니다 (장식용 9개 제외)."
       },
       {
         "axis": "D",
         "metricKey": "load_time",
         "model": "rule-based",
-        "score": 96,
-        "evidence": "홈페이지 응답에 약 608ms 걸렸습니다."
+        "score": 100,
+        "evidence": "홈페이지 응답에 약 488ms 걸렸습니다."
       },
       {
         "axis": "D",
@@ -2421,6 +2911,76 @@ export function measuredCompanies(): CompanyRecord[] {
         "model": "rule-based",
         "score": 100,
         "evidence": "hreflang 대체 링크 6개로 다국어를 명시합니다."
+      },
+      {
+        "axis": "A",
+        "metricKey": "agent_findability",
+        "model": "claude-opus-5",
+        "score": 76,
+        "evidence": "제품 라인업은 풍부하나 거대한 내비게이션이 두 번 반복된 뒤에야 본문이 나와 핵심 소개 도달이 늦다."
+      },
+      {
+        "axis": "A",
+        "metricKey": "content_extractability",
+        "model": "claude-opus-5",
+        "score": 62,
+        "evidence": "메가 메뉴 전체가 통째로 두 번 추출돼 본문 대비 메뉴 비중이 지나치게 크다."
+      },
+      {
+        "axis": "B",
+        "metricKey": "logical_organization",
+        "model": "claude-opus-5",
+        "score": 62,
+        "evidence": "메뉴 덤프가 본문 앞을 차지해 제목 위계와 정보 흐름을 기계가 잡기 어렵다."
+      },
+      {
+        "axis": "B",
+        "metricKey": "info_scannability",
+        "model": "claude-opus-5",
+        "score": 68,
+        "evidence": "제품·솔루션·산업이 목록으로 나열돼 있으나 메뉴와 본문 목록이 섞여 구분이 어렵다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "clarity",
+        "model": "claude-opus-5",
+        "score": 84,
+        "evidence": "기관용 디지털자산 인프라(지갑·커스터디·결제·토큰화) 기업이라는 점이 분명하다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "product_depth",
+        "model": "claude-opus-5",
+        "score": 80,
+        "evidence": "Wallet-as-a-Service, Embedded Wallets, 토큰화, Off Exchange, Policy Engine 등 제품이 세분화돼 있고 역할이 설명된다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "key_info_present",
+        "model": "claude-opus-5",
+        "score": 62,
+        "evidence": "가격·문의 경로는 있으나 회사 주소·법인 정보·경영진 상세가 본문에 없다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "freshness_clarity",
+        "model": "claude-opus-5",
+        "score": 76,
+        "evidence": "Agentic Payments Suite 출시, The Financial Grid 2026 등 최신 소식이 있으나 날짜 표기가 없다."
+      },
+      {
+        "axis": "D",
+        "metricKey": "technical_depth",
+        "model": "claude-opus-5",
+        "score": 82,
+        "evidence": "MPC 기반 지갑, 정책 엔진, 보안 태세 관리, 컴플라이언스 연동 등 보안·규제 신호가 구체적이다."
+      },
+      {
+        "axis": "D",
+        "metricKey": "content_polish",
+        "model": "claude-opus-5",
+        "score": 78,
+        "evidence": "용어는 일관되나 메뉴 중복으로 본문 정돈감이 떨어진다."
       },
       {
         "axis": "A",
@@ -2585,7 +3145,7 @@ export function measuredCompanies(): CompanyRecord[] {
         "metricKey": "sitemap_present",
         "model": "rule-based",
         "score": 100,
-        "evidence": "sitemap.xml을 정상(200) 제공합니다."
+        "evidence": "sitemap을 정상(200) 제공합니다 (/sitemap.xml)."
       },
       {
         "axis": "A",
@@ -2655,7 +3215,7 @@ export function measuredCompanies(): CompanyRecord[] {
         "metricKey": "load_time",
         "model": "rule-based",
         "score": 100,
-        "evidence": "홈페이지 응답에 약 128ms 걸렸습니다."
+        "evidence": "홈페이지 응답에 약 156ms 걸렸습니다."
       },
       {
         "axis": "D",
@@ -2677,6 +3237,76 @@ export function measuredCompanies(): CompanyRecord[] {
         "model": "rule-based",
         "score": 0,
         "evidence": "hreflang 다국어 표기가 없습니다."
+      },
+      {
+        "axis": "A",
+        "metricKey": "agent_findability",
+        "model": "claude-opus-5",
+        "score": 70,
+        "evidence": "메가 메뉴가 본문을 압도해 회사 소개보다 제품 목록이 먼저 길게 나오고, 핵심 포지션 문장이 뒤로 밀린다."
+      },
+      {
+        "axis": "A",
+        "metricKey": "content_extractability",
+        "model": "claude-opus-5",
+        "score": 58,
+        "evidence": "내비게이션이 두 번 반복되고 'Featured Capabilities' 같은 동일 문구가 여러 번 중복 추출된다."
+      },
+      {
+        "axis": "B",
+        "metricKey": "logical_organization",
+        "model": "claude-opus-5",
+        "score": 60,
+        "evidence": "제품 카테고리 구분은 있으나 메뉴와 본문이 구별되지 않아 기계가 구조를 파악하기 어렵다."
+      },
+      {
+        "axis": "B",
+        "metricKey": "info_scannability",
+        "model": "claude-opus-5",
+        "score": 66,
+        "evidence": "Transaction/Data/Infrastructure/Staking 네 축으로 나뉘고 각 항목이 한 줄 설명을 달고 있어 목록성은 좋다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "clarity",
+        "model": "claude-opus-5",
+        "score": 86,
+        "evidence": "기관용 노드·스테이킹·커스터디 인프라 기업이라는 점이 분명하다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "product_depth",
+        "model": "claude-opus-5",
+        "score": 86,
+        "evidence": "Institutional Vault, Builder Vault, Enterprise KMS, RPC API, Data Indexer, Staking API 등 제품이 촘촘하고 각각의 용도가 명시된다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "key_info_present",
+        "model": "claude-opus-5",
+        "score": 70,
+        "evidence": "Trust Center, Documentation, 리포트 링크는 있으나 회사 주소·연락처 등 기본 식별 정보가 본문에 없다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "freshness_clarity",
+        "model": "claude-opus-5",
+        "score": 74,
+        "evidence": "Validator Performance Report 등 정기 자료가 있으나 날짜 표기가 없어 시점을 알 수 없다."
+      },
+      {
+        "axis": "D",
+        "metricKey": "technical_depth",
+        "model": "claude-opus-5",
+        "score": 86,
+        "evidence": "MPC Signer, Policy Engine, 온프렘 서명, Clear signing, 12개 프로토콜 등 기술 항목이 구체적이다."
+      },
+      {
+        "axis": "D",
+        "metricKey": "content_polish",
+        "model": "claude-opus-5",
+        "score": 72,
+        "evidence": "용어는 전문적이나 메뉴·문구 중복이 많아 정돈감이 떨어진다."
       },
       {
         "axis": "A",
@@ -2841,7 +3471,7 @@ export function measuredCompanies(): CompanyRecord[] {
         "metricKey": "sitemap_present",
         "model": "rule-based",
         "score": 100,
-        "evidence": "sitemap.xml을 정상(200) 제공합니다."
+        "evidence": "sitemap을 정상(200) 제공합니다 (/sitemap.xml)."
       },
       {
         "axis": "A",
@@ -2911,7 +3541,7 @@ export function measuredCompanies(): CompanyRecord[] {
         "metricKey": "load_time",
         "model": "rule-based",
         "score": 100,
-        "evidence": "홈페이지 응답에 약 200ms 걸렸습니다."
+        "evidence": "홈페이지 응답에 약 235ms 걸렸습니다."
       },
       {
         "axis": "D",
@@ -2933,6 +3563,76 @@ export function measuredCompanies(): CompanyRecord[] {
         "model": "rule-based",
         "score": 0,
         "evidence": "hreflang 다국어 표기가 없습니다."
+      },
+      {
+        "axis": "A",
+        "metricKey": "agent_findability",
+        "model": "claude-opus-5",
+        "score": 82,
+        "evidence": "메뉴 트리가 길지만 '토큰화·커스터디·디지털자산을 위한 기관 플랫폼'이라는 정의가 명확히 제시된다."
+      },
+      {
+        "axis": "A",
+        "metricKey": "content_extractability",
+        "model": "claude-opus-5",
+        "score": 70,
+        "evidence": "제품 메뉴 트리가 본문 앞을 크게 차지해 실질 본문 비중이 낮다. 그 외 추출은 깨끗하다."
+      },
+      {
+        "axis": "B",
+        "metricKey": "logical_organization",
+        "model": "claude-opus-5",
+        "score": 72,
+        "evidence": "제품군 → 솔루션 → 개발자 자료 → 회사 순 흐름은 있으나 메뉴와 본문의 경계가 흐리다."
+      },
+      {
+        "axis": "B",
+        "metricKey": "info_scannability",
+        "model": "claude-opus-5",
+        "score": 76,
+        "evidence": "Digital Assets / Web3 Middleware / Chain Infrastructure 세 축으로 묶고 각 항목에 한 줄 설명을 달아 스캔이 쉽다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "clarity",
+        "model": "claude-opus-5",
+        "score": 92,
+        "evidence": "기관용 토큰화·커스터디·디지털자산 플랫폼 기업이며 대상이 CBDC·자본시장·자산운용·FMI임이 분명하다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "product_depth",
+        "model": "claude-opus-5",
+        "score": 88,
+        "evidence": "Custody, Tokenize, Digital Cash Hub, FireFly Enterprise, Interop Hub, Paladin/Zeto 프라이버시까지 제품이 세분화되고 역할이 구체적이다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "key_info_present",
+        "model": "claude-opus-5",
+        "score": 82,
+        "evidence": "Documentation, API Reference, Service Status, Help Center, Security & Compliance 링크가 갖춰져 개발자·도입 검토 경로가 분명하다. 법인 정보는 없다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "freshness_clarity",
+        "model": "claude-opus-5",
+        "score": 80,
+        "evidence": "Project Agorá(BIS 및 40+ 금융기관) 참여 등 최신 소식과 블로그가 있으나 날짜 표기가 없다."
+      },
+      {
+        "axis": "D",
+        "metricKey": "technical_depth",
+        "model": "claude-opus-5",
+        "score": 88,
+        "evidence": "Besu, Hyperledger FireFly, 포스트양자 ZKP(Zeto), EVM 프로그래머블 프라이버시(Paladin) 등 오픈소스·기술 스택이 구체적이다."
+      },
+      {
+        "axis": "D",
+        "metricKey": "content_polish",
+        "model": "claude-opus-5",
+        "score": 84,
+        "evidence": "용어와 서술이 일관되고 과장이 적다."
       },
       {
         "axis": "A",
@@ -3096,8 +3796,8 @@ export function measuredCompanies(): CompanyRecord[] {
         "axis": "A",
         "metricKey": "sitemap_present",
         "model": "rule-based",
-        "score": 0,
-        "evidence": "sitemap.xml을 찾지 못했습니다."
+        "score": 100,
+        "evidence": "sitemap을 정상(200) 제공합니다 (/wp-sitemap.xml)."
       },
       {
         "axis": "A",
@@ -3110,22 +3810,22 @@ export function measuredCompanies(): CompanyRecord[] {
         "axis": "A",
         "metricKey": "ssr_rendered",
         "model": "rule-based",
-        "score": 0,
-        "evidence": "서버 응답 본문이 약 58자로 빈약해 JS 렌더링 의존으로 추정합니다."
+        "score": 100,
+        "evidence": "서버 응답 HTML에 본문 약 3,845자가 담겨 있어 SSR로 판단합니다."
       },
       {
         "axis": "A",
         "metricKey": "not_bot_blocked",
         "model": "rule-based",
-        "score": 0,
-        "evidence": "봇 User-Agent를 403으로 차단합니다."
+        "score": 100,
+        "evidence": "봇 차단 없이 정상(200) 응답합니다."
       },
       {
         "axis": "A",
         "metricKey": "pages_reachable",
         "model": "rule-based",
-        "score": 0,
-        "evidence": "홈페이지 응답 실패(status 403)입니다."
+        "score": 100,
+        "evidence": "홈페이지가 정상(200) 응답합니다."
       },
       {
         "axis": "B",
@@ -3138,8 +3838,8 @@ export function measuredCompanies(): CompanyRecord[] {
         "axis": "B",
         "metricKey": "semantic_ratio",
         "model": "rule-based",
-        "score": 0,
-        "evidence": "시맨틱 태그 6개 중 0개 사용 (누락: header, nav, main, article, section, footer)."
+        "score": 67,
+        "evidence": "시맨틱 태그 6개 중 4개 사용 (누락: nav, article)."
       },
       {
         "axis": "B",
@@ -3152,22 +3852,22 @@ export function measuredCompanies(): CompanyRecord[] {
         "axis": "B",
         "metricKey": "heading_hierarchy",
         "model": "rule-based",
-        "score": 50,
-        "evidence": "h1 0개(1개 권장), 레벨 건너뜀 없음."
+        "score": 75,
+        "evidence": "h1 정확히 1개, 제목 레벨 건너뜀 있음."
       },
       {
         "axis": "B",
         "metricKey": "alt_coverage",
         "model": "rule-based",
-        "score": 100,
-        "evidence": "이미지가 없어 감점 대상이 아닙니다."
+        "score": 12,
+        "evidence": "이미지 52개 중 6개에 alt 텍스트가 있습니다."
       },
       {
         "axis": "D",
         "metricKey": "load_time",
         "model": "rule-based",
-        "score": 100,
-        "evidence": "홈페이지 응답에 약 55ms 걸렸습니다."
+        "score": 37,
+        "evidence": "홈페이지 응답에 약 2,076ms 걸렸습니다."
       },
       {
         "axis": "D",
@@ -3189,6 +3889,76 @@ export function measuredCompanies(): CompanyRecord[] {
         "model": "rule-based",
         "score": 0,
         "evidence": "hreflang 다국어 표기가 없습니다."
+      },
+      {
+        "axis": "A",
+        "metricKey": "agent_findability",
+        "model": "claude-opus-5",
+        "score": 78,
+        "evidence": "'$10bn+ 온체인 자산'과 규제 금융시장 토큰화라는 포지션이 히어로에 제시돼 방향은 빠르게 잡힌다."
+      },
+      {
+        "axis": "A",
+        "metricKey": "content_extractability",
+        "model": "claude-opus-5",
+        "score": 66,
+        "evidence": "내비게이션이 두 번 통째로 반복되고, 지표가 '$0bn+ / 0mn+ / 0+ Years'처럼 카운터 초기값 0으로 렌더돼 실제 수치가 빠진 채 추출된다."
+      },
+      {
+        "axis": "B",
+        "metricKey": "logical_organization",
+        "model": "claude-opus-5",
+        "score": 68,
+        "evidence": "What we do → 고객 → 성과 → 문의 흐름은 있으나 제목 위계가 약하고 메뉴 중복으로 경계가 흐리다."
+      },
+      {
+        "axis": "B",
+        "metricKey": "info_scannability",
+        "model": "claude-opus-5",
+        "score": 62,
+        "evidence": "'업계 최초' 목록은 나열돼 있으나 핵심 지표가 0으로 표시돼 스캔의 실익이 떨어진다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "clarity",
+        "model": "claude-opus-5",
+        "score": 82,
+        "evidence": "Corda 기반으로 규제 금융시장의 실물자산 토큰화와 상호운용성을 제공하는 기업임이 드러난다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "product_depth",
+        "model": "claude-opus-5",
+        "score": 70,
+        "evidence": "Corda와 R3 Labs, Solana Toolkit이 언급되지만 각각의 기능·아키텍처 설명이 짧다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "key_info_present",
+        "model": "claude-opus-5",
+        "score": 58,
+        "evidence": "문의 폼만 있고 회사 주소·연락처·법인 정보·경영진 정보가 본문에 없다."
+      },
+      {
+        "axis": "C",
+        "metricKey": "freshness_clarity",
+        "model": "claude-opus-5",
+        "score": 62,
+        "evidence": "'1st 디지털 채권 결제' 등 성과 목록은 있으나 날짜가 없고, 핵심 지표가 0으로 표시돼 서술과 수치가 어긋난다."
+      },
+      {
+        "axis": "D",
+        "metricKey": "technical_depth",
+        "model": "claude-opus-5",
+        "score": 74,
+        "evidence": "wCBDC 결제, mBridge 크로스보더 거래, Fnality·HQLAx 크로스체인 스왑 등 규제권 레퍼런스는 구체적이나 기술 문서·API 정보는 없다."
+      },
+      {
+        "axis": "D",
+        "metricKey": "content_polish",
+        "model": "claude-opus-5",
+        "score": 64,
+        "evidence": "서술은 전문적이나 지표 0 노출과 내비 중복이 완성도를 크게 떨어뜨린다."
       },
       {
         "axis": "A",

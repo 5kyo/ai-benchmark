@@ -25,7 +25,7 @@ export const METRIC_INFO: Record<string, MetricInfo> = {
   content_extractability: { label: "콘텐츠 추출성", description: "본문이 팝업·이미지텍스트·인터랙션 의존 없이 텍스트로 깔끔히 추출되는가.", suggestion: "핵심 내용을 이미지가 아닌 실제 텍스트로 제공하고 반복·팝업 장벽을 줄이세요." },
   // A 접근성 — 규칙
   robots_allowed: { label: "robots 허용", description: "robots.txt가 크롤러의 접근을 막지 않는가.", suggestion: "robots.txt에서 크롤러 접근을 허용하세요." },
-  sitemap_present: { label: "사이트맵", description: "sitemap.xml을 제공해 페이지 목록을 알려주는가.", suggestion: "sitemap.xml을 추가해 주요 페이지를 노출하세요." },
+  sitemap_present: { label: "사이트맵", description: "사이트맵을 제공해 페이지 목록을 알려주는가. robots.txt의 Sitemap 지시자와 sitemap.xml·sitemap-index.xml·sitemap_index.xml을 확인한다.", suggestion: "사이트맵을 추가하고 robots.txt에 Sitemap 지시자로 위치를 알리세요." },
   llms_txt_present: { label: "llms.txt", description: "AI 에이전트용 안내 파일 /llms.txt 를 제공하는가.", suggestion: "/llms.txt를 추가해 AI 에이전트용 사이트 안내를 제공하세요." },
   ssr_rendered: { label: "SSR 렌더", description: "JS 실행 없이도 서버 응답 HTML에 본문이 담겨 있는가.", suggestion: "핵심 콘텐츠를 서버 렌더링(SSR)하거나 정적으로 제공하세요." },
   not_bot_blocked: { label: "봇 미차단", description: "봇 User-Agent를 403 등으로 차단하지 않는가.", suggestion: "정상 크롤러의 접근 차단(403)을 완화하세요." },
@@ -38,7 +38,7 @@ export const METRIC_INFO: Record<string, MetricInfo> = {
   semantic_ratio: { label: "시맨틱 태그", description: "div 남발 대신 main·section·article 등 의미 있는 HTML5 태그를 쓰는가.", suggestion: "main·section·article 등 시맨틱 태그로 구조를 표현하세요." },
   meta_completeness: { label: "메타 태그", description: "title·description·Open Graph 등 메타 정보가 갖춰졌는가.", suggestion: "title·description·Open Graph 메타 태그를 채우세요." },
   heading_hierarchy: { label: "제목 계층", description: "하나의 h1 아래 h2~h6이 올바른 계층으로 구성됐는가.", suggestion: "h1을 하나만 두고 h2~h6 계층을 정리하세요." },
-  alt_coverage: { label: "이미지 alt", description: "이미지에 대체텍스트(alt)가 얼마나 채워졌는가.", suggestion: "이미지에 의미 있는 alt 텍스트를 추가하세요." },
+  alt_coverage: { label: "이미지 alt", description: "이미지에 대체텍스트(alt)가 얼마나 채워졌는가. aria-hidden·role=presentation으로 장식용임을 명시한 이미지는 세지 않는다.", suggestion: "콘텐츠 이미지에 의미 있는 alt를 넣고, 장식용 이미지는 aria-hidden으로 명시하세요." },
   // C 콘텐츠
   clarity: { label: "명확성", description: "무엇을 하는 회사인지 홈페이지만으로 분명히 알 수 있는가.", suggestion: "첫 화면에 '무엇을 하는 회사인지'를 한 문장으로 명시하세요." },
   product_depth: { label: "제품 구체성", description: "제품·서비스 설명이 충분히 구체적인가.", suggestion: "제품·서비스별 기능과 사례를 구체적으로 보강하세요." },
