@@ -78,16 +78,33 @@ function headingHierarchyScore($: cheerio.CheerioAPI): Scored {
   return { score: Math.max(0, score), evidence: `${notes.join(", ")}.` };
 }
 
+/**
+ * 명시적으로 장식용이라고 선언된 이미지인가.
+ * aria-hidden="true"(자신 또는 조상)와 role="presentation|none"은 "보조기술에 노출하지 말라"는
+ * 뜻이고, 이런 이미지에 alt="" 를 두는 것이 WCAG가 권장하는 올바른 마크업이다.
+ * 분모에 넣으면 접근성을 제대로 처리한 사이트가 오히려 감점된다.
+ */
 function altCoverageScore($: cheerio.CheerioAPI): Scored {
-  const imgs = $("img");
+  const imgs = $("img").toArray();
   if (imgs.length === 0) return { score: 100, evidence: "이미지가 없어 감점 대상이 아닙니다." };
-  let withAlt = 0;
-  imgs.each((_, el) => {
-    if (($(el).attr("alt") ?? "").trim().length > 0) withAlt += 1;
-  });
+
+  const isDecorative = (el: (typeof imgs)[number]): boolean => {
+    const $el = $(el);
+    const role = ($el.attr("role") ?? "").trim().toLowerCase();
+    if (role === "presentation" || role === "none") return true;
+    return $el.closest('[aria-hidden="true"]').length > 0;
+  };
+
+  const counted = imgs.filter((el) => !isDecorative(el));
+  const decorative = imgs.length - counted.length;
+  const note = decorative ? ` (장식용 ${decorative}개 제외)` : "";
+  if (counted.length === 0) {
+    return { score: 100, evidence: `이미지 ${imgs.length}개가 모두 장식용으로 선언돼 감점 대상이 아닙니다.` };
+  }
+  const withAlt = counted.filter((el) => ($(el).attr("alt") ?? "").trim().length > 0).length;
   return {
-    score: Math.round((withAlt / imgs.length) * 100),
-    evidence: `이미지 ${imgs.length}개 중 ${withAlt}개에 alt 텍스트가 있습니다.`,
+    score: Math.round((withAlt / counted.length) * 100),
+    evidence: `이미지 ${counted.length}개 중 ${withAlt}개에 alt 텍스트가 있습니다${note}.`,
   };
 }
 

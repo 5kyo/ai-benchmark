@@ -57,7 +57,11 @@ export function scoreAccessibility(snap: RawSnapshot): MetricScore[] {
     m(
       "sitemap_present",
       sitemap,
-      sitemap ? "sitemap.xml을 정상(200) 제공합니다." : "sitemap.xml을 찾지 못했습니다."
+      sitemap
+        ? // 어느 경로에서 찾았는지 남긴다 — /sitemap.xml 외에 sitemap-index.xml 등도 후보라
+          // 근거만 보고 "왜 만점인지" 판단할 수 있어야 한다.
+          `sitemap을 정상(200) 제공합니다 (${new URL(snap.sitemap!.url).pathname}).`
+        : "sitemap을 찾지 못했습니다(robots.txt의 Sitemap 지시자·관례 경로 모두 확인)."
     ),
     m("llms_txt_present", llms, llms ? "/llms.txt를 제공합니다." : "/llms.txt가 없습니다(404 등)."),
     m(

@@ -60,6 +60,29 @@ describe("scoreStructure", () => {
     expect(get(s, "alt_coverage")).toBe(100);
   });
 
+  it("alt_coverage excludes images inside an aria-hidden ancestor", () => {
+    // 마퀴·캐러셀은 같은 로고를 한 벌 더 깔고 그 사본을 aria-hidden으로 감춘다.
+    // 사본의 alt=""는 올바른 마크업이므로 분모에 넣으면 안 된다.
+    const body = `<body><img src="a" alt="a">
+      <span aria-hidden="true"><img src="a" alt=""></span></body>`;
+    expect(get(scoreStructure(snap(body)), "alt_coverage")).toBe(100);
+  });
+
+  it("alt_coverage excludes role=presentation images", () => {
+    const body = `<body><img src="a" alt="a"><img src="deco" role="presentation" alt=""></body>`;
+    expect(get(scoreStructure(snap(body)), "alt_coverage")).toBe(100);
+  });
+
+  it("alt_coverage still penalizes a content image left with an empty alt", () => {
+    const body = `<body><img src="a" alt="a"><img src="hero" alt=""></body>`;
+    expect(get(scoreStructure(snap(body)), "alt_coverage")).toBe(50);
+  });
+
+  it("alt_coverage is 100 when every image is declared decorative", () => {
+    const body = `<body><span aria-hidden="true"><img src="a" alt=""></span></body>`;
+    expect(get(scoreStructure(snap(body)), "alt_coverage")).toBe(100);
+  });
+
   it("heading_hierarchy penalizes missing or multiple h1", () => {
     const s = scoreStructure(snap("<body><h2>no h1</h2><h3>x</h3></body>"));
     expect(get(s, "heading_hierarchy")).toBeLessThan(100);
