@@ -1,7 +1,7 @@
 {
   "date": "2026-08-06",
   "fromDate": "2026-07-09",
-  "generatedAt": "2026-08-06T07:55:48.088Z",
+  "generatedAt": "2026-08-06T09:11:51.887Z",
   "entries": [
     {
       "slug": "parameta",
@@ -13,33 +13,33 @@
       ],
       "overall": {
         "from": 74,
-        "to": 93
+        "to": 86
       },
       "axes": [
         {
           "axis": "A",
           "from": 75,
-          "to": 96
+          "to": 91
         },
         {
           "axis": "B",
           "from": 54,
-          "to": 96
+          "to": 91
         },
         {
           "axis": "C",
           "from": 82,
-          "to": 87
+          "to": 75
         },
         {
           "axis": "D",
           "from": 85,
-          "to": 95
+          "to": 90
         }
       ],
       "rank": {
         "from": 9,
-        "to": 1
+        "to": 2
       },
       "metrics": [
         {
@@ -112,19 +112,22 @@
         ],
         "textChangedPct": 94.8
       },
-      "summary": "홈페이지를 WordPress에서 Astro 기반으로 전면 리뉴얼해, 반복 슬로건만 담겼던 제목 자리를 h1 1개와 제품·솔루션·사례 위계로 바꾸고 JSON-LD·llms.txt·시맨틱 태그를 새로 갖췄다. 제품 구성도 Loopchain·MyID·BTP 중심에서 ParaSta·PortX·MyID·broof 네 축으로 재편되며 종합 74 → 93으로 9위에서 1위가 됐다."
+      "summary": "홈페이지를 WordPress에서 Astro 기반으로 전면 리뉴얼해, 반복 슬로건만 담겼던 제목 자리를 h1 1개와 제품·솔루션·사례 위계로 바꾸고 JSON-LD·llms.txt·시맨틱 태그를 갖췄다. 규칙 15개 지표는 전부 만점이 됐으나, 태그·라벨이 공백 없이 붙어 추출되는 문제로 축 C가 82 → 75로 내려가며 종합 74 → 86, 9위 → 2위에 그쳤다."
     },
     {
       "slug": "lambda256",
       "name": "Lambda256",
       "kinds": [
         "content",
-        "rank"
+        "score"
       ],
-      "rank": {
-        "from": 1,
-        "to": 3
-      },
+      "axes": [
+        {
+          "axis": "C",
+          "from": 87,
+          "to": 83
+        }
+      ],
       "content": {
         "titleChanged": false,
         "metaChanged": false,
@@ -132,7 +135,7 @@
         "headingsRemoved": [],
         "textChangedPct": 23.2
       },
-      "summary": "홈 구성과 제품 라인업(SCOPE·CLAIR·NODIT)은 그대로이며, 카드사 공동 PoC·케이뱅크 오프램프 등 최신 보도자료가 갱신됐다. 점수는 87.8 → 87.5로 사실상 변동이 없다."
+      "summary": "제품 라인업(SCOPE·CLAIR·NODIT)과 홈 구성은 유지된 채 카드사 공동 PoC·케이뱅크 오프램프 등 최신 보도자료가 갱신됐다. 종합 87.8 → 86.2로 사실상 변동이 없으며 1위를 유지했다."
     },
     {
       "slug": "dsrv",
@@ -141,13 +144,6 @@
         "content",
         "score",
         "rank"
-      ],
-      "axes": [
-        {
-          "axis": "C",
-          "from": 72,
-          "to": 75
-        }
       ],
       "rank": {
         "from": 10,
@@ -178,26 +174,14 @@
         ],
         "textChangedPct": 45.9
       },
-      "summary": "온체인 금융 OS 포지셔닝과 DSRV Portal·All That Node·Validator 구성이 유지됐고 지표 배지가 일부 갱신됐다. 종합 72.7 → 73.9."
+      "summary": "온체인 금융 OS 포지셔닝과 DSRV Portal·All That Node·Validator 구성이 유지됐고 지표 배지가 일부 갱신됐다. 종합 72.7 → 73.7."
     },
     {
       "slug": "hexlant",
       "name": "Hexlant",
       "kinds": [
-        "score",
-        "rank"
+        "score"
       ],
-      "axes": [
-        {
-          "axis": "C",
-          "from": 73,
-          "to": 76
-        }
-      ],
-      "rank": {
-        "from": 7,
-        "to": 8
-      },
       "metrics": [
         {
           "axis": "D",
@@ -207,7 +191,7 @@
           "evidence": "홈페이지 응답에 약 409ms 걸렸습니다."
         }
       ],
-      "summary": "인수합병으로 사명이 월렛원에서 헥토월렛원으로 바뀐 안내가 추가됐고 제품(옥텟·오하이) 구성은 유지됐다. 종합 76.6 → 78.5."
+      "summary": "인수합병으로 사명이 월렛원에서 헥토월렛원으로 바뀐 안내가 추가됐고 제품(옥텟·오하이) 구성은 유지됐다. 종합 76.6 → 78.3."
     },
     {
       "slug": "haechi-labs",
@@ -226,7 +210,25 @@
       "name": "KODA (한국디지털자산)",
       "kinds": [
         "content",
+        "score",
         "rank"
+      ],
+      "axes": [
+        {
+          "axis": "B",
+          "from": 77,
+          "to": 74
+        },
+        {
+          "axis": "C",
+          "from": 85,
+          "to": 82
+        },
+        {
+          "axis": "D",
+          "from": 89,
+          "to": 86
+        }
       ],
       "rank": {
         "from": 3,
@@ -243,7 +245,7 @@
         ],
         "textChangedPct": 12.3
       },
-      "summary": "커스터디 시장점유율과 인증 중심 구성은 유지된 채 보험 한도 4천만 달러 확대, 삼일PwC SOC 인증 등 최신 뉴스가 추가됐다. 종합 86.3 → 86.8로 소폭 상승했다."
+      "summary": "커스터디 시장점유율과 인증 중심 구성이 유지된 채 보험 한도 4천만 달러 확대, 삼일PwC SOC 인증 등 최신 뉴스가 추가됐다. 종합 86.3 → 83.7."
     },
     {
       "slug": "bdacs",
@@ -280,14 +282,13 @@
         "headingsRemoved": [],
         "textChangedPct": 0
       },
-      "summary": "홈 구성과 문안이 거의 그대로이며 sitemap 부재도 유지됐다. 종합 59.4 → 61.3."
+      "summary": "홈 구성과 문안이 거의 그대로이며 sitemap 부재도 유지됐다. 종합 59.4 → 61.4."
     },
     {
       "slug": "consensys",
       "name": "ConsenSys",
       "kinds": [
-        "score",
-        "rank"
+        "score"
       ],
       "axes": [
         {
@@ -296,10 +297,6 @@
           "to": 72
         }
       ],
-      "rank": {
-        "from": 6,
-        "to": 7
-      },
       "metrics": [
         {
           "axis": "B",
@@ -309,15 +306,31 @@
           "evidence": "이미지 10개 중 10개에 alt 텍스트가 있습니다 (장식용 3개 제외)."
         }
       ],
-      "summary": "Trustware 개념과 MetaMask·Infura·Linea 중심 구성이 유지됐고 이미지 alt 정비로 축 B가 소폭 올랐다. 종합 77.6 → 79.0."
+      "summary": "Trustware 개념과 MetaMask·Infura·Linea 중심 구성이 유지됐고 이미지 alt 정비로 축 B가 소폭 올랐다. 종합 77.6 → 78.9."
     },
     {
       "slug": "alchemy",
       "name": "Alchemy",
       "kinds": [
         "content",
-        "score"
+        "score",
+        "rank"
       ],
+      "overall": {
+        "from": 88,
+        "to": 85
+      },
+      "axes": [
+        {
+          "axis": "C",
+          "from": 84,
+          "to": 79
+        }
+      ],
+      "rank": {
+        "from": 2,
+        "to": 3
+      },
       "metrics": [
         {
           "axis": "B",
@@ -383,7 +396,7 @@
         ],
         "textChangedPct": 80.4
       },
-      "summary": "개발자 플랫폼 구성은 유지하면서 MCP 서버·CLI·Agent Wallets 등 에이전트 스택 소개가 전면에 배치됐다. 종합 87.6 → 87.8로 거의 변동이 없다."
+      "summary": "개발자 플랫폼 구성을 유지하면서 MCP 서버·CLI·Agent Wallets 등 에이전트 스택 소개가 전면에 배치됐다. 종합 87.6 → 85.2."
     },
     {
       "slug": "fireblocks",
@@ -395,7 +408,7 @@
       ],
       "rank": {
         "from": 5,
-        "to": 6
+        "to": 8
       },
       "metrics": [
         {
@@ -413,31 +426,47 @@
         "headingsRemoved": [],
         "textChangedPct": 4.1
       },
-      "summary": "Agentic Payments Suite 출시 배너와 에이전트 인프라 메뉴가 추가됐다. 종합 79.1 → 79.6으로 큰 변화는 없다."
+      "summary": "Agentic Payments Suite 출시 배너와 에이전트 인프라 메뉴가 추가됐다. 다만 메가 메뉴가 두 번 반복 추출되는 구조는 그대로다. 종합 79.1 → 78.2."
     },
     {
       "slug": "blockdaemon",
       "name": "Blockdaemon",
       "kinds": [
+        "score",
         "rank"
+      ],
+      "axes": [
+        {
+          "axis": "C",
+          "from": 81,
+          "to": 78
+        }
       ],
       "rank": {
         "from": 8,
         "to": 10
       },
-      "summary": "제품 메뉴 구성과 본문이 대체로 유지됐다. 종합 74.0 → 73.8로 변동이 없다."
+      "summary": "제품 메뉴 구성과 본문이 대체로 유지됐다. 종합 74.0 → 73.3."
     },
     {
       "slug": "kaleido",
       "name": "Kaleido",
       "kinds": [
+        "score",
         "rank"
+      ],
+      "axes": [
+        {
+          "axis": "C",
+          "from": 87,
+          "to": 84
+        }
       ],
       "rank": {
         "from": 4,
         "to": 5
       },
-      "summary": "Project Agorá 참여 공지가 상단에 걸렸고 제품 구성은 유지됐다. 종합 83.3으로 동일하다."
+      "summary": "Project Agorá 참여 공지가 상단에 걸렸고 제품 구성은 유지됐다. 종합 83.3 → 82.2."
     },
     {
       "slug": "r3",
@@ -447,28 +476,23 @@
       ],
       "overall": {
         "from": 16,
-        "to": 39
+        "to": 50
       },
       "axes": [
         {
           "axis": "A",
           "from": 11,
-          "to": 60
+          "to": 69
         },
         {
           "axis": "B",
           "from": 20,
-          "to": 30
+          "to": 37
         },
         {
           "axis": "C",
           "from": 0,
-          "to": 23
-        },
-        {
-          "axis": "D",
-          "from": 51,
-          "to": 44
+          "to": 42
         }
       ],
       "metrics": [
@@ -529,7 +553,7 @@
           "evidence": "홈페이지 응답에 약 2,076ms 걸렸습니다."
         }
       ],
-      "summary": "직전 측정에서 봇 차단·미응답으로 본문을 수집하지 못했으나 이번에는 정상 응답해 실제 내용이 반영됐다. 다만 핵심 지표가 카운터 초기값 0으로 렌더돼 '$0bn+ / 0mn+'로 읽히고 응답이 2초를 넘겨, 종합 15.8 → 39.1에 그쳤다."
+      "summary": "직전 측정에서 봇 차단·미응답으로 본문을 수집하지 못했으나 이번에는 정상 응답해 실제 내용이 반영됐다. 다만 핵심 지표가 카운터 초기값 0으로 렌더돼 '$0bn+ / 0mn+'로 읽히고 응답이 2초를 넘겨, 종합 15.8 → 50.2에 그쳤다."
     }
   ]
 }
