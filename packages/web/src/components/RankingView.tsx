@@ -119,7 +119,7 @@ export function RankingView({ companies, weights, models }: { companies: Company
                     </div>
                   </th>
                 ))}
-                <th className="px-3 py-2.5 text-right text-xs font-normal" style={{ width: 72 }}>종합</th>
+                <th className="px-3 py-2.5 text-right text-xs font-normal" style={{ width: splitModels ? 120 : 72 }}>종합</th>
                 <th className="px-4 py-2.5 text-right text-xs font-normal" style={{ width: 84 }}>평균대비</th>
               </tr>
             </thead>
@@ -177,9 +177,13 @@ export function RankingView({ companies, weights, models }: { companies: Company
                       <ScorePill score={r.overall} />
                       {splitModels && (
                         <div className="mt-1 flex flex-col items-end gap-0.5">
+                          {/* 색 점만 두면 범례와 대조해야 어느 모델인지 알 수 있다. 이름을 같이 적는다. */}
                           {r.overallByModel.map((m) => (
                             <span key={m.model} className="flex items-center gap-1" title={m.model}>
                               <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ background: modelColor(m.model) }} />
+                              <span className="text-[10px] leading-none" style={{ color: "var(--muted)" }}>
+                                {modelShort(m.model)}
+                              </span>
                               <span className="mono text-[10px] tabular-nums" style={{ color: scoreColor(m.score) }}>
                                 {m.score == null ? "—" : Math.round(m.score)}
                               </span>
